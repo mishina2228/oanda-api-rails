@@ -10,7 +10,27 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_06_09_060904) do
+ActiveRecord::Schema.define(version: 2019_06_11_235131) do
+
+  create_table "usd_jpy_m1_candles", force: :cascade do |t|
+    t.decimal "close_ask", precision: 8, scale: 5, null: false
+    t.decimal "close_bid", precision: 8, scale: 5, null: false
+    t.decimal "close_mid", precision: 8, scale: 5, null: false
+    t.decimal "high_ask", precision: 8, scale: 5, null: false
+    t.decimal "high_bid", precision: 8, scale: 5, null: false
+    t.decimal "high_mid", precision: 8, scale: 5, null: false
+    t.decimal "low_ask", precision: 8, scale: 5, null: false
+    t.decimal "low_bid", precision: 8, scale: 5, null: false
+    t.decimal "low_mid", precision: 8, scale: 5, null: false
+    t.decimal "open_ask", precision: 8, scale: 5, null: false
+    t.decimal "open_bid", precision: 8, scale: 5, null: false
+    t.decimal "open_mid", precision: 8, scale: 5, null: false
+    t.datetime "time", null: false
+    t.integer "volume", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["time"], name: "index_usd_jpy_m1_candles_on_time", unique: true
+  end
 
   create_table "usd_jpy_s5_candles", force: :cascade do |t|
     t.decimal "close_ask", precision: 8, scale: 5, null: false
