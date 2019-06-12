@@ -31,18 +31,18 @@ class UsdJpyM1CandleTest < ActiveSupport::TestCase
 
   def valid_params
     {
-      close_ask: 108.50,
-      close_bid: 108.50,
-      close_mid: 108.50,
-      high_ask: 108.50,
-      high_bid: 108.50,
-      high_mid: 108.50,
-      low_ask: 108.50,
-      low_bid: 108.50,
-      low_mid: 108.50,
-      open_ask: 108.50,
-      open_bid: 108.50,
-      open_mid: 108.50,
+      close_ask: 108.550,
+      close_bid: 108.550,
+      close_mid: 108.550,
+      high_ask: 108.550,
+      high_bid: 108.550,
+      high_mid: 108.550,
+      low_ask: 108.550,
+      low_bid: 108.550,
+      low_mid: 108.550,
+      open_ask: 108.550,
+      open_bid: 108.550,
+      open_mid: 108.550,
       time: Time.zone.parse('2019-06-12T00:00:00+0900'),
       volume: 1
     }
