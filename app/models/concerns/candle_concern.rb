@@ -24,15 +24,18 @@ module CandleConcern
     # UsdJpyS5Candle.save_numerous_candles(start: Time.parse('2002/02/06 00:00:00+0000'),
     #                       finish: Time.parse('2002/10/06 00:00:00+0000'),
     #                       count: 100)
+    # start: Time
+    # finish: Time
+    # count: Integer
     def save_numerous_candles(start:, finish:, count:)
       loop do
+        if start >= finish
+          puts "finish: #{finish.in_time_zone('Asia/Tokyo')} を超えたので終了します。"
+          break
+        end
         ret = gimme_candle(start: start, count: count)
         if ret.present?
           puts "#{ret.last.time} まで取得しました。"
-          if ret.last.time >= finish
-            puts "finish: #{finish.in_time_zone('Asia/Tokyo')} を超えたので終了します。"
-            break
-          end
           start = ret.last.time + const_get(:TIME_RANGE)
         else
           start += count * const_get(:TIME_RANGE)
@@ -41,6 +44,8 @@ module CandleConcern
       end
     end
 
+    # start: String, Time, nil
+    # count: Integer
     def gimme_candle(start:, count:)
       start = convert_time(start)
       count ||= 100
