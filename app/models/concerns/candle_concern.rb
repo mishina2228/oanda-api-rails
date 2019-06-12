@@ -114,7 +114,7 @@ module CandleConcern
     end
 
     def new_candle(bidask, midpoint)
-      candle = UsdJpyS5Candle.new
+      candle = new
 
       candle.open_bid = bidask.open_bid
       candle.close_bid = bidask.close_bid
