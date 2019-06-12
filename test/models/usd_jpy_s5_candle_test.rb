@@ -51,6 +51,115 @@ class UsdJpyS5CandleTest < ActiveSupport::TestCase
     assert_match regexp, error.message
   end
 
+  def test_import_invalid_candles
+    candle = UsdJpyS5Candle.new(valid_params)
+    dup_candle = UsdJpyS5Candle.new(valid_params)
+    dup_candle.time = candle.time
+
+    assert_raise ActiveRecord::RecordNotUnique do
+      UsdJpyS5Candle.import!([candle, dup_candle])
+    end
+  end
+
+  def test_merge_into_indifferent_size
+    bidasks = [
+      bidask(time: Time.zone.parse('2019-06-12T00:00:00+0000')),
+      bidask(time: Time.zone.parse('2019-06-12T00:00:05+0000')),
+      bidask(time: Time.zone.parse('2019-06-12T00:00:10+0000'))
+    ]
+    midpoints = [
+      midpoint(time: Time.zone.parse('2019-06-12T00:00:00+0000')),
+      midpoint(time: Time.zone.parse('2019-06-12T00:00:05+0000')),
+    ]
+
+    error = assert_raise RuntimeError do
+      UsdJpyS5Candle.merge_into(bidasks, midpoints)
+    end
+    regexp = /\Anumber does not match/
+    assert_match regexp, error.message
+  end
+
+  def test_merge_into_time_mismatch
+    bidasks = [
+      bidask(time: Time.zone.parse('2019-06-12T00:00:00+0000')),
+      bidask(time: Time.zone.parse('2019-06-12T00:00:05+0000')),
+      bidask(time: Time.zone.parse('2019-06-12T00:00:10+0000'))
+    ]
+    midpoints = [
+      midpoint(time: Time.zone.parse('2019-06-12T00:00:00+0000')),
+      midpoint(time: Time.zone.parse('2019-06-12T00:00:05+0000')),
+      midpoint(time: Time.zone.parse('2019-06-12T00:00:15+0000'))
+    ]
+    ret = UsdJpyS5Candle.merge_into(bidasks, midpoints)
+    assert_equal 2, ret.size, 'timeがbidaskとmidpointで一致しないときはそれを飛ばすこと'
+    ng = %w(2019-06-12T00:00:10+0000 2019-06-12T00:00:15+0000)
+    ret.each do |candle|
+      assert_not ng.include?(candle.time.strftime('%Y-%m-%dT%H:%M:%S%z')), '一致しないデータが入っていないこと'
+    end
+  end
+
+  def test_merge_into_not_complete
+    bidasks = [
+      bidask(time: Time.zone.parse('2019-06-12T00:00:00+0000')),
+      bidask(time: Time.zone.parse('2019-06-12T00:00:05+0000')),
+      bidask(time: Time.zone.parse('2019-06-12T00:00:10+0000'), complete: false)
+    ]
+    midpoints = [
+      midpoint(time: Time.zone.parse('2019-06-12T00:00:00+0000')),
+      midpoint(time: Time.zone.parse('2019-06-12T00:00:05+0000')),
+      midpoint(time: Time.zone.parse('2019-06-12T00:00:10+0000'))
+    ]
+    ret = UsdJpyS5Candle.merge_into(bidasks, midpoints)
+    assert_equal 2, ret.size, 'completeでないデータは飛ばすこと'
+    ng = %w(2019-06-12T00:00:10+0000)
+    ret.each do |candle|
+      assert_not ng.include?(candle.time.strftime('%Y-%m-%dT%H:%M:%S%z')), 'completeでないデータが入っていないこと'
+    end
+  end
+
+  def test_merge_into_duplicate_time
+    bidasks = [
+      bidask(time: Time.zone.parse('2019-06-12T00:00:00+0000')),
+      bidask(time: Time.zone.parse('2019-06-12T00:00:05+0000')),
+      bidask(time: Time.zone.parse('2019-06-12T00:00:05+0000'))
+    ]
+    midpoints = [
+      midpoint(time: Time.zone.parse('2019-06-12T00:00:00+0000')),
+      midpoint(time: Time.zone.parse('2019-06-12T00:00:05+0000')),
+      midpoint(time: Time.zone.parse('2019-06-12T00:00:05+0000'))
+    ]
+    ret = UsdJpyS5Candle.merge_into(bidasks, midpoints)
+    assert_equal 2, ret.size, '重複しているデータは飛ばすこと'
+  end
+
+  def test_merge_into_unique_time
+    assert UsdJpyS5Candle.create(valid_params.merge(time: Time.zone.parse('2019-06-12T00:00:00+0000')))
+
+    bidasks = [
+      bidask(time: Time.zone.parse('2019-06-12T00:00:00+0000')),
+      bidask(time: Time.zone.parse('2019-06-12T00:00:05+0000')),
+      bidask(time: Time.zone.parse('2019-06-12T00:00:10+0000'))
+    ]
+    midpoints = [
+      midpoint(time: Time.zone.parse('2019-06-12T00:00:00+0000')),
+      midpoint(time: Time.zone.parse('2019-06-12T00:00:05+0000')),
+      midpoint(time: Time.zone.parse('2019-06-12T00:00:10+0000'))
+    ]
+    ret = UsdJpyS5Candle.merge_into(bidasks, midpoints)
+    assert_equal 2, ret.size, 'DBに登録済みのデータは飛ばすこと'
+    ng = %w(2019-06-12T00:00:10+0000)
+    ret.each do |candle|
+      assert_not ng.include?(candle.time.strftime('%Y-%m-%dT%H:%M:%S%z')), 'DBに登録済みのデータが入っていないこと'
+    end
+  end
+
+  def test_new_candle
+    ba = bidask(time: Time.zone.parse('2019-06-12T00:00:00+0000'))
+    mp = midpoint(time: Time.zone.parse('2019-06-12T00:00:00+0000'))
+    candle = UsdJpyS5Candle.new_candle(ba, mp)
+    assert candle.is_a?(UsdJpyS5Candle)
+  end
+
   def valid_params
     {
       close_ask: 108.550,
@@ -68,5 +177,37 @@ class UsdJpyS5CandleTest < ActiveSupport::TestCase
       time: Time.zone.parse('2019-06-12T00:00:00+0900'),
       volume: 1
     }
+  end
+
+  def bidask(params = {})
+    time = params[:time] || Time.zone.parse('2019-06-12T00:00:00+0000')
+    time = time.utc
+    OandaAPI::Resource::Candle.new(
+      close_ask: params[:close_ask] || 108.550,
+      close_bid: params[:close_bid] || 108.550,
+      high_ask: params[:high_ask] || 108.550,
+      high_bid: params[:high_bid] || 108.550,
+      low_ask: params[:low_ask] || 108.550,
+      low_bid: params[:low_bid] || 108.550,
+      open_ask: params[:open_ask] || 108.550,
+      open_bid: params[:open_bid] || 108.550,
+      time: time,
+      volume: params[:volume] || 1,
+      complete: params[:complete].nil? ? true : params[:complete]
+    )
+  end
+
+  def midpoint(params = {})
+    time = params[:time] || Time.zone.parse('2019-06-12T00:00:00+0000')
+    time = time.utc
+    OandaAPI::Resource::Candle.new(
+      close_mid: params[:close_mid] || 108.550,
+      high_mid: params[:high_mid] || 108.550,
+      low_mid: params[:low_mid] || 108.550,
+      open_mid: params[:open_mid] || 108.550,
+      time: time,
+      volume: params[:volume] || 1,
+      complete: params[:complete] || true
+    )
   end
 end
