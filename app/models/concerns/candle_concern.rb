@@ -99,7 +99,7 @@ module CandleConcern
       candles = bidasks.map do |bidask|
         midpoint = midpoints.find {|mid| mid.time == bidask.time}
         unless midpoint
-          puts "bidpointとmidpointでtimeが一致しないデータをスキップします。 time: #{bidask.time}"
+          puts "bidaskとmidpointでtimeが一致しないデータをスキップします。 time: #{bidask.time}"
           next
         end
         next unless bidask.complete? && midpoint.complete? # どっちかがcompleteじゃなければskip
@@ -110,7 +110,7 @@ module CandleConcern
 
         candle
       end
-      candles.compact
+      candles.compact.uniq(&:time)
     end
 
     def new_candle(bidask, midpoint)
