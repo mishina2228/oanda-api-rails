@@ -93,7 +93,7 @@ module CandleConcern
 
     def merge_into(bidasks, midpoints)
       if bidasks.size != midpoints.size
-        raise "number dose not match. bidask: #{bidasks.size}, midpoint: #{midpoints.size}"
+        raise "number does not match. bidask: #{bidasks.size}, midpoint: #{midpoints.size}"
       end
 
       candles = bidasks.map do |bidask|
@@ -106,7 +106,10 @@ module CandleConcern
 
         candle = new_candle(bidask, midpoint)
         # すでに登録済のレコードをスキップ
-        next if candle.invalid?
+        if candle.invalid?
+          puts "time: #{candle.time} のレコードがすでに存在するため、スキップします。"
+          next
+        end
 
         candle
       end
