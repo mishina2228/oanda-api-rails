@@ -57,7 +57,7 @@ module CandleConcern
       end
 
       params = {
-        instrument: 'USD_JPY',
+        instrument: const_get(:INSTRUMENT),
         granularity: const_get(:GRANULARITY),
         count: count,
         start: start
