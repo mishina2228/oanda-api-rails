@@ -12,4 +12,30 @@ class CandleJob
     count = params[:count] || 5000
     klass.save_numerous_candles(start: start, finish: finish, count: count)
   end
+
+  # startからfinishの期間がすべて休場時間であるか判定
+  def self.between_market_holiday?(start, finish)
+    return false if market_workday?(start) || market_workday?(finish)
+
+    diff = finish - start
+    diff / 1.day <= 2
+  end
+
+  # 土曜の06:00から休場、月曜の06:00から開場だが、
+  # サマータイムの考慮がめんどいので1時間余裕をもたせる
+  def self.market_holiday?(time)
+    if time.saturday?
+      time.hour > 6
+    elsif time.sunday?
+      true
+    elsif time.monday?
+      time.hour < 5
+    else
+      false
+    end
+  end
+
+  def self.market_workday?(time)
+    !market_holiday?(time)
+  end
 end
