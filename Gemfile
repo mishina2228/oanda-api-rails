@@ -65,3 +65,5 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
 gem 'activerecord-import'
 gem 'oanda_api'
+gem 'resque'
+gem 'resque-scheduler'
