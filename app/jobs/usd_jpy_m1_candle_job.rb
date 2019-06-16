@@ -1,8 +1,5 @@
-class UsdJpyM1CandleJob
-  @queue = :normal
-
+class UsdJpyM1CandleJob < CandleJob
   def self.perform(params = {})
-    params = params.with_indifferent_access
-    p 'Hello Resque!'
+    super(UsdJpyM1Candle, params)
   end
 end

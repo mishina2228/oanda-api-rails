@@ -10,9 +10,9 @@ eur_jpy_m1_candle_job:
   queue: 'normal'
   args:
   description: 'EUR/JPY の1分足ローソク取得ジョブ'
-gbp_jpy_m1_candle_job:
-  cron: '*/10 * * * *'
-  class: 'GbpJpyM1CandleJob'
-  queue: 'normal'
-  args:
-  description: 'GBP/JPY の1分足ローソク取得ジョブ'
+#gbp_jpy_m1_candle_job:
+#  cron: '*/10 * * * *'
+#  class: 'GbpJpyM1CandleJob'
+#  queue: 'normal'
+#  args:
+#  description: 'GBP/JPY の1分足ローソク取得ジョブ'
