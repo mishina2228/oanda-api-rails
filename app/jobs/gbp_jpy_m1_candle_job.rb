@@ -1,4 +1,4 @@
-class CandleJob
+class GbpJpyM1CandleJob
   @queue = :normal
 
   def self.perform(params = {})
