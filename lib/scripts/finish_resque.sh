@@ -1,2 +1,2 @@
-pgrep -f resque | xargs kill
+pgrep -f resque- | xargs kill
 
