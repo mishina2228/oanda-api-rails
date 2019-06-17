@@ -1,6 +1,16 @@
 ---
 ja:
   activerecord:
+    models:
+      resque_schedule: Resqueスケジュール
+    attributes:
+      resque_schedule:
+        name: スケジュール名
+        cron: cron
+        class_name: ジョブクラス名
+        queue: キュー名
+        description: 説明
+        enabled: 有効
     errors:
       messages:
         record_invalid: 'バリデーションに失敗しました: %{errors}'
@@ -139,12 +149,22 @@ ja:
         one: "%{model}にエラーが発生しました"
         other: "%{model}に%{count}個のエラーが発生しました"
   helpers:
+    link:
+      back: 戻る
+      delete: 削除
+      edit: 編集
+      new: 新規作成
+      show: 閲覧
     select:
       prompt: 選択してください
     submit:
       create: 登録する
       submit: 保存する
       update: 更新する
+    title:
+      edit: "%{model}編集"
+      list: "%{models}一覧"
+      show: "%{model}閲覧"
   number:
     currency:
       format:
