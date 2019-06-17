@@ -9,7 +9,7 @@ class CandleJob
 
     start = params[:start] || klass.latest_candle.time + klass::TIME_RANGE
     finish = params[:finish] || Time.zone.now
-    count = params[:count] || 5000
+    count = params[:count] || 100
     klass.save_numerous_candles(start: start, finish: finish, count: count)
   end
 
