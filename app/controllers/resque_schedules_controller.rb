@@ -14,6 +14,7 @@ class ResqueSchedulesController < ApplicationController
   def update
     respond_to do |format|
       if @resque_schedule.update(resque_schedule_params)
+        @resque_schedule.setup_resque_schedule
         format.html {redirect_to @resque_schedule, notice: 'Resque schedule was successfully updated.'}
       else
         format.html {render :edit}
@@ -28,6 +29,6 @@ class ResqueSchedulesController < ApplicationController
   end
 
   def resque_schedule_params
-    params.fetch(:resque_schedule, {})
+    params.fetch(:resque_schedule, {}).permit(:enabled)
   end
 end

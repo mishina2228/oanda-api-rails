@@ -1,17 +1,79 @@
 <%= form_with(model: resque_schedule, local: true) do |form| %>
   <% if resque_schedule.errors.any? %>
     <div id="error_explanation">
-      <h2><%= pluralize(resque_schedule.errors.count, "error") %> prohibited this resque_schedule from being saved:</h2>
-
       <ul>
-      <% resque_schedule.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
+        <% resque_schedule.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
       </ul>
     </div>
   <% end %>
 
-  <div class="actions">
-    <%= form.submit %>
+  <div class="container">
+    <div class="row">
+      <div class="form-group">
+        <div class="col-xs-4 col-sm-2">
+          <%= form.label :name %>
+        </div>
+        <div class="col-xs-8 col-sm-10">
+          <%= resque_schedule.name %>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="form-group">
+        <div class="col-xs-4 col-sm-2">
+          <%= form.label :cron %>
+        </div>
+        <div class="col-xs-8 col-sm-10">
+          <%= resque_schedule.cron %>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="form-group">
+        <div class="col-xs-4 col-sm-2">
+          <%= form.label :class_name %>
+        </div>
+        <div class="col-xs-8 col-sm-10">
+          <%= resque_schedule.class_name %>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="form-group">
+        <div class="col-xs-4 col-sm-2">
+          <%= form.label :queue %>
+        </div>
+        <div class="col-xs-8 col-sm-10">
+          <%= resque_schedule.queue %>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="form-group">
+        <div class="col-xs-4 col-sm-2">
+          <%= form.label :description %>
+        </div>
+        <div class="col-xs-8 col-sm-10">
+          <%= resque_schedule.description %>
+        </div>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="form-group">
+        <div class="col-xs-4 col-sm-2">
+          <%= form.label :enabled %>
+        </div>
+        <div class="col-xs-8 col-sm-10">
+          <%= form.check_box :enabled, class: 'form-control' %>
+        </div>
+      </div>
+    </div>
+
+    <div class="actions">
+      <%= form.submit class: 'btn btn-primary' %>
+    </div>
   </div>
 <% end %>
