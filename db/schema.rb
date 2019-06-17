@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_06_13_134331) do
+ActiveRecord::Schema.define(version: 2019_06_17_083259) do
 
   create_table "eur_jpy_m1_candles", force: :cascade do |t|
     t.decimal "close_ask", precision: 8, scale: 5, null: false
@@ -50,6 +50,17 @@ ActiveRecord::Schema.define(version: 2019_06_13_134331) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["time"], name: "index_gbp_jpy_m1_candles_on_time", unique: true
+  end
+
+  create_table "resque_schedules", force: :cascade do |t|
+    t.string "name", null: false
+    t.string "description"
+    t.string "cron"
+    t.string "class_name"
+    t.string "queue"
+    t.boolean "enabled", default: false, null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "usd_jpy_m1_candles", force: :cascade do |t|

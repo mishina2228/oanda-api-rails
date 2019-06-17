@@ -1,0 +1,17 @@
+<%= form_with(model: resque_schedule, local: true) do |form| %>
+  <% if resque_schedule.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(resque_schedule.errors.count, "error") %> prohibited this resque_schedule from being saved:</h2>
+
+      <ul>
+      <% resque_schedule.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

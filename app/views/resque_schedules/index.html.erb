@@ -1,0 +1,23 @@
+<h1>
+  <%= t('helpers.title.list', models: ResqueSchedule.model_name.human.pluralize(I18n.locale)) %>
+</h1>
+
+<table class='table table-bordered table-hover table-striped'>
+  <thead>
+  <tr>
+    <th><%= ResqueSchedule.human_attribute_name :name %></th>
+    <th><%= ResqueSchedule.human_attribute_name :enabled %></th>
+  </tr>
+  </thead>
+
+  <tbody>
+  <% @resque_schedules.each do |resque_schedule| %>
+    <tr>
+      <td><%= link_to resque_schedule.name, resque_schedule %></td>
+      <td><%= resque_schedule.enabled %></td>
+    </tr>
+  <% end %>
+  </tbody>
+</table>
+
+<br>
