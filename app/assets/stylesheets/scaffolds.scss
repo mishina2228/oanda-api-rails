@@ -40,6 +40,32 @@ td {
   padding: 0 5px 7px;
 }
 
+td a {
+  color: #337ab7;
+
+  &:visited {
+    color: #337ab7;
+  }
+
+  &:hover {
+    color: #fff;
+    background-color: #337ab7;
+  }
+}
+
+.header a {
+  color: #fff;
+
+  &:visited {
+    color: #fff;
+  }
+
+  &:hover {
+    color: #337ab7;
+    background-color: #fff;
+  }
+}
+
 div {
   &.field, &.actions {
     margin-bottom: 10px;
