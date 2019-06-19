@@ -1,0 +1,21 @@
+usd_jpy_m1_candle_job:
+  name: 'usd_jpy_m1_candle_job'
+  cron: '*/10 * * * 1-6'
+  class_name: 'UsdJpyM1CandleJob'
+  queue: 'normal'
+  description: 'USD/JPY の1分足ローソク取得ジョブ'
+  enabled: true
+eur_jpy_m1_candle_job:
+  name: 'eur_jpy_m1_candle_job'
+  cron: '*/10 * * * 1-6'
+  class_name: 'EurJpyM1CandleJob'
+  queue: 'normal'
+  description: 'EUR/JPY の1分足ローソク取得ジョブ'
+  enabled: true
+gbp_jpy_m1_candle_job:
+  name: 'gbp_jpy_m1_candle_job'
+  cron: '*/10 * * * 1-6'
+  class_name: 'GbpJpyM1CandleJob'
+  queue: 'normal'
+  description: 'GBP/JPY の1分足ローソク取得ジョブ'
+  enabled: false

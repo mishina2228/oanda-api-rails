@@ -6,24 +6,12 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
-ResqueSchedule.create(
-  name: 'usd_jpy_m1_candle_job',
-  cron: '*/10 * * * 1-6',
-  class_name: 'UsdJpyM1CandleJob',
-  queue: 'normal',
-  description: 'USD/JPY の1分足ローソク取得ジョブ'
-)
-ResqueSchedule.create(
-  name: 'eur_jpy_m1_candle_job',
-  cron: '*/10 * * * 1-6',
-  class_name: 'EurJpyM1CandleJob',
-  queue: 'normal',
-  description: 'EUR/JPY の1分足ローソク取得ジョブ'
-)
-ResqueSchedule.create(
-  name: 'gbp_jpy_m1_candle_job',
-  cron: '*/10 * * * 1-6',
-  class_name: 'GbpJpyM1CandleJob',
-  queue: 'normal',
-  description: 'GBP/JPY の1分足ローソク取得ジョブ'
-)
+Dir.glob(Rails.root.join('db', 'seeds', '*.yml')).each do |yml|
+  klass_name = File.basename(yml, '.yml')
+  klass = klass_name.singularize.camelize.constantize
+  YAML.load_file(yml).each_value do |value|
+    record = klass.new
+    record.attributes = value
+    record.save!
+  end
+end
