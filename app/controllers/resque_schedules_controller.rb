@@ -3,6 +3,7 @@ class ResqueSchedulesController < ApplicationController
 
   def index
     @resque_schedules = ResqueSchedule.all
+    @actual = Resque.schedule
   end
 
   def show
