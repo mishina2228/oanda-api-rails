@@ -23,6 +23,11 @@ class ResqueSchedulesController < ApplicationController
     end
   end
 
+  def setup_all
+    ResqueSchedule.all.find_each(&:setup_resque_schedule)
+    redirect_to action: :index, notice: 'Resque schedules were all set.'
+  end
+
   private
 
   def set_resque_schedule
