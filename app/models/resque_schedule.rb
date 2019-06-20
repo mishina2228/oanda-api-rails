@@ -19,7 +19,8 @@ class ResqueSchedule < ApplicationRecord
       cron: cron,
       class: class_name,
       queue: queue,
-      description: description
+      description: description,
+      persist: true
     }
   end
 end
