@@ -72,11 +72,12 @@ class UsdJpyS5CandleTest < ActiveSupport::TestCase
       midpoint(time: Time.zone.parse('2019-06-12T00:00:05+0000')),
     ]
 
-    error = assert_raise RuntimeError do
-      UsdJpyS5Candle.merge_into(bidasks, midpoints)
+    ret = UsdJpyS5Candle.merge_into(bidasks, midpoints)
+    assert_equal 2, ret.size, '数がbidaskとmidpointで一致しないときは、timeが一致しないものを飛ばすこと'
+    ng = %w(2019-06-12T00:00:10+0000)
+    ret.each do |candle|
+      assert_not ng.include?(candle.time.strftime('%Y-%m-%dT%H:%M:%S%z')), '一致しないデータが入っていないこと'
     end
-    regexp = /\Anumber does not match/
-    assert_match regexp, error.message
   end
 
   def test_merge_into_time_mismatch

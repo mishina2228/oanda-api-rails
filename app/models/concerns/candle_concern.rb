@@ -101,10 +101,6 @@ module CandleConcern
     end
 
     def merge_into(bidasks, midpoints)
-      if bidasks.size != midpoints.size
-        raise "number does not match. bidask: #{bidasks.size}, midpoint: #{midpoints.size}"
-      end
-
       candles = bidasks.map do |bidask|
         midpoint = midpoints.find {|mid| mid.time == bidask.time}
         unless midpoint
