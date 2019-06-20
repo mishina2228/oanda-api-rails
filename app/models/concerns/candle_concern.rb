@@ -34,17 +34,17 @@ module CandleConcern
     def save_numerous_candles(start:, finish:, count:)
       loop do
         if start >= finish
-          puts "finish: #{finish.in_time_zone('Asia/Tokyo')} を超えたので終了します。"
+          Rails.logger.info "finish: #{finish.in_time_zone('Asia/Tokyo')} を超えたので終了します。"
           break
         end
         ret = gimme_candle(start: start, count: count)
         if ret.present?
-          puts "#{ret.last.time} まで取得しました。"
+          Rails.logger.info "#{ret.last.time} まで取得しました。"
           start = ret.last.time + const_get(:TIME_RANGE)
         else
           start += count * const_get(:TIME_RANGE)
         end
-        puts "次の取得を開始: start = #{start}"
+        Rails.logger.info "次の取得を開始: start = #{start}"
       end
     end
 
@@ -66,7 +66,7 @@ module CandleConcern
         count: count,
         start: start
       }
-      puts "params: #{params}"
+      Rails.logger.info "params: #{params}"
       client = Mishina::Oanda::Client.client
       bidask_data = client.candles(
         params.merge(candle_format: OandaAPI::Resource::Candle::Format::BIDASK)
@@ -74,16 +74,16 @@ module CandleConcern
       midpoint_data = client.candles(
         params.merge(candle_format: OandaAPI::Resource::Candle::Format::MIDPOINT)
       ).get
-      puts 'データ取得完了 & データ整形開始'
+      Rails.logger.info 'データ取得完了 & データ整形開始'
 
       bidasks = bidask_data.instance_variable_get(:@collection)
       midpoints = midpoint_data.instance_variable_get(:@collection)
 
       candles = merge_into(bidasks, midpoints)
-      puts 'データ整形終了 & バルクインサート開始'
+      Rails.logger.info 'データ整形終了 & バルクインサート開始'
       # DBに制約があるので import でも import! でも落ちるのだ
       import!(candles)
-      puts 'バルクインサート終了'
+      Rails.logger.info 'バルクインサート終了'
       candles
     end
 
@@ -104,7 +104,7 @@ module CandleConcern
       candles = bidasks.map do |bidask|
         midpoint = midpoints.find {|mid| mid.time == bidask.time}
         unless midpoint
-          puts "bidaskとmidpointでtimeが一致しないデータをスキップします。 time: #{bidask.time}"
+          Rails.logger.info "bidaskとmidpointでtimeが一致しないデータをスキップします。 time: #{bidask.time}"
           next
         end
         next unless bidask.complete? && midpoint.complete? # どっちかがcompleteじゃなければskip
@@ -112,7 +112,7 @@ module CandleConcern
         candle = new_candle(bidask, midpoint)
         # すでに登録済のレコードをスキップ
         if candle.invalid?
-          puts "time: #{candle.time} のレコードがすでに存在するため、スキップします。"
+          Rails.logger.info "time: #{candle.time} のレコードがすでに存在するため、スキップします。"
           next
         end
 
