@@ -20,5 +20,11 @@ module OandaApiRails
     config.active_record.default_timezone = :local
 
     config.paths.add 'lib', eager_load: true
+
+    config.generators do |g|
+      g.assets false
+      g.helper false
+      g.jbuilder false
+    end
   end
 end
