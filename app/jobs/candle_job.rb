@@ -40,7 +40,7 @@ class CandleJob
 
     Rails.logger.info "次の取得を開始: start = #{start}"
     Resque.enqueue_in_with_queue(
-      @queue, 5.seconds, self.class,
+      @queue, 5.seconds, self,
       start: start, finish: finish, count: count
     )
   end
