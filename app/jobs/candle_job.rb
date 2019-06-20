@@ -48,8 +48,10 @@ class CandleJob
   def self.arrange_params(klass, params)
     start = if params[:start]
               params[:start].to_time
-            else
+            elsif klass.latest_candle
               klass.latest_candle.time + klass::TIME_RANGE
+            else
+              Time.new(2000, 1, 1, 0, 0, 0, '+09:00')
             end
     finish = if params[:finish]
                params[:finish].to_time
