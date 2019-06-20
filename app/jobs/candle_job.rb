@@ -1,12 +1,7 @@
 class CandleJob
-  @queue = :normal
-
   def self.before_enqueue(params = {})
     jobs = Resque.peek(@queue, 0, 100)
-    jobs.each do |job|
-      return false if job['class'] == name
-    end
-    true
+    jobs.none? {|job| job['class'] == name}
   end
 
   def self.perform(klass, params = {})
