@@ -9,6 +9,7 @@ Rails.application.routes.draw do
       put :setup_all
     end
   end
+  resources :candle_information, only: %w(index)
 
   root 'resque_schedules#index'
 end

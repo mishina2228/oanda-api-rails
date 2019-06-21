@@ -24,6 +24,10 @@ module CandleConcern
       order(time: :desc).first
     end
 
+    def pseudo_count
+      maximum(:id)
+    end
+
     # Usage:
     # UsdJpyS5Candle.save_numerous_candles(start: Time.parse('2002/02/06 00:00:00+0000'),
     #                       finish: Time.parse('2002/10/06 00:00:00+0000'),
