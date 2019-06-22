@@ -1,5 +1,16 @@
 ---
 ja:
+  activemodel:
+    models:
+      candle_information: ローソク足情報
+    attributes:
+      candle_information:
+        usd_jpy_m1_count: 'USD/JPY 1分足 件数'
+        eur_jpy_m1_count: 'EUR/JPY 1分足 件数'
+        gbp_jpy_m1_count: 'GBP/JPY 1分足 件数'
+        usd_jpy_m1_latest: 'USD/JPY 最新日時'
+        eur_jpy_m1_latest: 'EUR/JPY 最新日時'
+        gbp_jpy_m1_latest: 'GBP/JPY 最新日時'
   activerecord:
     models:
       resque_schedule: Resqueスケジュール
