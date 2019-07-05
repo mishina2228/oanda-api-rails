@@ -25,7 +25,7 @@ module CandleConcern
     end
 
     def pseudo_count
-      maximum(:id)
+      maximum(:id) || 0
     end
 
     # Usage:
