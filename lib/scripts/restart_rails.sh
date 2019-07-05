@@ -1,3 +1,4 @@
+#!/usr/bin/env bash
 cd /home/pi/git-repos/oanda-api-rails
-rails restart
+bundle exec rails restart RAILS_ENV=production
 
