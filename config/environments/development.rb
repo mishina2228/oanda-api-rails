@@ -59,7 +59,7 @@ Rails.application.configure do
   # routes, locales, etc. This feature depends on the listen gem.
   # config.file_watcher = ActiveSupport::EventedFileUpdateChecker
 
-  config.log_level = :info
+  config.log_level = :debug
 
   # log rotation
   config.logger = Logger.new('log/development.log', 5, 10.megabytes)
