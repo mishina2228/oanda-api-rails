@@ -79,6 +79,7 @@ class CandleJob
   # 土曜の06:00から休場、月曜の06:00から開場だが、
   # サマータイムの考慮がめんどいので1時間余裕をもたせる
   def self.market_holiday?(time)
+    time = time.in_time_zone('Asia/Tokyo')
     if time.saturday?
       time.hour > 6
     elsif time.sunday?
