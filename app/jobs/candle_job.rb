@@ -25,6 +25,12 @@ class CandleJob
       return
     end
 
+    if between_market_holiday?(start, finish)
+      Rails.logger.info '指定期間が全て休場中のため、処理を終了します。'
+      Rails.logger.info "start: #{start}, finish: #{finish}"
+      return
+    end
+
     ret = klass.gimme_candle(start: start, count: count)
     if ret.present?
       Rails.logger.info "#{ret.last.time} まで取得しました。"
