@@ -69,7 +69,7 @@ class UsdJpyS5CandleTest < ActiveSupport::TestCase
     ]
     midpoints = [
       midpoint(time: Time.zone.parse('2019-06-12T00:00:00+0000')),
-      midpoint(time: Time.zone.parse('2019-06-12T00:00:05+0000')),
+      midpoint(time: Time.zone.parse('2019-06-12T00:00:05+0000'))
     ]
 
     ret = UsdJpyS5Candle.merge_into(bidasks, midpoints)
