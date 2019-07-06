@@ -8,9 +8,9 @@ class ResqueSchedule < ApplicationRecord
 
   def setup_resque_schedule
     if enabled?
-      Resque.set_schedule(name, schedule_config)
+      JobUtils.set_schedule(name, schedule_config)
     else
-      Resque.remove_schedule(name)
+      JobUtils.remove_schedule(name)
     end
   end
 

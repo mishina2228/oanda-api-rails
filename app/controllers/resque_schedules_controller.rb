@@ -4,7 +4,7 @@ class ResqueSchedulesController < ApplicationController
   def index
     @resque_schedules = ResqueSchedule.all
     begin
-      @actual = Resque.schedule
+      @actual = JobUtils.schedule
     rescue Redis::CannotConnectError => e
       Rails.logger.warn e.message
       @actual = e.message
