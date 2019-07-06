@@ -1,0 +1,7 @@
+job1:
+  name: 'test_candle_job'
+  cron: '*/10 * * * 1-6'
+  class_name: 'TestJob'
+  queue: 'normal'
+  description: 'テストジョブ1'
+  enabled: true
