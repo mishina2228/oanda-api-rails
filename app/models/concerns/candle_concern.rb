@@ -71,7 +71,7 @@ module CandleConcern
         start: start
       }
       Rails.logger.info "params: #{params}"
-      client = Mishina::Oanda::Client.client
+      client = Mishina::Oanda::ClientFactory.client
       bidask_data = client.candles(
         params.merge(candle_format: OandaAPI::Resource::Candle::Format::BIDASK)
       ).get
