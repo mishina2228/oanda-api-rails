@@ -10,6 +10,11 @@ Rails.application.routes.draw do
     end
   end
   resources :candle_information, only: %w(index)
+  resources :candle_access, only: %w(index) do
+    collection do
+      put :access
+    end
+  end
 
   root 'resque_schedules#index'
 end

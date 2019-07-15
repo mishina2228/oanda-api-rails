@@ -2,8 +2,15 @@
 ja:
   activemodel:
     models:
+      candle_access: ローソク足情報取得
       candle_information: ローソク足情報
     attributes:
+      candle_access:
+        candle_format: 形式
+        count: 個数
+        granularity: 単位
+        instrument: 通貨
+        start: 開始日時
       candle_information:
         usd_jpy_m1_count: 'USD/JPY 1分足 件数'
         eur_jpy_m1_count: 'EUR/JPY 1分足 件数'
