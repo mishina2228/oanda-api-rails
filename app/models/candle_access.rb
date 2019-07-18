@@ -16,7 +16,7 @@ class CandleAccess
 
   def access
     self.start = transform_start(start)
-    client.candles(candle_params).get
+    client.candles(candle_params).get.instance_variable_get(:@collection)
   end
 
   def transform_start(start)

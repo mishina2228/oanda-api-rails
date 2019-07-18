@@ -8,7 +8,6 @@ class CandleAccessController < ApplicationController
     if candle_access.valid?
       begin
         @candle_data = candle_access.access
-        Rails.logger.debug(@candle_data.inspect)
       rescue OandaAPI::RequestError => e
         Rails.logger.info('something is wrong!')
         Rails.logger.info(e.inspect)
@@ -16,7 +15,7 @@ class CandleAccessController < ApplicationController
     else
       @candle_data = {}
     end
-
+    render plain: JSON.pretty_generate(@candle_data)
   end
 
   private
