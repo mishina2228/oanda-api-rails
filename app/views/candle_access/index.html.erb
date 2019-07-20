@@ -6,8 +6,16 @@
 
 <h3>
   取得結果
+  <%= image_tag('/images/loading.gif', class: 'loading hide') %>
 </h3>
-<pre>
-  <code class="candle-access result">
-  </code>
-</pre>
+
+<div class="candle-access result columns">
+</div>
+
+<script>
+  $(document).on('turbolinks:load', (function () {
+    $('.candle-access.result.columns').columns({
+      data: []
+    });
+  }));
+</script>

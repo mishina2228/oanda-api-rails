@@ -9,13 +9,13 @@ class CandleAccessController < ApplicationController
       begin
         @candle_data = candle_access.access
       rescue OandaAPI::RequestError => e
-        Rails.logger.info('something is wrong!')
+        Rails.logger.info('something went wrong!')
         Rails.logger.info(e.inspect)
       end
     else
-      @candle_data = {}
+      @candle_data = [{message: 'search parameters are invalid.'}]
     end
-    render plain: JSON.pretty_generate(@candle_data)
+    render json: @candle_data
   end
 
   private

@@ -1,7 +1,7 @@
 $(document).on('turbolinks:load', (function () {
   $('#candle-access').on('click', function () {
     const $form = $(this).parents('form');
-    const $result_field = $('code.candle-access.result');
+    const $result_field = $('.candle-access.result.columns');
     $.ajax({
       url: $form.attr('action'),
       type: 'POST',
@@ -14,13 +14,27 @@ $(document).on('turbolinks:load', (function () {
           'count': $form.find('#candle_access_count').val(),
           'start': $form.find('#candle_access_start').val()
         }
+      },
+      beforeSend: function () {
+        $('img.loading').removeClass('hide')
       }
     }).done((data) => {
+      console.log('SUCCESS');
       console.log(data);
     }).fail((data) => {
+      console.log('FAIL');
       console.log(data);
     }).always((data) => {
-      $result_field.html(data);
+      data = data.map(obj => {
+        delete obj._attributes;
+        return obj;
+      });
+      $result_field.columns('destroy');
+      $result_field.columns({
+        data: data,
+        size: 10
+      });
+      $('img.loading').addClass('hide')
     })
   })
 }));
