@@ -33,6 +33,17 @@ class ResqueSchedulesController < ApplicationController
     redirect_to action: :index, notice: 'Resque schedules were all set.'
   end
 
+  def schedule
+    begin
+      @actual = JobUtils.schedule
+    rescue Redis::CannotConnectError => e
+      Rails.logger.warn e.message
+      @actual = e.message
+    end
+
+    render json: @actual
+  end
+
   private
 
   def set_resque_schedule

@@ -7,6 +7,7 @@ Rails.application.routes.draw do
   resources :resque_schedules, only: %w(index show edit update) do
     collection do
       put :setup_all
+      get :schedule
     end
   end
   resources :candle_information, only: %w(index)
