@@ -1,5 +1,9 @@
-$(document).on('turbolinks:load', (function () {
+let resque_schedules = {};
+resque_schedules.load_schedules = function () {
   const $field = $('#resque-schedules');
+  if(!$field[0]) {
+    return null;
+  }
   $.ajax({
     url: '/resque_schedules/schedule',
     type: 'GET',
@@ -16,4 +20,4 @@ $(document).on('turbolinks:load', (function () {
     $field.html(pretty);
     $('img.loading').addClass('hide')
   })
-}));
+};

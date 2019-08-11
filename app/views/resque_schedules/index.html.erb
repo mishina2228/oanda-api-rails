@@ -32,3 +32,9 @@
   <code id="resque-schedules">
   </code>
 </pre>
+
+<script>
+  $(document).on('turbolinks:load', (function () {
+    resque_schedules.load_schedules();
+  }));
+</script>
