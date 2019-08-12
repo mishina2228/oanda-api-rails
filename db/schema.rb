@@ -12,7 +12,7 @@
 
 ActiveRecord::Schema.define(version: 2019_06_17_083259) do
 
-  create_table "eur_jpy_m1_candles", force: :cascade do |t|
+  create_table "eur_jpy_m1_candles", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_bin", force: :cascade do |t|
     t.decimal "close_ask", precision: 8, scale: 5, null: false
     t.decimal "close_bid", precision: 8, scale: 5, null: false
     t.decimal "close_mid", precision: 8, scale: 5, null: false
@@ -32,7 +32,7 @@ ActiveRecord::Schema.define(version: 2019_06_17_083259) do
     t.index ["time"], name: "index_eur_jpy_m1_candles_on_time", unique: true
   end
 
-  create_table "gbp_jpy_m1_candles", force: :cascade do |t|
+  create_table "gbp_jpy_m1_candles", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_bin", force: :cascade do |t|
     t.decimal "close_ask", precision: 8, scale: 5, null: false
     t.decimal "close_bid", precision: 8, scale: 5, null: false
     t.decimal "close_mid", precision: 8, scale: 5, null: false
@@ -52,7 +52,7 @@ ActiveRecord::Schema.define(version: 2019_06_17_083259) do
     t.index ["time"], name: "index_gbp_jpy_m1_candles_on_time", unique: true
   end
 
-  create_table "resque_schedules", force: :cascade do |t|
+  create_table "resque_schedules", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_bin", force: :cascade do |t|
     t.string "name", null: false
     t.string "description"
     t.string "cron"
@@ -63,7 +63,7 @@ ActiveRecord::Schema.define(version: 2019_06_17_083259) do
     t.datetime "updated_at", null: false
   end
 
-  create_table "usd_jpy_m1_candles", force: :cascade do |t|
+  create_table "usd_jpy_m1_candles", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_bin", force: :cascade do |t|
     t.decimal "close_ask", precision: 8, scale: 5, null: false
     t.decimal "close_bid", precision: 8, scale: 5, null: false
     t.decimal "close_mid", precision: 8, scale: 5, null: false
@@ -83,7 +83,7 @@ ActiveRecord::Schema.define(version: 2019_06_17_083259) do
     t.index ["time"], name: "index_usd_jpy_m1_candles_on_time", unique: true
   end
 
-  create_table "usd_jpy_s5_candles", force: :cascade do |t|
+  create_table "usd_jpy_s5_candles", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_bin", force: :cascade do |t|
     t.decimal "close_ask", precision: 8, scale: 5, null: false
     t.decimal "close_bid", precision: 8, scale: 5, null: false
     t.decimal "close_mid", precision: 8, scale: 5, null: false
