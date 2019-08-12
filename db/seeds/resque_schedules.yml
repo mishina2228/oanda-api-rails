@@ -18,4 +18,4 @@ gbp_jpy_m1_candle_job:
   class_name: 'GbpJpyM1CandleJob'
   queue: 'normal'
   description: 'GBP/JPY の1分足ローソク取得ジョブ'
-  enabled: false
+  enabled: true
