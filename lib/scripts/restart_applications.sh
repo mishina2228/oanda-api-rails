@@ -7,4 +7,4 @@ echo 'sleep 5 seconds ...'
 sleep 5s
 sh ./lib/scripts/start_resque.sh
 sh ./lib/scripts/start_rails.sh
-echo 'started rails and resque.'
+
