@@ -18,7 +18,7 @@ class ResqueSchedulesTest < ApplicationSystemTestCase
     click_on I18n.t('helpers.link.edit')
     page.assert_current_path(edit_resque_schedule_path(@resque_schedule.id))
 
-    uncheck('resque_schedule_enabled')
+    uncheck ResqueSchedule.human_attribute_name(:enabled)
     click_on I18n.t('helpers.submit.update')
 
     assert_text I18n.t('helpers.notice.update')
