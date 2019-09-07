@@ -173,6 +173,11 @@ ja:
       edit: 編集
       new: 新規作成
       show: 閲覧
+    notice:
+      create: 正常に作成されました
+      delete: 正常に削除されました
+      delete_confirm: 削除してよろしいですか?
+      update: 正常に更新されました
     select:
       prompt: 選択してください
     submit:

@@ -145,12 +145,27 @@ en:
         one: 1 error prohibited this %{model} from being saved
         other: "%{count} errors prohibited this %{model} from being saved"
   helpers:
+    link:
+      back: Back
+      delete: Delete
+      edit: Edit
+      new: New
+      show: Show
+    notice:
+      create: Created successfully
+      delete: Deleted successfully
+      delete_confirm: Are you sure you want to delete it?
+      update: Updated successfully
     select:
       prompt: Please select
     submit:
       create: Create %{model}
       submit: Save %{model}
       update: Update %{model}
+    title:
+      edit: "Editing %{model}"
+      list: "Listing %{models}"
+      show: "Show %{model}"
   number:
     currency:
       format:

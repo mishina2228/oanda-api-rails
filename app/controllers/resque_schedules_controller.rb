@@ -14,8 +14,8 @@ class ResqueSchedulesController < ApplicationController
   def update
     respond_to do |format|
       if @resque_schedule.update(resque_schedule_params)
-        @resque_schedule.setup_resque_schedule
-        format.html {redirect_to @resque_schedule, notice: 'Resque schedule was successfully updated.'}
+        # @resque_schedule.setup_resque_schedule
+        format.html {redirect_to @resque_schedule, notice: t('helpers.notice.update')}
       else
         format.html {render :edit}
       end
