@@ -21,7 +21,8 @@ class ResqueSchedulesControllerTest < ActionDispatch::IntegrationTest
   end
 
   test 'should update resque_schedule' do
-    patch resque_schedule_url(@resque_schedule), params: {resque_schedule: {}}
+    patch resque_schedule_url(@resque_schedule), params: {resque_schedule: {enabled: false}}
     assert_redirected_to resque_schedule_url(@resque_schedule)
+    assert_not @resque_schedule.reload.enabled?
   end
 end
