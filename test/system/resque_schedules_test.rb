@@ -11,18 +11,18 @@ class ResqueSchedulesTest < ApplicationSystemTestCase
   end
 
   test 'updating a Resque schedule' do
-    assert resque_schedule = ResqueSchedule.first
-    assert resque_schedule.enabled?
+    assert @resque_schedule.enabled?
 
     visit resque_schedules_url
-    click_on resque_schedule.name, match: :first
+    click_on @resque_schedule.name, match: :first
     click_on I18n.t('helpers.link.edit')
-    page.assert_current_path(edit_resque_schedule_path(resque_schedule.id))
+    page.assert_current_path(edit_resque_schedule_path(@resque_schedule.id))
+
     uncheck('resque_schedule_enabled')
     click_on I18n.t('helpers.submit.update')
 
     assert_text I18n.t('helpers.notice.update')
-    page.assert_current_path(resque_schedule_path(resque_schedule.id))
-    assert_not resque_schedule.reload.enabled?
+    page.assert_current_path(resque_schedule_path(@resque_schedule.id))
+    assert_not @resque_schedule.reload.enabled?
   end
 end
