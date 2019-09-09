@@ -167,6 +167,8 @@ ja:
         one: "%{model}にエラーが発生しました"
         other: "%{model}に%{count}個のエラーが発生しました"
   helpers:
+    button:
+      setup_all: 一括設定
     link:
       back: 戻る
       delete: 削除
@@ -177,6 +179,7 @@ ja:
       create: 正常に作成されました
       delete: 正常に削除されました
       delete_confirm: 削除してよろしいですか?
+      setup_all_resque_schedules: Resqueスケジュールを一括設定しました。
       update: 正常に更新されました
     select:
       prompt: 選択してください

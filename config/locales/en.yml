@@ -145,6 +145,8 @@ en:
         one: 1 error prohibited this %{model} from being saved
         other: "%{count} errors prohibited this %{model} from being saved"
   helpers:
+    button:
+      setup_all: SETUP ALL
     link:
       back: Back
       delete: Delete
@@ -155,6 +157,7 @@ en:
       create: Created successfully
       delete: Deleted successfully
       delete_confirm: Are you sure you want to delete it?
+      setup_all_resque_schedules: Resque schedules were all set.
       update: Updated successfully
     select:
       prompt: Please select

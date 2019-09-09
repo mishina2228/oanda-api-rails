@@ -12,11 +12,12 @@ class ResqueSchedulesController < ApplicationController
   end
 
   def update
+    @resque_schedule.attributes = resque_schedule_params
     respond_to do |format|
-      if @resque_schedule.update(resque_schedule_params)
-        # @resque_schedule.setup_resque_schedule
+      begin
+        @resque_schedule.save_and_setting!
         format.html {redirect_to @resque_schedule, notice: t('helpers.notice.update')}
-      else
+      rescue ActiveRecord::RecordInvalid, Redis::CannotConnectError
         format.html {render :edit}
       end
     end
@@ -24,7 +25,7 @@ class ResqueSchedulesController < ApplicationController
 
   def setup_all
     ResqueSchedule.all.find_each(&:setup_resque_schedule)
-    redirect_to action: :index, notice: 'Resque schedules were all set.'
+    redirect_to({action: :index}, notice: t('helpers.notice.setup_all_resque_schedules'))
   end
 
   def schedule

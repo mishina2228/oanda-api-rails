@@ -2,7 +2,7 @@
   <%= t('helpers.title.list', models: ResqueSchedule.model_name.human.pluralize(I18n.locale)) %>
 </h1>
 
-<%= link_to 'SETUP_ALL', setup_all_resque_schedules_path,
+<%= link_to t('helpers.button.setup_all'), setup_all_resque_schedules_path,
             class: 'btn btn-info', role: :button, method: :put %>
 <table class='table table-bordered table-hover table-striped'>
   <thead>
