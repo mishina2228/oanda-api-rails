@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-cd /home/pi/git-repos/oanda-api-rails
+cd `dirname $0`/../..
 
 echo 'starting rails.'
 

@@ -1,5 +1,6 @@
 #!/usr/bin/env bash
-cd /home/pi/git-repos/oanda-api-rails
+cd `dirname $0`/../..
+
 sh ./lib/scripts/finish_rails.sh
 sh ./lib/scripts/finish_resque.sh
 echo 'stopped rails and resque.'
