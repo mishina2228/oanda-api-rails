@@ -1,5 +1,4 @@
 #!/usr/bin/env bash
-
 cd `dirname $0`/../..
 
 sh ./lib/scripts/finish_rails.sh
