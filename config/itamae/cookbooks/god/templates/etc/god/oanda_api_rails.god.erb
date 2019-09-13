@@ -12,8 +12,8 @@
     w.stop_signal  = 'QUIT'
     w.stop_timeout = 300.seconds
 
-    #    w.uid = 'git'
-    #    w.gid = 'git'
+    # w.uid = 'git'
+    # w.gid = 'git'
 
     # restart if memory gets too high
     w.transition(:up, :restart) do |on|
@@ -68,8 +68,8 @@ end
     w.stop_signal  = 'QUIT'
     w.stop_timeout = 300.seconds
 
-    #    w.uid = 'git'
-    #    w.gid = 'git'
+    # w.uid = 'git'
+    # w.gid = 'git'
 
     # restart if memory gets too high
     w.transition(:up, :restart) do |on|

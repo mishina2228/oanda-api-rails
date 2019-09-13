@@ -20,7 +20,7 @@ end
 
 設定ファイル読み込み
 ```
-$ sudo god -c /etc/god/master.conf -P /var/run/god.pid -l /var/log/god.log --log-level info
+$ god -c /etc/god/master.conf
 ```
 
 God から Resque, resque-scheduler の状態確認/起動/再起動/停止
