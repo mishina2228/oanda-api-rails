@@ -1,15 +1,11 @@
-rails_env = ENV['RAILS_ENV'] || 'development'
-rails_root = ENV['RAILS_ROOT'] || File.dirname(__FILE__) + '/..'
-app_name = 'oanda_api_rails'
-
 1.times do |num|
   God.watch do |w|
-    w.dir = rails_root
-    w.name = "resque-#{app_name}-#{num}"
-    w.group = "resque-#{app_name}"
+    w.dir = "<%= @rails_root %>"
+    w.name = "resque-<%= @app_name %>-#{num}"
+    w.group = "resque-<%= @app_name %>"
     w.interval = 30.seconds
-    w.env = {'QUEUE' => 'normal', 'RAILS_ENV' => rails_env}
-    w.start = "bundle exec rake -f #{rails_root}/Rakefile environment resque:work"
+    w.env = {'QUEUE' => 'normal', 'RAILS_ENV' => "<%= @rails_env %>"}
+    w.start = "bundle exec rake -f <%= @rails_root %>/Rakefile environment resque:work"
     w.log = "#{w.dir}/log/#{w.name}.log"
     w.err_log = "#{w.dir}/log/#{w.name}_error.log"
     w.start_grace  = 10.seconds
@@ -60,12 +56,12 @@ end
 
 1.times do |num|
   God.watch do |w|
-    w.dir = rails_root
-    w.name = "resque-scheduler-#{app_name}-#{num}"
-    w.group = "resque-#{app_name}"
+    w.dir = "<%= @rails_root %>"
+    w.name = "resque-scheduler-<%= @app_name %>-#{num}"
+    w.group = "resque-<%= @app_name %>"
     w.interval = 30.seconds
-    w.env = {'RAILS_ENV' => rails_env, 'DYNAMIC_SCHEDULE' => true}
-    w.start = "bundle exec rake -f #{rails_root}/Rakefile environment resque:scheduler"
+    w.env = {'RAILS_ENV' => "<%= @rails_env %>", 'DYNAMIC_SCHEDULE' => true}
+    w.start = "bundle exec rake -f <%= @rails_root %>/Rakefile environment resque:scheduler"
     w.log = "#{w.dir}/log/#{w.name}.log"
     w.err_log = "#{w.dir}/log/#{w.name}_error.log"
     w.start_grace  = 10.seconds

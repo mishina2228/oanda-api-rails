@@ -62,12 +62,16 @@ group :test do
   gem 'chromedriver-helper', '~> 1.2'
 end
 
+group :itamae do
+  gem 'god'
+  gem 'itamae'
+end
+
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
 gem 'activerecord-import'
 gem 'oanda_api'
 
-gem 'god'
 gem 'resque'
 gem 'resque-scheduler'
