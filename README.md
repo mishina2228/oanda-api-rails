@@ -9,15 +9,6 @@ Resque, resque-scheduler を God で管理するための設定ファイル作�
 $ RAILS_ENV=[RAILS_ENV] bundle exec itamae local config/itamae/resque.rb
 ```
 
-以下のファイルを作成
-
-`/etc/god/master.conf`
-```
-Dir.glob('/etc/god/*.god') do |config|
-  God.load config
-end
-```
-
 設定ファイル読み込み
 ```
 $ god -c /etc/god/master.conf

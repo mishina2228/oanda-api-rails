@@ -1,3 +1,18 @@
+directory '/etc/god' do
+  user 'root'
+  owner 'root'
+  group 'root'
+  mode '755'
+end
+
+remote_file '/etc/god/master.conf' do
+  user 'root'
+  owner 'root'
+  group 'root'
+  mode '755'
+  source './cookbooks/god/templates/etc/god/master.conf'
+end
+
 template '/etc/god/oanda_api_rails.god' do
   user 'root'
   owner 'root'
