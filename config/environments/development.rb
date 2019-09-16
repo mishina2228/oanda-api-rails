@@ -59,6 +59,9 @@ Rails.application.configure do
   # routes, locales, etc. This feature depends on the listen gem.
   # config.file_watcher = ActiveSupport::EventedFileUpdateChecker
 
+  # sassc-rails turn on inline source maps
+  config.sass.inline_source_maps = true
+
   config.log_level = :debug
 
   # log rotation
