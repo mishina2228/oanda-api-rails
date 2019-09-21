@@ -168,6 +168,7 @@ ja:
         other: "%{model}に%{count}個のエラーが発生しました"
   helpers:
     button:
+      acquire: 取得実行
       setup_all: 一括設定
     link:
       back: 戻る
@@ -179,6 +180,7 @@ ja:
       create: 正常に作成されました
       delete: 正常に削除されました
       delete_confirm: 削除してよろしいですか?
+      processing: 処理中...
       setup_all_resque_schedules: Resqueスケジュールを一括設定しました。
       update: 正常に更新されました
     select:
@@ -188,6 +190,7 @@ ja:
       submit: 保存する
       update: 更新する
     title:
+      acquired_result: 取得結果
       edit: "%{model}編集"
       list: "%{models}一覧"
       show: "%{model}閲覧"

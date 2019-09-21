@@ -2,8 +2,9 @@
   <%= t('helpers.title.list', models: ResqueSchedule.model_name.human.pluralize(I18n.locale)) %>
 </h1>
 
-<%= link_to t('helpers.button.setup_all'), setup_all_resque_schedules_path,
-            class: 'btn btn-info', role: :button, method: :put %>
+<%= button_to t('helpers.button.setup_all'), setup_all_resque_schedules_path,
+              class: 'btn btn-info', role: :button, method: :put,
+              data: {disable_with: t('helpers.notice.processing')} %>
 <table class='table table-bordered table-hover table-striped'>
   <thead>
   <tr>

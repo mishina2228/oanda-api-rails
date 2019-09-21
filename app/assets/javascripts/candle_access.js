@@ -1,5 +1,6 @@
 $(document).on('turbolinks:load', (function () {
   $('#candle-access').on('click', function () {
+    $(this).prop('disabled', true);
     const $form = $(this).parents('form');
     const $result_field = $('.candle-access.result.columns');
     $.ajax({
@@ -34,7 +35,8 @@ $(document).on('turbolinks:load', (function () {
         data: data,
         size: 10
       });
-      $('img.loading').addClass('hide')
+      $('img.loading').addClass('hide');
+      $(this).prop('disabled', false);
     })
   })
 }));
