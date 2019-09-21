@@ -1,7 +1,7 @@
 class CandleJob
   def self.before_enqueue(params = {})
     params = params.with_indifferent_access
-    jobs = Resque.peek(@queue, 0, 100)
+    jobs = JobUtils.peek(@queue, 0, 100)
     jobs.each do |job|
       next if job['class'] != name
 
