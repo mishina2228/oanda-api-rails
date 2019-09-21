@@ -72,10 +72,4 @@ Rails.application.configure do
   end
 
   config.log_level = :debug
-
-  # log rotation
-  config.logger = Logger.new('log/development.log', 5, 10.megabytes)
-
-  # render console from Allowed networks
-  config.web_console.whitelisted_ips = (1..31).map {|n| "192.168.1.#{n}"}
 end
