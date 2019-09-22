@@ -21,7 +21,7 @@
       <td><%= link_to resque_schedule.name, resque_schedule %></td>
       <td><%= resque_schedule.description %></td>
       <td><%= resque_schedule.cron %></td>
-      <td><span class="glyphicon <%= check_icon(resque_schedule.enabled) %>"></span></td>
+      <td><%= check_icon(resque_schedule.enabled) %></td>
     </tr>
   <% end %>
   </tbody>

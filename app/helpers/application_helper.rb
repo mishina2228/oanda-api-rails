@@ -8,6 +8,7 @@ module ApplicationHelper
   end
 
   def check_icon(boolean)
-    boolean ? 'glyphicon-check' : 'glyphicon-unchecked'
+    icon = boolean ? 'glyphicon-check' : 'glyphicon-unchecked'
+    tag.span class: ['glyphicon', icon]
   end
 end
