@@ -1,21 +1,67 @@
-usd_jpy_m1_candle_job:
-  name: 'usd_jpy_m1_candle_job'
-  cron: '*/10 * * * 1-6'
+default_usd_jpy_m1: &default_usd_jpy_m1
   class_name: 'UsdJpyM1CandleJob'
   queue: 'normal'
-  description: 'USD/JPY の1分足ローソク取得ジョブ'
   enabled: true
-eur_jpy_m1_candle_job:
-  name: 'eur_jpy_m1_candle_job'
-  cron: '*/10 * * * 1-6'
+default_eur_jpy_m1: &default_eur_jpy_m1
   class_name: 'EurJpyM1CandleJob'
   queue: 'normal'
-  description: 'EUR/JPY の1分足ローソク取得ジョブ'
   enabled: true
-gbp_jpy_m1_candle_job:
-  name: 'gbp_jpy_m1_candle_job'
-  cron: '*/10 * * * 1-6'
+default_gbp_jpy_m1: &default_gbp_jpy_m1
   class_name: 'GbpJpyM1CandleJob'
   queue: 'normal'
-  description: 'GBP/JPY の1分足ローソク取得ジョブ'
   enabled: true
+
+default_monday: &default_monday
+  cron: '*/10 5-23 * * 1'
+default_tuesday_to_friday: &default_tuesday_to_friday
+  cron: '*/10 * * * 2-5'
+default_saturday: &default_saturday
+  cron: '*/10 0-6 * * 6'
+
+usd_jpy_m1_candle_job1:
+  <<: *default_usd_jpy_m1
+  <<: *default_monday
+  name: 'usd_jpy_m1_candle_job1'
+  description: 'USD/JPY の1分足 月曜日05:00~23:50'
+usd_jpy_m1_candle_job2:
+  <<: *default_usd_jpy_m1
+  <<: *default_tuesday_to_friday
+  name: 'usd_jpy_m1_candle_job2'
+  description: 'USD/JPY の1分足 火曜日から金曜日'
+usd_jpy_m1_candle_job3:
+  <<: *default_usd_jpy_m1
+  <<: *default_saturday
+  name: 'usd_jpy_m1_candle_job3'
+  description: 'USD/JPY の1分足 土曜日00:00~06:50'
+
+eur_jpy_m1_candle_job1:
+  <<: *default_eur_jpy_m1
+  <<: *default_monday
+  name: 'eur_jpy_m1_candle_job1'
+  description: 'EUR/JPY の1分足 月曜日05:00~23:50'
+eur_jpy_m1_candle_job2:
+  <<: *default_eur_jpy_m1
+  <<: *default_tuesday_to_friday
+  name: 'eur_jpy_m1_candle_job2'
+  description: 'EUR/JPY の1分足 火曜日から金曜日'
+eur_jpy_m1_candle_job3:
+  <<: *default_eur_jpy_m1
+  <<: *default_saturday
+  name: 'eur_jpy_m1_candle_job3'
+  description: 'EUR/JPY の1分足 土曜日00:00~06:50'
+
+gbp_jpy_m1_candle_job1:
+  <<: *default_gbp_jpy_m1
+  <<: *default_monday
+  name: 'gbp_jpy_m1_candle_job1'
+  description: 'GBP/JPY の1分足 月曜日05:00~23:50'
+gbp_jpy_m1_candle_job2:
+  <<: *default_gbp_jpy_m1
+  <<: *default_tuesday_to_friday
+  name: 'gbp_jpy_m1_candle_job2'
+  description: 'GBP/JPY の1分足 火曜日から金曜日'
+gbp_jpy_m1_candle_job3:
+  <<: *default_gbp_jpy_m1
+  <<: *default_saturday
+  name: 'gbp_jpy_m1_candle_job3'
+  description: 'GBP/JPY の1分足 土曜日00:00~06:50'

@@ -9,9 +9,13 @@
 Dir.glob(Rails.root.join('db', 'seeds', '*.yml')).each do |yml|
   klass_name = File.basename(yml, '.yml')
   klass = klass_name.singularize.camelize.constantize
-  YAML.load_file(yml).each_value do |value|
-    record = klass.new
-    record.attributes = value
-    record.save!
+  klass.transaction do
+    klass.destroy_all
+    YAML.load_file(yml).reject {|key, _value| key.start_with?('default_')}.each_value do |value|
+      record = klass.new
+      record.attributes = value
+      record.save!
+    end
   end
+  puts "#{klass} was loaded."
 end
