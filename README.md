@@ -4,6 +4,8 @@ OANDA の API を使って為替データを取得してみる
 
 # Commands
 
+### Resqueの設定
+
 Resque, resque-scheduler を God で管理するための設定ファイル作成
 ```
 $ RAILS_ENV=[RAILS_ENV] bundle exec itamae local config/itamae/resque.rb
@@ -20,4 +22,12 @@ $ sudo god status resque-oanda_api_rails
 $ sudo god start resque-oanda_api_rails
 $ sudo god restart resque-oanda_api_rails
 $ sudo god stop resque-oanda_api_rails
+```
+
+### ソース更新時の作業
+
+```
+bundle
+bundle exec rake assets:precompile RAILS_ENV=production
+bundle exec pumactl start -F config/puma/[RAILS_ENV].rb
 ```
