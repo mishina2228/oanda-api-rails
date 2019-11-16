@@ -1,4 +1,4 @@
-$(document).on('turbolinks:load', (function () {
+$(document).on('turbolinks:load', (() => {
   $('.datetime-picker').datetimepicker({
     format: 'YYYY-MM-DDTHH:mm:ssZ',
     locale: 'ja'

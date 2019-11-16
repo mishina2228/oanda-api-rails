@@ -1,5 +1,5 @@
 let resque_schedules = {};
-resque_schedules.load_schedules = function () {
+resque_schedules.load_schedules = () => {
   const $field = $('#resque-schedules');
   if(!$field[0]) {
     return null;
@@ -7,7 +7,7 @@ resque_schedules.load_schedules = function () {
   $.ajax({
     url: '/resque_schedules/schedule',
     type: 'GET',
-    beforeSend: function () {
+    beforeSend: () => {
       $('img.loading').removeClass('hide')
     }
   }).done(() => {

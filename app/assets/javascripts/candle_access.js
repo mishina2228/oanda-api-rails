@@ -1,7 +1,7 @@
-$(document).on('turbolinks:load', (function () {
-  $('#candle-access').on('click', function () {
-    $(this).prop('disabled', true);
-    const $form = $(this).parents('form');
+$(document).on('turbolinks:load', (() => {
+  $('#candle-access').on('click', event => {
+    $(event.currentTarget).prop('disabled', true);
+    const $form = $(event.currentTarget).parents('form');
     const $result_field = $('.candle-access.result.columns');
     $.ajax({
       url: $form.attr('action'),
@@ -16,7 +16,7 @@ $(document).on('turbolinks:load', (function () {
           'start': $form.find('#candle_access_start').val()
         }
       },
-      beforeSend: function () {
+      beforeSend: () => {
         $('img.loading').removeClass('hide')
       }
     }).done((data) => {
@@ -36,7 +36,7 @@ $(document).on('turbolinks:load', (function () {
         size: 10
       });
       $('img.loading').addClass('hide');
-      $(this).prop('disabled', false);
+      $(event.currentTarget).prop('disabled', false);
     })
   })
 }));
