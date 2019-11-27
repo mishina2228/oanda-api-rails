@@ -6,7 +6,7 @@ Get exchange data using OANDA API
 
 ### Resque settings
 
-Create a configuration file to manage Resque and resque-scheduler with God
+Create a configuration file to manage [Resque](https://github.com/resque/resque) and [resque-scheduler](https://github.com/resque/resque-scheduler) with [God](http://godrb.com/)
 ```
 $ RAILS_ENV=[RAILS_ENV] bundle exec itamae local config/itamae/resque.rb
 ```
