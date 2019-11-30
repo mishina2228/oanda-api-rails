@@ -16,7 +16,7 @@ default_monday: &default_monday
 default_tuesday_to_friday: &default_tuesday_to_friday
   cron: '*/10 * * * 2-5'
 default_saturday: &default_saturday
-  cron: '*/10 0-6 * * 6'
+  cron: '*/10 0-7 * * 6'
 
 usd_jpy_m1_candle_job1:
   <<: *default_usd_jpy_m1
@@ -32,7 +32,7 @@ usd_jpy_m1_candle_job3:
   <<: *default_usd_jpy_m1
   <<: *default_saturday
   name: 'usd_jpy_m1_candle_job3'
-  description: 'USD/JPY の1分足 土曜日00:00~06:50'
+  description: 'USD/JPY の1分足 土曜日00:00~07:50'
 
 eur_jpy_m1_candle_job1:
   <<: *default_eur_jpy_m1
@@ -48,7 +48,7 @@ eur_jpy_m1_candle_job3:
   <<: *default_eur_jpy_m1
   <<: *default_saturday
   name: 'eur_jpy_m1_candle_job3'
-  description: 'EUR/JPY の1分足 土曜日00:00~06:50'
+  description: 'EUR/JPY の1分足 土曜日00:00~07:50'
 
 gbp_jpy_m1_candle_job1:
   <<: *default_gbp_jpy_m1
@@ -64,4 +64,4 @@ gbp_jpy_m1_candle_job3:
   <<: *default_gbp_jpy_m1
   <<: *default_saturday
   name: 'gbp_jpy_m1_candle_job3'
-  description: 'GBP/JPY の1分足 土曜日00:00~06:50'
+  description: 'GBP/JPY の1分足 土曜日00:00~07:50'
