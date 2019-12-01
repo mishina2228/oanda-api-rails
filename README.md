@@ -33,5 +33,5 @@ $ sudo god stop resque-oanda_api_rails
 ```
 bundle
 bundle exec rails assets:precompile RAILS_ENV=[RAILS_ENV]
-bundle exec pumactl start -F config/puma/[RAILS_ENV].rb
+bundle exec pumactl start -e [RAILS_ENV]
 ```
