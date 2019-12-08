@@ -1,6 +1,34 @@
 ---
 en:
+  activemodel:
+    models:
+      candle_access: Candle access
+      candle_information: Candle information
+    attributes:
+      candle_access:
+        candle_format: Format
+        count: Count
+        granularity: Granularity
+        instrument: Instrument
+        start: Started at
+      candle_information:
+        usd_jpy_m1_count: 'USD/JPY 1-minute count'
+        eur_jpy_m1_count: 'EUR/JPY 1-minute count'
+        gbp_jpy_m1_count: 'GBP/JPY 1-minute count'
+        usd_jpy_m1_latest: 'USD/JPY latest time'
+        eur_jpy_m1_latest: 'EUR/JPY latest time'
+        gbp_jpy_m1_latest: 'GBP/JPY latest time'
   activerecord:
+    models:
+      resque_schedule: Resque schdule
+    attributes:
+      resque_schedule:
+        name: Schedule name
+        cron: Cron
+        class_name: Job class name
+        queue: Queue name
+        description: Description
+        enabled: Enabled
     errors:
       messages:
         record_invalid: 'Validation failed: %{errors}'

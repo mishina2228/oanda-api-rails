@@ -4,7 +4,7 @@ module ApplicationHelper
   end
 
   def candle_latest_time(candle)
-    candle ? candle.time : '(なし)'
+    candle ? candle.time : '(No data)'
   end
 
   def check_icon(boolean)

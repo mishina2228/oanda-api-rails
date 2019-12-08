@@ -1,5 +1,7 @@
+<% title = t('helpers.title.list', models: ResqueSchedule.model_name.human.pluralize(I18n.locale)) %>
+<% content_for(:html_title) { title } %>
 <h1>
-  <%= t('helpers.title.list', models: ResqueSchedule.model_name.human.pluralize(I18n.locale)) %>
+  <%= title %>
 </h1>
 
 <%= button_to t('helpers.button.setup_all'), setup_all_resque_schedules_path,
