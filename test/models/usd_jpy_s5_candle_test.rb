@@ -130,7 +130,7 @@ class UsdJpyS5CandleTest < ActiveSupport::TestCase
       midpoint(time: Time.zone.parse('2019-06-12T00:00:05+0000'))
     ]
     ret = UsdJpyS5Candle.merge_into(bidasks, midpoints)
-    assert_equal 2, ret.size, '重複しているデータは飛ばすこと'
+    assert_equal 2, ret.size, 'skip duplicate data'
   end
 
   def test_merge_into_unique_time

@@ -2,7 +2,7 @@ class JobUtils
   class << self
     def schedule
       if Rails.env.test?
-        Rails.logger.info('テスト環境では空のハッシュを返します。')
+        Rails.logger.info('Returns an empty hash in a test environment.')
         {}
       else
         Resque.schedule
@@ -11,7 +11,7 @@ class JobUtils
 
     def set_schedule(name, schedule_config)
       if Rails.env.test?
-        Rails.logger.info('テスト環境ではスケジュール追加をスキップします。')
+        Rails.logger.info('Skip the schedule addition in the test environment.')
         return
       end
       Resque.set_schedule(name, schedule_config)
@@ -19,7 +19,7 @@ class JobUtils
 
     def remove_schedule(name)
       if Rails.env.test?
-        Rails.logger.info('テスト環境ではスケジュール削除をスキップします。')
+        Rails.logger.info('Skip the schedule deletion in the test environment.')
         return
       end
       Resque.remove_schedule(name)
@@ -27,7 +27,7 @@ class JobUtils
 
     def peek(queue, start, count)
       if Rails.env.test?
-        Rails.logger.info('テスト環境では空の配列を返します。')
+        Rails.logger.info('Returns an empty array in the test environment.')
         []
       else
         Resque.peek(queue, start, count)

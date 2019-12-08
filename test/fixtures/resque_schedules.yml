@@ -3,5 +3,5 @@ job1:
   cron: '*/10 * * * 1-6'
   class_name: 'TestJob'
   queue: 'normal'
-  description: 'テストジョブ1'
+  description: 'Test Job 1'
   enabled: true

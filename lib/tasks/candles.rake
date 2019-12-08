@@ -4,7 +4,7 @@ module CandleTask
   module_function
 
   def arguments
-    raise 'START_AT と FINISH_AT を指定してください' if ENV['START_AT'].blank? || ENV['FINISH_AT'].blank?
+    raise 'Please specify START_AT and FINISH_AT' if ENV['START_AT'].blank? || ENV['FINISH_AT'].blank?
 
     {
       start: ENV['START_AT'].to_time,
@@ -14,26 +14,26 @@ module CandleTask
   end
 
   namespace :usd_jpy_candles do
-    desc 'USD/JPY 5秒足ローソクの取得タスク'
+    desc 'USD/JPY 5-second candle acquisition task'
     task s5: :environment do
       UsdJpyS5Candle.save_numerous_candles(arguments)
     end
 
-    desc 'USD/JPY 1分足ローソクの取得タスク'
+    desc 'USD/JPY 1-minute candle acquisition task'
     task m1: :environment do
       UsdJpyM1Candle.save_numerous_candles(arguments)
     end
   end
 
   namespace :eur_jpy_candles do
-    desc 'EUR/JPY 1分足ローソクの取得タスク'
+    desc 'EUR/JPY 1-minute candle acquisition task'
     task m1: :environment do
       EurJpyM1Candle.save_numerous_candles(arguments)
     end
   end
 
   namespace :gbp_jpy_candles do
-    desc 'GBP/JPY 1分足ローソクの取得タスク'
+    desc 'GBP/JPY 1-minute candle acquisition task'
     task m1: :environment do
       GbpJpyM1Candle.save_numerous_candles(arguments)
     end
