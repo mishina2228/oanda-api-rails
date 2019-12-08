@@ -35,3 +35,24 @@ bundle
 bundle exec rails assets:precompile RAILS_ENV=[RAILS_ENV]
 bundle exec pumactl start -e [RAILS_ENV]
 ```
+
+# Configuration Files
+
+### Notify when Resque job failed
+
+If a Resque job fails, a notification is sent by email.  
+Please fill in the settings of email to config/mail.yml .  
+The following is an example when sending from Gmail:
+
+```
+production:
+  delivery_method: :smtp
+  smtp_settings:
+    address: 'smtp.gmail.com'
+    port: 587
+    domain: 'gmail.com'
+    user_name: [USER_NAME]
+    password: [PASSWORD]
+    authentication: 'plain'
+    enable_starttls_auto: true
+```
