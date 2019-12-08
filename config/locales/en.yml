@@ -174,6 +174,7 @@ en:
         other: "%{count} errors prohibited this %{model} from being saved"
   helpers:
     button:
+      acquire: ACQUIRE
       setup_all: SETUP ALL
     link:
       back: Back
@@ -185,6 +186,7 @@ en:
       create: Created successfully
       delete: Deleted successfully
       delete_confirm: Are you sure you want to delete it?
+      processing: processing...
       setup_all_resque_schedules: Resque schedules were all set.
       update: Updated successfully
     select:
@@ -194,6 +196,7 @@ en:
       submit: Save %{model}
       update: Update %{model}
     title:
+      acquired_result: Acquired result
       edit: "Editing %{model}"
       list: "Listing %{models}"
       show: "Show %{model}"
