@@ -7,7 +7,7 @@ module Resque
         notification = Resque::Failure::EmailNotification.new(
           sample_exception, 'worker', 'queue', 'payload'
         )
-        assert notification.recipients.present?, 'there should be notification target users'
+        assert notification.recipients.present?, 'confirm that there are users to be notified'
         mail = notification.save
         assert mail.present?, 'email should be sent'
       end
