@@ -19,12 +19,6 @@ $(document).on('turbolinks:load', (() => {
       beforeSend: () => {
         $('img.loading').removeClass('hide')
       }
-    }).done((data) => {
-      console.log('SUCCESS');
-      console.log(data);
-    }).fail((data) => {
-      console.log('FAIL');
-      console.log(data);
     }).always((data) => {
       data = data.map(obj => {
         delete obj._attributes;
