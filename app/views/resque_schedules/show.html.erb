@@ -1,3 +1,4 @@
+<% content_for(:html_title) { @resque_schedule.name } %>
 <h1>
   <%= t('helpers.title.show', model: ResqueSchedule.model_name.human.pluralize(I18n.locale)) %>
 </h1>
