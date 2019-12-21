@@ -73,10 +73,10 @@ class UsdJpyS5CandleTest < ActiveSupport::TestCase
     ]
 
     ret = UsdJpyS5Candle.merge_into(bidasks, midpoints)
-    assert_equal 2, ret.size, '数がbidaskとmidpointで一致しないときは、timeが一致しないものを飛ばすこと'
+    assert_equal 2, ret.size, 'skip it if time does not match in bidask and midpoint'
     ng = %w(2019-06-12T00:00:10+0000)
     ret.each do |candle|
-      assert_not ng.include?(candle.time.strftime('%Y-%m-%dT%H:%M:%S%z')), '一致しないデータが入っていないこと'
+      assert_not ng.include?(candle.time.strftime('%Y-%m-%dT%H:%M:%S%z')), 'should not contain unmatched data'
     end
   end
 
@@ -92,10 +92,10 @@ class UsdJpyS5CandleTest < ActiveSupport::TestCase
       midpoint(time: Time.zone.parse('2019-06-12T00:00:15+0000'))
     ]
     ret = UsdJpyS5Candle.merge_into(bidasks, midpoints)
-    assert_equal 2, ret.size, 'timeがbidaskとmidpointで一致しないときはそれを飛ばすこと'
+    assert_equal 2, ret.size, 'skip it if time does not match in bidask and midpoint'
     ng = %w(2019-06-12T00:00:10+0000 2019-06-12T00:00:15+0000)
     ret.each do |candle|
-      assert_not ng.include?(candle.time.strftime('%Y-%m-%dT%H:%M:%S%z')), '一致しないデータが入っていないこと'
+      assert_not ng.include?(candle.time.strftime('%Y-%m-%dT%H:%M:%S%z')), 'should not contain unmatched data'
     end
   end
 
@@ -111,10 +111,10 @@ class UsdJpyS5CandleTest < ActiveSupport::TestCase
       midpoint(time: Time.zone.parse('2019-06-12T00:00:10+0000'))
     ]
     ret = UsdJpyS5Candle.merge_into(bidasks, midpoints)
-    assert_equal 2, ret.size, 'completeでないデータは飛ばすこと'
+    assert_equal 2, ret.size, 'skip it if not complete'
     ng = %w(2019-06-12T00:00:10+0000)
     ret.each do |candle|
-      assert_not ng.include?(candle.time.strftime('%Y-%m-%dT%H:%M:%S%z')), 'completeでないデータが入っていないこと'
+      assert_not ng.include?(candle.time.strftime('%Y-%m-%dT%H:%M:%S%z')), 'should not contain data that is not complete'
     end
   end
 
@@ -147,10 +147,10 @@ class UsdJpyS5CandleTest < ActiveSupport::TestCase
       midpoint(time: Time.zone.parse('2019-06-12T00:00:10+0000'))
     ]
     ret = UsdJpyS5Candle.merge_into(bidasks, midpoints)
-    assert_equal 2, ret.size, 'DBに登録済みのデータは飛ばすこと'
+    assert_equal 2, ret.size, 'skip registered data'
     ng = %w(2019-06-12T00:00:10+0000)
     ret.each do |candle|
-      assert_not ng.include?(candle.time.strftime('%Y-%m-%dT%H:%M:%S%z')), 'DBに登録済みのデータが入っていないこと'
+      assert_not ng.include?(candle.time.strftime('%Y-%m-%dT%H:%M:%S%z')), 'should not contain registered data'
     end
   end
 

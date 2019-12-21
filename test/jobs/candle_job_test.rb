@@ -45,17 +45,17 @@ class CandleJobTest < ActiveSupport::TestCase
 
     saturday = Time.new(2019, 6, 15, 6, 59, 0).in_time_zone('Asia/Tokyo')
     assert saturday.saturday?
-    assert_not CandleJob.market_holiday?(saturday), '土曜の6:59までは開場とする'
+    assert_not CandleJob.market_holiday?(saturday), 'open until 6:59 on Saturday in JST'
     saturday = Time.new(2019, 6, 15, 7, 0, 0).in_time_zone('Asia/Tokyo')
     assert saturday.saturday?
-    assert CandleJob.market_holiday?(saturday), '土曜の7:00以降は休場とする'
+    assert CandleJob.market_holiday?(saturday), 'closed after 7:00 on Saturday in JST'
 
     monday = Time.new(2019, 6, 17, 4, 59, 0).in_time_zone('Asia/Tokyo')
     assert monday.monday?
-    assert CandleJob.market_holiday?(monday), '月曜の4:59までは休場とする'
+    assert CandleJob.market_holiday?(monday), 'closed until 4:59 on Monday in JST'
     monday = Time.new(2019, 6, 17, 5, 0, 0).in_time_zone('Asia/Tokyo')
     assert monday.monday?
-    assert_not CandleJob.market_holiday?(monday), '月曜の5:00からは開場とする'
+    assert_not CandleJob.market_holiday?(monday), 'open from 5:00 on Monday in JST'
   end
 
   def test_between_market_holiday_utc
