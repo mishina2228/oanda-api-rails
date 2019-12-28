@@ -11,7 +11,7 @@ class JobUtils
 
     def set_schedule(name, schedule_config)
       if Rails.env.test?
-        Rails.logger.info('Skip the schedule addition in the test environment.')
+        Rails.logger.info('Skip adding schedules in the test environment.')
         return
       end
       Resque.set_schedule(name, schedule_config)
@@ -19,7 +19,7 @@ class JobUtils
 
     def remove_schedule(name)
       if Rails.env.test?
-        Rails.logger.info('Skip the schedule deletion in the test environment.')
+        Rails.logger.info('Skip deleting schedules in the test environment.')
         return
       end
       Resque.remove_schedule(name)
