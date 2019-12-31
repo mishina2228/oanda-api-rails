@@ -1,3 +1,5 @@
+[![CircleCI](https://circleci.com/gh/mishina2228/oanda-api-rails.svg?style=svg)](https://circleci.com/gh/mishina2228/oanda-api-rails)
+
 # oanda-api-rails
 
 Get exchange data using OANDA API
