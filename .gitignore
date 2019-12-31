@@ -34,7 +34,11 @@
 /config/master.key
 /config/mail.yml
 
+# Ignore IDE settings
 /.idea/
 *.iml
 
 /config/token.yml
+
+# Ignore test meta data
+/test/reports/*
