@@ -49,6 +49,7 @@ group :test do
   gem 'capybara', '>= 2.15', '< 4.0'
   gem 'minitest-ci'
   gem 'selenium-webdriver'
+  gem 'simplecov', require: false
   gem 'webdrivers'
 end
 
