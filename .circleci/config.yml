@@ -96,14 +96,6 @@ commands:
           command: |-
             bin/rails db:create --trace
             bin/rails db:schema:load --trace
-  setup_test_reporter:
-    steps:
-      - run:
-          name: Setup Code Climate test-reporter
-          command: |-
-            curl -L https://codeclimate.com/downloads/test-reporter/test-reporter-latest-linux-amd64 > ./cc-test-reporter
-            chmod +x ./cc-test-reporter
-            ./cc-test-reporter before-build
   minitest:
     steps:
       - run:
@@ -218,11 +210,7 @@ jobs: # a collection of steps
           ruby-version: latest
       - wait_for_db
       - setup_database
-      - setup_test_reporter
       - minitest
-      - run:
-          name: Upload test coverage
-          command: ./cc-test-reporter after-build --coverage-input-type simplecov --exit-code $?
       - store_test_reports
   system-test-latest:
     executor: node-browsers-latest
