@@ -1,6 +1,6 @@
 [![CircleCI](https://circleci.com/gh/mishina2228/oanda-api-rails.svg?style=svg)](https://circleci.com/gh/mishina2228/oanda-api-rails)
 [![Maintainability](https://api.codeclimate.com/v1/badges/b6b9044754816afc195c/maintainability)](https://codeclimate.com/github/mishina2228/oanda-api-rails/maintainability)
-[![Test Coverage](https://api.codeclimate.com/v1/badges/b6b9044754816afc195c/test_coverage)](https://codeclimate.com/github/mishina2228/oanda-api-rails/test_coverage)
+[![codecov](https://codecov.io/gh/mishina2228/oanda-api-rails/branch/master/graph/badge.svg)](https://codecov.io/gh/mishina2228/oanda-api-rails)
 
 # oanda-api-rails
 
