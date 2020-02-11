@@ -56,6 +56,19 @@ class CandleJobTest < ActiveSupport::TestCase
     monday = Time.new(2019, 6, 17, 5, 0, 0).in_time_zone('Asia/Tokyo')
     assert monday.monday?
     assert_not CandleJob.market_holiday?(monday), 'open from 5:00 on Monday in JST'
+
+    day = Time.new(2019, 6, 18, 5, 0, 0).in_time_zone('Asia/Tokyo')
+    assert day.tuesday?
+    assert_not CandleJob.market_holiday?(day), 'open all day from Tuesday to Friday'
+    day = day.tomorrow
+    assert day.wednesday?
+    assert_not CandleJob.market_holiday?(day), 'open all day from Tuesday to Friday'
+    day = day.tomorrow
+    assert day.thursday?
+    assert_not CandleJob.market_holiday?(day), 'open all day from Tuesday to Friday'
+    day = day.tomorrow
+    assert day.friday?
+    assert_not CandleJob.market_holiday?(day), 'open all day from Tuesday to Friday'
   end
 
   def test_between_market_holiday_utc
