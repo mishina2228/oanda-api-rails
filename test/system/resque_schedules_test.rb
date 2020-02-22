@@ -7,7 +7,8 @@ class ResqueSchedulesTest < ApplicationSystemTestCase
 
   test 'visiting the index' do
     visit resque_schedules_url
-    assert_selector 'h1', text: I18n.t('helpers.title.list', models: ResqueSchedule.model_name.human.pluralize(I18n.locale))
+    text = I18n.t('helpers.title.list', models: ResqueSchedule.model_name.human.pluralize(I18n.locale))
+    assert_selector 'h1', text: text
   end
 
   test 'updating a Resque schedule' do

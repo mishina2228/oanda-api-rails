@@ -3,6 +3,9 @@ require:
 
 AllCops:
   TargetRubyVersion: 2.6
+  Exclude:
+    - 'bin/*'
+    - 'db/**/*'
 
 Layout/EndOfLine:
   EnforcedStyle: lf
@@ -11,7 +14,6 @@ Layout/SpaceInsideBlockBraces:
   SpaceBeforeBlockParameters: false
 Layout/SpaceInsideHashLiteralBraces:
   EnforcedStyle: no_space
-
 Layout/LineLength:
   Max: 100
 
@@ -25,6 +27,12 @@ Style/EmptyMethod:
   EnforcedStyle: expanded
 Style/FrozenStringLiteralComment:
   Enabled: false
+Style/HashEachMethods:
+  Enabled: true
+Style/HashTransformKeys:
+  Enabled: true
+Style/HashTransformValues:
+  Enabled: true
 Style/PercentLiteralDelimiters:
   Enabled: false
 Style/SymbolArray:

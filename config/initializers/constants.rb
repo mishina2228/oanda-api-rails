@@ -1,6 +1,6 @@
 module Constants
   module Mishina
-    OANDA_TOKEN_PATH = Rails.root.join('config', 'token.yml')
+    OANDA_TOKEN_PATH = Rails.root.join('config/token.yml')
     CANDLE_FORMATS = {
       bidask: OandaAPI::Resource::Candle::Format::BIDASK,
       midpoint: OandaAPI::Resource::Candle::Format::MIDPOINT

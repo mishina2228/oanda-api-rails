@@ -61,7 +61,7 @@ class UsdJpyS5CandleTest < ActiveSupport::TestCase
     end
   end
 
-  def test_merge_into_indifferent_size
+  test 'do not merge unless bidask and mindpoint at the same time' do
     bidasks = [
       bidask(time: Time.zone.parse('2019-06-12T00:00:00+0000')),
       bidask(time: Time.zone.parse('2019-06-12T00:00:05+0000')),
@@ -76,11 +76,12 @@ class UsdJpyS5CandleTest < ActiveSupport::TestCase
     assert_equal 2, ret.size, 'skip it if time does not match in bidask and midpoint'
     ng = %w(2019-06-12T00:00:10+0000)
     ret.each do |candle|
-      assert_not ng.include?(candle.time.strftime('%Y-%m-%dT%H:%M:%S%z')), 'should not contain unmatched data'
+      candle_time = candle.time.strftime('%Y-%m-%dT%H:%M:%S%z')
+      assert_not ng.include?(candle_time), 'should not contain unmatched data'
     end
   end
 
-  def test_merge_into_time_mismatch
+  test 'do not merge unless bidask and mindpoint at the same time 2' do
     bidasks = [
       bidask(time: Time.zone.parse('2019-06-12T00:00:00+0000')),
       bidask(time: Time.zone.parse('2019-06-12T00:00:05+0000')),
@@ -95,11 +96,12 @@ class UsdJpyS5CandleTest < ActiveSupport::TestCase
     assert_equal 2, ret.size, 'skip it if time does not match in bidask and midpoint'
     ng = %w(2019-06-12T00:00:10+0000 2019-06-12T00:00:15+0000)
     ret.each do |candle|
-      assert_not ng.include?(candle.time.strftime('%Y-%m-%dT%H:%M:%S%z')), 'should not contain unmatched data'
+      candle_time = candle.time.strftime('%Y-%m-%dT%H:%M:%S%z')
+      assert_not ng.include?(candle_time), 'should not contain unmatched data'
     end
   end
 
-  def test_merge_into_not_complete
+  test 'do not merge incomplete candle' do
     bidasks = [
       bidask(time: Time.zone.parse('2019-06-12T00:00:00+0000')),
       bidask(time: Time.zone.parse('2019-06-12T00:00:05+0000')),
@@ -114,11 +116,12 @@ class UsdJpyS5CandleTest < ActiveSupport::TestCase
     assert_equal 2, ret.size, 'skip it if not complete'
     ng = %w(2019-06-12T00:00:10+0000)
     ret.each do |candle|
-      assert_not ng.include?(candle.time.strftime('%Y-%m-%dT%H:%M:%S%z')), 'should not contain data that is not complete'
+      candle_time = candle.time.strftime('%Y-%m-%dT%H:%M:%S%z')
+      assert_not ng.include?(candle_time), 'should not contain data that is not complete'
     end
   end
 
-  def test_merge_into_duplicate_time
+  test 'do not merge duplicate candle' do
     bidasks = [
       bidask(time: Time.zone.parse('2019-06-12T00:00:00+0000')),
       bidask(time: Time.zone.parse('2019-06-12T00:00:05+0000')),
@@ -133,8 +136,10 @@ class UsdJpyS5CandleTest < ActiveSupport::TestCase
     assert_equal 2, ret.size, 'skip duplicate data'
   end
 
-  def test_merge_into_unique_time
-    assert UsdJpyS5Candle.create(valid_params.merge(time: Time.zone.parse('2019-06-12T00:00:00+0000')))
+  test 'do not merge candle that already exist' do
+    assert UsdJpyS5Candle.create(
+      valid_params.merge(time: Time.zone.parse('2019-06-12T00:00:00+0000'))
+    )
 
     bidasks = [
       bidask(time: Time.zone.parse('2019-06-12T00:00:00+0000')),
@@ -150,7 +155,8 @@ class UsdJpyS5CandleTest < ActiveSupport::TestCase
     assert_equal 2, ret.size, 'skip registered data'
     ng = %w(2019-06-12T00:00:10+0000)
     ret.each do |candle|
-      assert_not ng.include?(candle.time.strftime('%Y-%m-%dT%H:%M:%S%z')), 'should not contain registered data'
+      candle_time = candle.time.strftime('%Y-%m-%dT%H:%M:%S%z')
+      assert_not ng.include?(candle_time), 'should not contain registered data'
     end
   end
 

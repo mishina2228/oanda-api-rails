@@ -14,12 +14,10 @@ class ResqueSchedulesController < ApplicationController
   def update
     @resque_schedule.attributes = resque_schedule_params
     respond_to do |format|
-      begin
-        @resque_schedule.save_and_setting!
-        format.html {redirect_to @resque_schedule, notice: t('helpers.notice.update')}
-      rescue ActiveRecord::RecordInvalid, Redis::CannotConnectError
-        format.html {render :edit}
-      end
+      @resque_schedule.save_and_setting!
+      format.html {redirect_to @resque_schedule, notice: t('helpers.notice.update')}
+    rescue ActiveRecord::RecordInvalid, Redis::CannotConnectError
+      format.html {render :edit}
     end
   end
 

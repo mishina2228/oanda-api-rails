@@ -6,7 +6,7 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
-Dir.glob(Rails.root.join('db', 'seeds', '*.yml')).each do |yml|
+Dir.glob(Rails.root.join('db/seeds/*.yml')).sort.each do |yml|
   klass_name = File.basename(yml, '.yml')
   klass = klass_name.singularize.camelize.constantize
   klass.transaction do
