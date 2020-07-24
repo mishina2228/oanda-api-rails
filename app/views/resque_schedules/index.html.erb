@@ -4,11 +4,13 @@
   <%= title %>
 </h1>
 
-<%= button_to t('helpers.button.setup_all'), setup_all_resque_schedules_path,
-              class: 'btn btn-info', role: :button, method: :put,
-              data: {disable_with: t('helpers.notice.processing')} %>
+<div class="setup-all-button">
+  <%= button_to t('helpers.button.setup_all'), setup_all_resque_schedules_path,
+                class: 'btn btn-info', role: :button, method: :put,
+                data: {disable_with: t('helpers.notice.processing')} %>
+</div>
 <table class='table table-bordered table-hover table-striped'>
-  <thead>
+<thead>
   <tr>
     <th><%= ResqueSchedule.human_attribute_name :name %></th>
     <th><%= ResqueSchedule.human_attribute_name :description %></th>
