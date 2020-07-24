@@ -5,6 +5,105 @@ body {
   font-family: verdana, arial, helvetica, sans-serif;
   font-size: 13px;
   line-height: 18px;
+
+  &.dark_mode {
+    background: #21252c;
+    color: whitesmoke;
+
+    nav {
+      &.navbar-default {
+        background: #464646;
+      }
+    }
+
+    td {
+      a {
+        color: #44b9d6;
+      }
+    }
+
+    pre {
+      color: #f5f5f5;
+      background: #333;
+    }
+
+    .table-striped {
+      tbody {
+        tr {
+          &:nth-of-type(odd) {
+            background: #404040;
+
+            &:hover {
+              background: #585858;
+            }
+          }
+
+          &:nth-of-type(even) {
+            background: #10171f;
+
+            &:hover {
+              background: #313131;
+            }
+          }
+        }
+      }
+    }
+
+    .box_radius {
+      background: #21252c;
+    }
+
+    .pagination {
+      li {
+        a {
+          background: #000000;
+          color: #44b9d6;
+        }
+      }
+
+      .active {
+        a {
+          background: #337ab7;
+          color: #fff;
+
+          &:hover {
+            background: #337ab7;
+            color: #fff;
+          }
+        }
+      }
+
+      .disabled {
+        a {
+          background: #000000;
+
+          &:hover {
+            background: #000000;
+          }
+        }
+      }
+    }
+
+    div.ui-columns-table {
+      color: #333;
+    }
+  }
+}
+
+.dark-mode-toggle {
+  width: 3rem;
+  height: 3rem;
+  position: fixed;
+  border-radius: 50%;
+  border: none;
+  right: 32px;
+  bottom: 32px;
+  left: unset;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: all 0.5s ease;
 }
 
 p, ol, ul, td {
