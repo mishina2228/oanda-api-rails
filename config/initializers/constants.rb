@@ -6,7 +6,7 @@ module Constants
       midpoint: OandaAPI::Resource::Candle::Format::MIDPOINT
     }.freeze
     GRANULARITIES =
-      OandaAPI::Resource::Candle::Granularity::VALID_GRANULARITIES.map {|g| [g.to_sym, g]}.to_h
+      OandaAPI::Resource::Candle::Granularity::VALID_GRANULARITIES.index_by(&:to_sym)
     INSTRUMENTS = {
       EUR_JPY = :EUR_JPY => :EUR_JPY,
       GBP_JPY = :GBP_JPY => :GBP_JPY,

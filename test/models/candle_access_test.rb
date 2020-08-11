@@ -1,7 +1,7 @@
 require 'test_helper'
 
 class CandleAccessTest < ActiveSupport::TestCase
-  def test_validation_blank
+  test 'attributes should not be blank' do
     assert CandleAccess.new(valid_params).valid?
     assert CandleAccess.new(valid_params.merge(candle_format: nil)).invalid?
     assert CandleAccess.new(valid_params.merge(candle_format: '')).invalid?
@@ -15,7 +15,7 @@ class CandleAccessTest < ActiveSupport::TestCase
     assert CandleAccess.new(valid_params.merge(start: '')).invalid?
   end
 
-  def test_validation_count
+  test 'count should be more than 0 and less than 5001' do
     assert CandleAccess.new(valid_params.merge(count: -1)).invalid?
     assert CandleAccess.new(valid_params.merge(count: 0)).invalid?
     assert CandleAccess.new(valid_params.merge(count: 1)).valid?
@@ -23,7 +23,7 @@ class CandleAccessTest < ActiveSupport::TestCase
     assert CandleAccess.new(valid_params.merge(count: 5001)).invalid?
   end
 
-  def test_validation_start
+  test 'validate format of start' do
     assert CandleAccess.new(valid_params.merge(start: '2018-01-01')).invalid?
     assert CandleAccess.new(valid_params.merge(start: '2018-01-01T00:00:00')).invalid?
     assert CandleAccess.new(valid_params.merge(start: '2018/01/01T00:00:00+00:00')).invalid?

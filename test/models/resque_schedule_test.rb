@@ -1,12 +1,12 @@
 require 'test_helper'
 
 class ResqueScheduleTest < ActiveSupport::TestCase
-  def test_validation
+  test 'name should not be blank' do
     assert ResqueSchedule.new(valid_params).valid?
     assert ResqueSchedule.new(valid_params.merge(name: nil)).invalid?
   end
 
-  def test_save_and_setting!
+  test 'save_and_setting!' do
     schedule = ResqueSchedule.new(valid_params)
     assert schedule.enabled?
     assert_nothing_raised do

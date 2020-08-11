@@ -1,7 +1,7 @@
 require 'test_helper'
 
 class UsdJpyS5CandleTest < ActiveSupport::TestCase
-  def test_validation
+  test 'attributes should not be blank' do
     assert UsdJpyS5Candle.new(valid_params).valid?
     assert UsdJpyS5Candle.new(valid_params.merge(close_ask: nil)).invalid?
     assert UsdJpyS5Candle.new(valid_params.merge(close_bid: nil)).invalid?
@@ -19,7 +19,7 @@ class UsdJpyS5CandleTest < ActiveSupport::TestCase
     assert UsdJpyS5Candle.new(valid_params.merge(volume: nil)).invalid?
   end
 
-  def test_unique_validation
+  test 'should be unique at time' do
     candle = UsdJpyS5Candle.new(valid_params)
     assert candle.save
 
@@ -29,7 +29,7 @@ class UsdJpyS5CandleTest < ActiveSupport::TestCase
     assert_not new_candle.save
   end
 
-  def test_convert_time
+  test 'convert_time' do
     time = Time.zone.parse('2019-06-12T00:00:00+0900')
     ret = UsdJpyS5Candle.convert_time(time)
     assert_equal '2019-06-11T15:00:00+00:00', ret
@@ -51,7 +51,7 @@ class UsdJpyS5CandleTest < ActiveSupport::TestCase
     assert_match regexp, error.message
   end
 
-  def test_import_invalid_candles
+  test 'cannot import invalid candles' do
     candle = UsdJpyS5Candle.new(valid_params)
     dup_candle = UsdJpyS5Candle.new(valid_params)
     dup_candle.time = candle.time
@@ -160,29 +160,10 @@ class UsdJpyS5CandleTest < ActiveSupport::TestCase
     end
   end
 
-  def test_new_candle
+  test 'new_candle should return an instance of UsdJpyS5Candle' do
     ba = bidask(time: Time.zone.parse('2019-06-12T00:00:00+0000'))
     mp = midpoint(time: Time.zone.parse('2019-06-12T00:00:00+0000'))
     candle = UsdJpyS5Candle.new_candle(ba, mp)
     assert candle.is_a?(UsdJpyS5Candle)
-  end
-
-  def valid_params
-    {
-      close_ask: 108.550,
-      close_bid: 108.550,
-      close_mid: 108.550,
-      high_ask: 108.550,
-      high_bid: 108.550,
-      high_mid: 108.550,
-      low_ask: 108.550,
-      low_bid: 108.550,
-      low_mid: 108.550,
-      open_ask: 108.550,
-      open_bid: 108.550,
-      open_mid: 108.550,
-      time: Time.zone.parse('2019-06-12T00:00:00+0900'),
-      volume: 1
-    }
   end
 end

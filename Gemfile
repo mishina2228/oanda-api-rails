@@ -26,8 +26,8 @@ gem 'jbuilder', '~> 2.10'
 
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.1.0', require: false
-gem 'bootstrap-sass', '>= 3.4.1'
 gem 'bootstrap3-datetimepicker-rails', '~> 4.17.47'
+gem 'bootstrap-sass', '>= 3.4.1'
 gem 'momentjs-rails', '>= 2.9.0'
 
 group :development, :test do

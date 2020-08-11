@@ -1,7 +1,7 @@
 require 'test_helper'
 
 class CandleJobTest < ActiveSupport::TestCase
-  def test_between_market_holiday?
+  test 'between_market_holiday?' do
     start = Time.new(2019, 6, 15, 7, 0, 0).in_time_zone('Asia/Tokyo')
     assert CandleJob.market_holiday?(start)
     finish = Time.new(2019, 6, 17, 4, 59, 0).in_time_zone('Asia/Tokyo')
@@ -38,7 +38,7 @@ class CandleJobTest < ActiveSupport::TestCase
     assert_not CandleJob.between_market_holiday?(start, finish)
   end
 
-  def test_market_holiday?
+  test 'market_holiday? from Saturday to Monday' do
     sunday = Time.new(2019, 6, 16).in_time_zone('Asia/Tokyo')
     assert sunday.sunday?
     assert CandleJob.market_holiday?(sunday)
@@ -56,7 +56,9 @@ class CandleJobTest < ActiveSupport::TestCase
     monday = Time.new(2019, 6, 17, 5, 0, 0).in_time_zone('Asia/Tokyo')
     assert monday.monday?
     assert_not CandleJob.market_holiday?(monday), 'open from 5:00 on Monday in JST'
+  end
 
+  test 'market_holiday? from Tuesday to Friday' do
     day = Time.new(2019, 6, 18, 5, 0, 0).in_time_zone('Asia/Tokyo')
     assert day.tuesday?
     assert_not CandleJob.market_holiday?(day), 'open all day from Tuesday to Friday'
@@ -71,7 +73,7 @@ class CandleJobTest < ActiveSupport::TestCase
     assert_not CandleJob.market_holiday?(day), 'open all day from Tuesday to Friday'
   end
 
-  def test_between_market_holiday_utc
+  test 'between_market_holiday? in UTC' do
     start = Time.new(2019, 6, 15, 7, 0, 0).in_time_zone('Asia/Tokyo').in_time_zone('UTC')
     assert CandleJob.market_holiday?(start)
     finish = Time.new(2019, 6, 17, 4, 59, 0).in_time_zone('Asia/Tokyo').in_time_zone('UTC')
@@ -108,7 +110,7 @@ class CandleJobTest < ActiveSupport::TestCase
     assert_not CandleJob.between_market_holiday?(start, finish)
   end
 
-  def test_market_holiday_utc
+  test 'market_holiday? in UTC' do
     sunday = Time.new(2019, 7, 7).in_time_zone('UTC')
     assert CandleJob.market_holiday?(sunday), '日本時間での日曜日であれば休場とする'
 
