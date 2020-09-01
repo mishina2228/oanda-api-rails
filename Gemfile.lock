@@ -238,7 +238,7 @@ GEM
       resque (>= 1.26)
       rufus-scheduler (~> 3.2)
     rexml (3.2.4)
-    rubocop (0.89.1)
+    rubocop (0.90.0)
       parallel (~> 1.10)
       parser (>= 2.7.1.1)
       rainbow (>= 2.2.2, < 4.0)
