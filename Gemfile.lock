@@ -349,7 +349,7 @@ DEPENDENCIES
   momentjs-rails (>= 2.9.0)
   mysql2 (>= 0.4.4, < 0.6.0)
   oanda_api
-  puma (~> 4.3)
+  puma (~> 4.3, < 5.0)
   puma_worker_killer
   rails (~> 6.0.3)
   resque
