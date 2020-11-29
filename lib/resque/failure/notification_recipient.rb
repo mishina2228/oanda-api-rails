@@ -1,11 +1,12 @@
 module Resque
   module Failure
     module NotificationRecipient
-      def recipients
-        yml_path = Rails.root.join('config/mail.yml')
-        return unless File.exist?(yml_path)
+      CONFIG_PATH = Rails.root.join('config/mail.yml')
 
-        options = YAML.load_file(yml_path)[Rails.env]
+      def recipients
+        return unless File.exist?(CONFIG_PATH)
+
+        options = YAML.load_file(CONFIG_PATH)[Rails.env]
         options['recipients']
       end
     end
