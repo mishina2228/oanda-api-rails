@@ -26,10 +26,10 @@ Resque, resque-scheduler operation with God
 * restart
 * stop
 ```
-$ sudo god status resque-oanda_api_rails
-$ sudo god start resque-oanda_api_rails
-$ sudo god restart resque-oanda_api_rails
-$ sudo god stop resque-oanda_api_rails
+$ god status resque-oanda_api_rails
+$ god start resque-oanda_api_rails
+$ god restart resque-oanda_api_rails
+$ god stop resque-oanda_api_rails
 ```
 
 ### After source update
@@ -44,7 +44,7 @@ bundle exec pumactl start -e [RAILS_ENV]
 
 ### Notify when Resque job failed
 
-If a Resque job fails, a notification is sent by email.  
+If a Resque job fails, a notification email will be sent.  
 Please fill in the settings of email to config/mail.yml .  
 The following is an example when sending from Gmail:
 
@@ -59,4 +59,6 @@ production:
     password: [PASSWORD]
     authentication: 'plain'
     enable_starttls_auto: true
+  recipients:
+    - [EMAIL_ADDRESS]
 ```
