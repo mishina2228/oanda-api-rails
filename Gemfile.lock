@@ -240,7 +240,7 @@ GEM
       resque (>= 1.26)
       rufus-scheduler (~> 3.2)
     rexml (3.2.4)
-    rubocop (1.5.2)
+    rubocop (1.6.1)
       parallel (~> 1.10)
       parser (>= 2.7.1.5)
       rainbow (>= 2.2.2, < 4.0)
