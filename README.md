@@ -1,6 +1,7 @@
 [![CircleCI](https://circleci.com/gh/mishina2228/oanda-api-rails.svg?style=svg)](https://circleci.com/gh/mishina2228/oanda-api-rails)
 [![Maintainability](https://api.codeclimate.com/v1/badges/b6b9044754816afc195c/maintainability)](https://codeclimate.com/github/mishina2228/oanda-api-rails/maintainability)
 [![codecov](https://codecov.io/gh/mishina2228/oanda-api-rails/branch/master/graph/badge.svg)](https://codecov.io/gh/mishina2228/oanda-api-rails)
+[![FOSSA Status](https://app.fossa.com/api/projects/git%2Bgithub.com%2Fmishina2228%2Foanda-api-rails.svg?type=shield)](https://app.fossa.com/projects/git%2Bgithub.com%2Fmishina2228%2Foanda-api-rails?ref=badge_shield)
 
 # oanda-api-rails
 
@@ -62,3 +63,7 @@ production:
   recipients:
     - [EMAIL_ADDRESS]
 ```
+
+
+## License
+[![FOSSA Status](https://app.fossa.com/api/projects/git%2Bgithub.com%2Fmishina2228%2Foanda-api-rails.svg?type=large)](https://app.fossa.com/projects/git%2Bgithub.com%2Fmishina2228%2Foanda-api-rails?ref=badge_large)
