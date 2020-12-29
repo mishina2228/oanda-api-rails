@@ -13,7 +13,7 @@ common_env: &common_env
   TZ: 'Asia/Tokyo'
 
 executors:
-  2-7:
+  ruby-2-7:
     docker:
       - image: circleci/ruby:2.7
     environment:
@@ -114,7 +114,7 @@ commands:
 
 jobs: # a collection of steps
   brakeman:
-    executor: 2-7
+    executor: ruby-2-7
     steps:
       - checkout
       - update_rubygems
