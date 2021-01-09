@@ -192,6 +192,8 @@ GEM
     raabro (1.3.1)
     racc (1.5.2)
     rack (2.2.3)
+    rack-mini-profiler (2.3.0)
+      rack (>= 1.2.0)
     rack-protection (2.1.0)
       rack
     rack-test (1.1.0)
@@ -291,6 +293,7 @@ GEM
       net-ssh (>= 2.7)
       net-telnet (= 0.1.1)
       sfl
+    spring (2.1.1)
     sprockets (4.0.2)
       concurrent-ruby (~> 1.0)
       rack (> 1, < 3)
@@ -356,6 +359,7 @@ DEPENDENCIES
   oanda_api
   puma (~> 5.1)
   puma_worker_killer
+  rack-mini-profiler (~> 2.0)
   rails (~> 6.1.1)
   resque
   resque-scheduler
@@ -364,6 +368,7 @@ DEPENDENCIES
   sassc-rails
   selenium-webdriver
   simplecov
+  spring
   sys-proctable
   turbolinks (~> 5)
   tzinfo-data
