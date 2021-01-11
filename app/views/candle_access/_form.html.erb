@@ -7,7 +7,7 @@
           <%= form.label :candle_format %>
         </div>
         <div class="col-xs-8 col-sm-10">
-          <%= form.select :candle_format, Constants::Mishina::CANDLE_FORMATS.invert,
+          <%= form.select :candle_format, Mishina::Constants::CANDLE_FORMATS.invert,
                           {}, class: 'form-control' %>
         </div>
       </div>
@@ -18,7 +18,7 @@
           <%= form.label :granularity %>
         </div>
         <div class="col-xs-8 col-sm-10">
-          <%= form.select :granularity, Constants::Mishina::GRANULARITIES.invert,
+          <%= form.select :granularity, Mishina::Constants::GRANULARITIES.invert,
                           {}, class: 'form-control' %>
         </div>
       </div>
@@ -29,7 +29,7 @@
           <%= form.label :instrument %>
         </div>
         <div class="col-xs-8 col-sm-10">
-          <%= form.select :instrument, Constants::Mishina::INSTRUMENTS.invert,
+          <%= form.select :instrument, Mishina::Constants::INSTRUMENTS.invert,
                           {}, class: 'form-control' %>
         </div>
       </div>
