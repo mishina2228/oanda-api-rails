@@ -18,6 +18,25 @@ Layout/SpaceInsideBlockBraces:
 Layout/SpaceInsideHashLiteralBraces:
   EnforcedStyle: no_space
 
+Metrics/AbcSize:
+  Exclude:
+    - 'test/**/*.rb'
+Metrics/BlockLength:
+  Exclude:
+    - 'config/environments/*.rb'
+Metrics/ClassLength:
+  Exclude:
+    - 'test/**/*.rb'
+Metrics/CyclomaticComplexity:
+  Exclude:
+    - 'test/**/*.rb'
+Metrics/MethodLength:
+  Exclude:
+    - 'test/**/*.rb'
+Metrics/PerceivedComplexity:
+  Exclude:
+    - 'test/**/*.rb'
+
 Rails/ActiveRecordCallbacksOrder:
   Enabled: true
 Rails/AfterCommitOverride:
@@ -38,6 +57,9 @@ Rails/PluckId:
   Enabled: true
 Rails/PluckInWhere:
   Enabled: true
+Rails/RakeEnvironment:
+  Exclude:
+    - 'lib/tasks/resque.rake'
 Rails/RenderInline:
   Enabled: true
 Rails/RenderPlainText:
@@ -59,6 +81,8 @@ Style/AsciiComments:
   Enabled: false
 Style/ClassAndModuleChildren:
   EnforcedStyle: compact
+  Exclude:
+    - 'config/application.rb'
 Style/Documentation:
   Enabled: false
 Style/EmptyMethod:
@@ -73,6 +97,8 @@ Style/HashLikeCase:
   Enabled: false
 Style/PercentLiteralDelimiters:
   Enabled: false
+Style/RescueStandardError:
+  EnforcedStyle: implicit
 Style/SlicingWithRange:
   Enabled: false
 Style/SymbolArray:
