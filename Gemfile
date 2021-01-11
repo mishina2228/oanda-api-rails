@@ -37,7 +37,8 @@ end
 group :development do
   gem 'brakeman'
   gem 'bullet'
-  gem 'rubocop', require: false
+  gem 'rubocop-minitest', require: false
+  gem 'rubocop-performance', require: false
   gem 'rubocop-rails', require: false
   # Access an interactive console on exception pages or by calling 'console' anywhere in the code.
   gem 'web-console', '>= 3.3.0'
