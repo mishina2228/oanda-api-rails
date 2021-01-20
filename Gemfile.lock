@@ -101,7 +101,7 @@ GEM
       tzinfo
     execjs (2.7.0)
     ffi (1.14.2)
-    fugit (1.4.1)
+    fugit (1.4.2)
       et-orbi (~> 1.1, >= 1.1.8)
       raabro (~> 1.4)
     gene_pool (1.5.0)
@@ -286,7 +286,7 @@ GEM
       rack (~> 2.2)
       rack-protection (= 2.1.0)
       tilt (~> 2.0)
-    specinfra (2.82.22)
+    specinfra (2.82.23)
       net-scp
       net-ssh (>= 2.7)
       net-telnet (= 0.1.1)
