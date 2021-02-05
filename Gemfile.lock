@@ -222,7 +222,7 @@ GEM
     rainbow (3.0.0)
     rake (13.0.3)
     redis (4.2.5)
-    redis-namespace (1.8.0)
+    redis-namespace (1.8.1)
       redis (>= 3.0.4)
     regexp_parser (2.0.3)
     resque (2.0.0)
