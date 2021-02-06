@@ -16,3 +16,7 @@ resque_schedules.load_schedules = () => {
     $('img.loading').addClass('hide')
   })
 };
+
+$(document).on('turbolinks:load', (() => {
+  resque_schedules.load_schedules();
+}));

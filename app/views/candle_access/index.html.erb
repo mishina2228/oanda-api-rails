@@ -9,16 +9,8 @@
 
 <h3>
   <%= t('helpers.title.acquired_result') %>
-  <%= image_tag('/images/loading.gif', class: 'loading hide') %>
+  <%= image_pack_tag('loading.gif', class: 'loading hide') %>
 </h3>
 
 <div class="candle-access result columns">
 </div>
-
-<script>
-  $(document).on('turbolinks:load', (() => {
-    $('.candle-access.result.columns').columns({
-      data: []
-    });
-  }));
-</script>

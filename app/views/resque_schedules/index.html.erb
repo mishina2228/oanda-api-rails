@@ -35,15 +35,9 @@
 
 <h3>
   Actual Resque Schedules
-  <%= image_tag('/images/loading.gif', class: 'loading hide') %>
+  <%= image_pack_tag('loading.gif', class: 'loading hide') %>
 </h3>
 <pre>
   <code id="resque-schedules">
   </code>
 </pre>
-
-<script>
-  $(document).on('turbolinks:load', (() => {
-    resque_schedules.load_schedules();
-  }));
-</script>

@@ -6,7 +6,24 @@
 
 Get exchange data using OANDA API
 
-# Commands
+## Prerequisites
+
+- Ruby 2.5+
+- Node.js 10.22.1+ || 12+ || 14+
+- Yarn 1.x+
+
+## Installation
+
+### Set up Rails app
+
+First, install the gems required by the application:
+```
+bundle
+```
+Next, execute the database migrations/schema setup:
+```
+bundle exec rails db:setup
+```
 
 ### Resque settings
 
@@ -32,10 +49,9 @@ $ god restart resque-oanda_api_rails
 $ god stop resque-oanda_api_rails
 ```
 
-### After source update
+### Start the app
 
 ```
-bundle
 bundle exec rails assets:precompile RAILS_ENV=[RAILS_ENV]
 bundle exec pumactl start -e [RAILS_ENV]
 ```

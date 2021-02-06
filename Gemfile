@@ -10,14 +10,9 @@ gem 'mysql2', '>= 0.4.4', '< 0.6.0'
 # Use Puma as the app server
 gem 'puma', '~> 5.2'
 gem 'puma_worker_killer'
-# Use SCSS for stylesheets
-gem 'sassc-rails'
+# Transpile app-like JavaScript. Read more: https://github.com/rails/webpacker
+gem 'webpacker', '~> 5.0'
 
-gem 'jquery-rails'
-gem 'jquery-ui-rails'
-
-# Use Uglifier as compressor for JavaScript assets
-gem 'uglifier', '>= 1.3.0'
 # Turbolinks makes navigating your web application faster. Read more: https://github.com/turbolinks/turbolinks
 gem 'turbolinks', '~> 5'
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
@@ -25,9 +20,12 @@ gem 'jbuilder', '~> 2.11'
 
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.1.0', require: false
-gem 'bootstrap3-datetimepicker-rails', '~> 4.17.47'
-gem 'bootstrap-sass', '>= 3.4.1'
-gem 'momentjs-rails', '>= 2.9.0'
+
+gem 'activerecord-import'
+gem 'oanda_api'
+
+gem 'resque'
+gem 'resque-scheduler'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
@@ -64,9 +62,3 @@ group :itamae do
   gem 'god'
   gem 'itamae'
 end
-
-gem 'activerecord-import'
-gem 'oanda_api'
-
-gem 'resque'
-gem 'resque-scheduler'

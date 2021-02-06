@@ -5,6 +5,7 @@ $(document).on('turbolinks:load', () => {
 });
 
 function change_theme() {
+  const Cookies = require('js-cookie')
   const body = $('body');
   body.toggleClass('dark_mode');
   const dark_mode_val = body.hasClass('dark_mode') ? 'isActive' : 'notActive';
