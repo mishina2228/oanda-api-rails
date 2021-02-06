@@ -1,8 +1,8 @@
-let resque_schedules = {};
-resque_schedules.load_schedules = () => {
-  const $field = $('#resque-schedules');
-  if(!$field[0]) {
-    return null;
+const resqueSchedules = {}
+resqueSchedules.load_schedules = () => {
+  const $field = $('#resque-schedules')
+  if (!$field[0]) {
+    return null
   }
   $.ajax({
     url: '/resque_schedules/schedule',
@@ -11,12 +11,12 @@ resque_schedules.load_schedules = () => {
       $('img.loading').removeClass('hide')
     }
   }).always((data) => {
-    const pretty = JSON.stringify(data, null, 4);
-    $field.html(pretty);
+    const pretty = JSON.stringify(data, null, 4)
+    $field.html(pretty)
     $('img.loading').addClass('hide')
   })
-};
+}
 
-$(document).on('turbolinks:load', (() => {
-  resque_schedules.load_schedules();
-}));
+$(document).on('turbolinks:load', () => {
+  resqueSchedules.load_schedules()
+})
