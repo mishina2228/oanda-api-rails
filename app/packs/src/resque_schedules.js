@@ -1,5 +1,4 @@
-const resqueSchedules = {}
-resqueSchedules.load_schedules = () => {
+const loadSchedules = () => {
   const $field = $('#resque-schedules')
   if (!$field[0]) {
     return null
@@ -18,5 +17,5 @@ resqueSchedules.load_schedules = () => {
 }
 
 $(document).on('turbolinks:load', () => {
-  resqueSchedules.load_schedules()
+  loadSchedules()
 })

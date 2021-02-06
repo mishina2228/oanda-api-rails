@@ -17,7 +17,7 @@ import '../src/candle_access'
 import '../src/columns_initializer'
 import '../src/datepicker_loader'
 import '../src/resque_schedules'
-import '../src/theme_changer.js'
+import '../src/theme_changer'
 import '../../../vendor/assets/javascripts/columns.min'
 
 import './application.scss'

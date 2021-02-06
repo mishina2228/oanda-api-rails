@@ -4,7 +4,7 @@ $(document).on('turbolinks:load', () => {
   })
 })
 
-function changeTheme () {
+const changeTheme = () => {
   const Cookies = require('js-cookie')
   const body = $('body')
   body.toggleClass('dark_mode')
