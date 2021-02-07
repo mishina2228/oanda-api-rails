@@ -106,6 +106,7 @@ commands:
           name: Restore Yarn Package Cache
           keys:
             - yarn-packages-{{ checksum "yarn.lock" }}
+            - yarn-packages-
   install_packages:
     steps:
       - run:
