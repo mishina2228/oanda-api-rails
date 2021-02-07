@@ -16,9 +16,10 @@ Get exchange data using OANDA API
 
 ### Set up Rails app
 
-First, install the gems required by the application:
+First, install the gems and javascript packages required by the application:
 ```
 bundle
+yarn
 ```
 Next, execute the database migrations/schema setup:
 ```
@@ -29,12 +30,12 @@ bundle exec rails db:setup
 
 Create a configuration file to manage [Resque](https://github.com/resque/resque) and [resque-scheduler](https://github.com/resque/resque-scheduler) with [God](http://godrb.com/)
 ```
-$ RAILS_ENV=[RAILS_ENV] bundle exec itamae local config/itamae/resque.rb
+RAILS_ENV=[RAILS_ENV] bundle exec itamae local config/itamae/resque.rb
 ```
 
 Load configuration file
 ```
-$ god -c /etc/god/master.conf
+god -c /etc/god/master.conf
 ```
 
 Resque, resque-scheduler operation with God
@@ -43,10 +44,10 @@ Resque, resque-scheduler operation with God
 * restart
 * stop
 ```
-$ god status resque-oanda_api_rails
-$ god start resque-oanda_api_rails
-$ god restart resque-oanda_api_rails
-$ god stop resque-oanda_api_rails
+god status resque-oanda_api_rails
+god start resque-oanda_api_rails
+god restart resque-oanda_api_rails
+god stop resque-oanda_api_rails
 ```
 
 ### Start the app
