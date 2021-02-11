@@ -16,26 +16,26 @@ module CandleTask
   namespace :usd_jpy_candles do
     desc 'USD/JPY 5-second candle acquisition task'
     task s5: :environment do
-      UsdJpyS5Candle.save_numerous_candles(arguments)
+      UsdJpyS5Candle.save_numerous_candles(**arguments)
     end
 
     desc 'USD/JPY 1-minute candle acquisition task'
     task m1: :environment do
-      UsdJpyM1Candle.save_numerous_candles(arguments)
+      UsdJpyM1Candle.save_numerous_candles(**arguments)
     end
   end
 
   namespace :eur_jpy_candles do
     desc 'EUR/JPY 1-minute candle acquisition task'
     task m1: :environment do
-      EurJpyM1Candle.save_numerous_candles(arguments)
+      EurJpyM1Candle.save_numerous_candles(**arguments)
     end
   end
 
   namespace :gbp_jpy_candles do
     desc 'GBP/JPY 1-minute candle acquisition task'
     task m1: :environment do
-      GbpJpyM1Candle.save_numerous_candles(arguments)
+      GbpJpyM1Candle.save_numerous_candles(**arguments)
     end
   end
 end
