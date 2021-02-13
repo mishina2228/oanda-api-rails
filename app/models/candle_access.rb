@@ -1,8 +1,7 @@
 class CandleAccess
   include ActiveModel::Model
 
-  attr_accessor :candle_format, :granularity, :instrument
-  attr_accessor :count, :start
+  attr_accessor :candle_format, :granularity, :instrument, :count, :start
 
   validates :candle_format, presence: true
   validates :granularity, presence: true
