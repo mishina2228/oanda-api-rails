@@ -29,7 +29,7 @@ class CandleAccessController < ApplicationController
     {
       granularity: 'M1',
       count: 100,
-      start: Time.zone.now.to_datetime.rfc3339
+      start: Time.zone.now.rfc3339
     }
   end
 end
