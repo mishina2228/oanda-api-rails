@@ -10,11 +10,6 @@ class ResqueSchedulesControllerTest < ActionDispatch::IntegrationTest
     assert_response :success
   end
 
-  test 'should show resque_schedule' do
-    get resque_schedule_url(@resque_schedule)
-    assert_response :success
-  end
-
   test 'should get edit' do
     get edit_resque_schedule_url(@resque_schedule)
     assert_response :success

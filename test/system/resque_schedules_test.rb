@@ -23,7 +23,7 @@ class ResqueSchedulesTest < ApplicationSystemTestCase
     click_on I18n.t('helpers.submit.update')
 
     assert_text I18n.t('helpers.notice.update')
-    page.assert_current_path(resque_schedule_path(@resque_schedule.id))
+    page.assert_current_path(resque_schedules_url)
     assert_not @resque_schedule.reload.enabled?
   end
 end

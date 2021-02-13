@@ -1,11 +1,8 @@
 class ResqueSchedulesController < ApplicationController
-  before_action :set_resque_schedule, only: [:show, :edit, :update]
+  before_action :set_resque_schedule, only: [:edit, :update]
 
   def index
     @resque_schedules = ResqueSchedule.all
-  end
-
-  def show
   end
 
   def edit
@@ -15,7 +12,7 @@ class ResqueSchedulesController < ApplicationController
     @resque_schedule.attributes = resque_schedule_params
     respond_to do |format|
       @resque_schedule.save_and_setting!
-      format.html {redirect_to @resque_schedule, notice: t('helpers.notice.update')}
+      format.html {redirect_to({action: :index}, notice: t('helpers.notice.update'))}
     rescue ActiveRecord::RecordInvalid, Redis::CannotConnectError
       format.html {render :edit}
     end
