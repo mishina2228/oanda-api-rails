@@ -8,7 +8,9 @@ class CandleAccess
   validates :granularity, presence: true
   validates :instrument, presence: true
   validates :count, numericality: {greater_than: 0, less_than: 5001, only_integer: true}
-  validates :start, format: {with: /\A\d{4}-\d{2}-\d{2}T\d{2}:\d{2}:\d{2}[+-]+\d{2}:\d{2}\z/}
+
+  START_DATETIME_FORMAT = /\A\d{4}-\d{2}-\d{2}T\d{2}:\d{2}:\d{2}([+-]\d{2}:\d{2}|\.000Z)\z/.freeze
+  validates :start, format: {with: START_DATETIME_FORMAT}
 
   def client
     @client ||= Mishina::Oanda::ClientFactory.client

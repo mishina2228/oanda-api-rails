@@ -28,9 +28,11 @@ class CandleAccessTest < ActiveSupport::TestCase
     assert CandleAccess.new(valid_params.merge(start: '2018-01-01T00:00:00')).invalid?
     assert CandleAccess.new(valid_params.merge(start: '2018/01/01T00:00:00+00:00')).invalid?
     assert CandleAccess.new(valid_params.merge(start: '2018-01-01 00:00:00+00:00')).invalid?
+    assert CandleAccess.new(valid_params.merge(start: '2018-01-01T00:00:00++09:00')).invalid?
     assert CandleAccess.new(valid_params.merge(start: '2018-01-01T00:00:00+09:00')).valid?
     assert CandleAccess.new(valid_params.merge(start: '2018-01-01T00:00:00-10:00')).valid?
     assert CandleAccess.new(valid_params.merge(start: '2018-01-01T00:00:00+00:30')).valid?
+    assert CandleAccess.new(valid_params.merge(start: '2018-01-01T00:00:00.000Z')).valid?
   end
 
   def valid_params
