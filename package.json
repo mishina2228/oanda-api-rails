@@ -15,6 +15,7 @@
     "popper.js": "^1.16.1",
     "rails-erb-loader": "^5.5.2",
     "resolve-url-loader": "^3.1.2",
+    "tabulator-tables": "^4.9.3",
     "turbolinks": "^5.2.0"
   },
   "devDependencies": {

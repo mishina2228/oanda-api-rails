@@ -15,7 +15,6 @@ import '../src/datepicker_loader'
 import '../src/fontawesome'
 import '../src/resque_schedules'
 import '../src/theme_changer'
-import '../../../vendor/assets/javascripts/columns.min'
 
 import './application.scss'
 

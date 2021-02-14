@@ -1,8 +1,9 @@
+import Tabulator from 'tabulator-tables'
+
 $(document).on('turbolinks:load', () => {
   $('#candle-access').on('click', event => {
     $(event.currentTarget).prop('disabled', true)
     const $form = $(event.currentTarget).parents('form')
-    const $resultField = $('.candle-access.result.columns')
     $.ajax({
       url: $form.attr('action'),
       type: 'POST',
@@ -24,10 +25,15 @@ $(document).on('turbolinks:load', () => {
         delete obj._attributes
         return obj
       })
-      $resultField.columns('destroy')
-      $resultField.columns({
+      new Tabulator('#candle-access-table', {
         data: data,
-        size: 10
+        autoColumns: true,
+        layout: 'fitColumns',
+        placeholder: 'No Data Set',
+        pagination: 'local',
+        paginationSize: 10,
+        paginationSizeSelector: [5, 10, 15, 20, 25, 30],
+        tooltips: true
       })
       $('img.loading').addClass('d-none')
       $(event.currentTarget).prop('disabled', false)
