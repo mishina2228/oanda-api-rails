@@ -10,6 +10,7 @@ common_env: &common_env
   DB_USERNAME: 'root'
   MYSQL_ALLOW_EMPTY_PASSWORD: yes
   RAILS_ENV: test
+  NODE_ENV: test
   TZ: 'Asia/Tokyo'
 
 executors:
