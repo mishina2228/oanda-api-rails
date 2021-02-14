@@ -7,12 +7,12 @@ const loadSchedules = () => {
     url: '/resque_schedules/schedule',
     type: 'GET',
     beforeSend: () => {
-      $('img.loading').removeClass('hide')
+      $('img.loading').removeClass('d-none')
     }
   }).always((data) => {
     const pretty = JSON.stringify(data, null, 4)
     $field.html(pretty)
-    $('img.loading').addClass('hide')
+    $('img.loading').addClass('d-none')
   })
 }
 

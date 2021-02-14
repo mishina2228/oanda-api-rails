@@ -1,3 +1,11 @@
+html {
+  font-size: 14px;
+}
+
+caption {
+  caption-side: top;
+}
+
 body {
   background-color: #fff;
   color: #333;
@@ -16,10 +24,11 @@ body {
       }
     }
 
-    td {
+    td, th {
       a {
         color: #44b9d6;
       }
+      color: whitesmoke;
     }
 
     pre {
@@ -208,4 +217,10 @@ div {
 
 label {
   display: block;
+}
+
+@for $size from 1 to 100 {
+  .w-#{$size} {
+    width: #{$size * 1%} !important;
+  }
 }

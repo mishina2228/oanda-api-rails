@@ -1,20 +1,19 @@
-$(document).on('turbolinks:load', () => {
-  $('.datetime-picker').datetimepicker({
-    format: 'YYYY-MM-DDTHH:mm:ssZ',
-    locale: 'ja'
-  })
-  $('.date-picker').datetimepicker({
-    format: 'YYYY-MM-DD',
-    locale: 'ja'
-  })
-  $('.month-picker').datetimepicker({
-    format: 'YYYY-MM',
-    locale: 'ja',
-    viewMode: 'months'
-  })
-  $('.year-picker').datetimepicker({
-    format: 'YYYY',
-    locale: 'ja',
-    viewMode: 'years'
+import flatpickr from 'flatpickr'
+import { Japanese } from 'flatpickr/dist/l10n/ja'
+
+const localeDict = {
+  en: null,
+  ja: Japanese
+}
+
+window.addEventListener('turbolinks:load', () => {
+  const locale = document.getElementsByTagName('body')[0].getAttribute('data-locale')
+  flatpickr('.datetime-picker', {
+    allowInput: true,
+    altFormat: 'Y-m-dTH:i:S+09:00',
+    altInput: true,
+    enableTime: true,
+    dateFormat: 'Z',
+    locale: localeDict[locale]
   })
 })

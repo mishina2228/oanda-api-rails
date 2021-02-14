@@ -10,16 +10,16 @@
 
   <tbody>
   <tr>
-    <th class="col-xs-4"><%= CandleInformation.human_attribute_name :usd_jpy_m1_count %></th>
-    <td class="col-xs-8"><%= @candle_information.usd_jpy_m1_count.to_s(:delimited) %></td>
+    <th class="w-40"><%= CandleInformation.human_attribute_name :usd_jpy_m1_count %></th>
+    <td><%= @candle_information.usd_jpy_m1_count.to_s(:delimited) %></td>
   </tr>
   <tr>
-    <th class="col-xs-4"><%= CandleInformation.human_attribute_name :eur_jpy_m1_count %></th>
-    <td class="col-xs-8"><%= @candle_information.eur_jpy_m1_count.to_s(:delimited) %></td>
+    <th><%= CandleInformation.human_attribute_name :eur_jpy_m1_count %></th>
+    <td><%= @candle_information.eur_jpy_m1_count.to_s(:delimited) %></td>
   </tr>
   <tr>
-    <th class="col-xs-4"><%= CandleInformation.human_attribute_name :gbp_jpy_m1_count %></th>
-    <td class="col-xs-8"><%= @candle_information.gbp_jpy_m1_count.to_s(:delimited) %></td>
+    <th><%= CandleInformation.human_attribute_name :gbp_jpy_m1_count %></th>
+    <td><%= @candle_information.gbp_jpy_m1_count.to_s(:delimited) %></td>
   </tr>
   </tbody>
 </table>
@@ -29,15 +29,16 @@
 
   <tbody>
   <tr>
-    <th class="col-xs-4"><%= CandleInformation.human_attribute_name :usd_jpy_m1_latest %></th>
-    <td class="col-xs-8"><%= candle_latest_time @candle_information.usd_jpy_m1_latest %></td>
+    <th class="w-40"><%= CandleInformation.human_attribute_name :usd_jpy_m1_latest %></th>
+    <td><%= candle_latest_time @candle_information.usd_jpy_m1_latest %></td>
   </tr>
   <tr>
-    <th class="col-xs-4"><%= CandleInformation.human_attribute_name :eur_jpy_m1_latest %></th>
-    <td class="col-xs-8"><%= candle_latest_time @candle_information.eur_jpy_m1_latest %></td>
+    <th><%= CandleInformation.human_attribute_name :eur_jpy_m1_latest %></th>
+    <td><%= candle_latest_time @candle_information.eur_jpy_m1_latest %></td>
   </tr>
   <tr>
-    <th class="col-xs-4"><%= CandleInformation.human_attribute_name :gbp_jpy_m1_latest %></th>
-    <td class="col-xs-8"><%= candle_latest_time @candle_information.gbp_jpy_m1_latest %></td>
+    <th><%= CandleInformation.human_attribute_name :gbp_jpy_m1_latest %></th>
+    <td><%= candle_latest_time @candle_information.gbp_jpy_m1_latest %></td>
   </tr>
+  </tbody>
 </table>

@@ -1,11 +1,13 @@
 {
   "dependencies": {
-    "@fortawesome/fontawesome-free": "^5.15.2",
+    "@fortawesome/fontawesome-svg-core": "^1.2.34",
+    "@fortawesome/free-regular-svg-icons": "^5.15.2",
+    "@fortawesome/free-solid-svg-icons": "^5.15.2",
     "@rails/activestorage": "^6.1.2",
     "@rails/ujs": "^6.1.2",
     "@rails/webpacker": "5.2.1",
-    "bootstrap-sass": "3",
-    "eonasdan-bootstrap-datetimepicker": "^4.17.49",
+    "bootstrap": "^4.6.0",
+    "flatpickr": "^4.6.9",
     "import-glob-loader": "^1.1.0",
     "jquery": "^3.5.1",
     "js-cookie": "^2.2.1",
@@ -17,6 +19,7 @@
   },
   "devDependencies": {
     "standard": "^16.0.3",
+    "webpack-bundle-analyzer": "^4.4.0",
     "webpack-dev-server": "^3.11.2"
   },
   "standard": {

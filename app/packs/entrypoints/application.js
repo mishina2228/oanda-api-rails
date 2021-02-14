@@ -7,15 +7,12 @@
 // To reference this file, add <%= javascript_pack_tag 'application' %> to the appropriate
 // layout file, like app/views/layouts/application.html.erb
 
-import 'bootstrap-sass'
-import '@fortawesome/fontawesome-free/js/all'
-import 'moment'
-import 'moment/locale/ja'
-import 'eonasdan-bootstrap-datetimepicker'
+import 'bootstrap'
 
 import '../src/candle_access'
 import '../src/columns_initializer'
 import '../src/datepicker_loader'
+import '../src/fontawesome'
 import '../src/resque_schedules'
 import '../src/theme_changer'
 import '../../../vendor/assets/javascripts/columns.min'

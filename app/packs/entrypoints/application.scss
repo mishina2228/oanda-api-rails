@@ -1,6 +1,6 @@
-@import '~@fortawesome/fontawesome-free/scss/fontawesome';
-$icon-font-path: '~bootstrap-sass/assets/fonts/bootstrap/';
-@import '~bootstrap-sass/assets/stylesheets/bootstrap';
-@import '~eonasdan-bootstrap-datetimepicker/src/sass/bootstrap-datetimepicker';
+@import '~bootstrap/scss/bootstrap';
+@import '~flatpickr/dist/flatpickr';
+@import '~flatpickr/dist/themes/material_blue';
+@import '~flatpickr/dist/plugins/monthSelect/style';
 @import '../../../vendor/assets/stylesheets/columns_classic';
 @import '../stylesheets/*';

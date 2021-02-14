@@ -17,7 +17,7 @@ $(document).on('turbolinks:load', () => {
         }
       },
       beforeSend: () => {
-        $('img.loading').removeClass('hide')
+        $('img.loading').removeClass('d-none')
       }
     }).always((data) => {
       data = data.map(obj => {
@@ -29,7 +29,7 @@ $(document).on('turbolinks:load', () => {
         data: data,
         size: 10
       })
-      $('img.loading').addClass('hide')
+      $('img.loading').addClass('d-none')
       $(event.currentTarget).prop('disabled', false)
     })
   })
