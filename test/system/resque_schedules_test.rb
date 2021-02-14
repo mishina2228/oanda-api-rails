@@ -16,7 +16,6 @@ class ResqueSchedulesTest < ApplicationSystemTestCase
 
     visit resque_schedules_url
     click_on @resque_schedule.name, match: :first
-    click_on I18n.t('helpers.link.edit')
     page.assert_current_path(edit_resque_schedule_path(@resque_schedule.id))
 
     uncheck ResqueSchedule.human_attribute_name(:enabled)
