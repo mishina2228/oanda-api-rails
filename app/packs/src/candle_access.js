@@ -25,7 +25,7 @@ $(document).on('turbolinks:load', () => {
         delete obj._attributes
         return obj
       })
-      new Tabulator('#candle-access-table', {
+      new Tabulator('#candle-access-table', { // eslint-disable-line no-new
         data: data,
         autoColumns: true,
         layout: 'fitColumns',
