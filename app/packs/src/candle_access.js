@@ -28,7 +28,6 @@ $(document).on('turbolinks:load', () => {
       new Tabulator('#candle-access-table', { // eslint-disable-line no-new
         data: data,
         autoColumns: true,
-        layout: 'fitColumns',
         placeholder: 'No Data Set',
         pagination: 'local',
         paginationSize: 10,
