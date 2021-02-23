@@ -210,7 +210,7 @@ GEM
     redis (4.2.5)
     redis-namespace (1.8.1)
       redis (>= 3.0.4)
-    regexp_parser (2.0.3)
+    regexp_parser (2.1.0)
     resque (2.0.0)
       mono_logger (~> 1.0)
       multi_json (~> 1.0)
