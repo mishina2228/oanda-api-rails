@@ -288,7 +288,7 @@ GEM
     tzinfo (2.0.4)
       concurrent-ruby (~> 1.0)
     unicode-display_width (2.0.0)
-    uniform_notifier (1.14.1)
+    uniform_notifier (1.14.2)
     vegas (0.1.11)
       rack (>= 1.0.0)
     web-console (4.1.0)
