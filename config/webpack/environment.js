@@ -13,7 +13,6 @@ environment.plugins.append('Provide',
   new webpack.ProvidePlugin({
     $: 'jquery',
     jQuery: 'jquery',
-    Mustache: 'mustache',
     Popper: ['popper.js', 'default']
   })
 )
