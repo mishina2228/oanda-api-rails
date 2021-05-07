@@ -8,7 +8,7 @@ gem 'rails', '~> 6.1.3'
 # Use mysql as the database for Active Record
 gem 'mysql2', '>= 0.4.4', '< 0.6.0'
 # Use Puma as the app server
-gem 'puma', '~> 5.2'
+gem 'puma', '~> 5.3'
 gem 'puma_worker_killer'
 # Transpile app-like JavaScript. Read more: https://github.com/rails/webpacker
 gem 'webpacker', '~> 5.3'
