@@ -42,7 +42,9 @@ jobs:
           cache: 'yarn'
       - run: yarn install
       - name: Database setup
-        run: bin/rails db:schema:load --trace
+        run: |-
+          bin/rails db:create --trace
+          bin/rails db:schema:load --trace
       - name: Build assets in advance
         run: bin/webpack
       - name: Run unit tests
