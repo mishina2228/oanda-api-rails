@@ -1,10 +1,8 @@
 require 'test_helper'
 
 class ApplicationSystemTestCase < ActionDispatch::SystemTestCase
-  caps = Selenium::WebDriver::Remote::Capabilities.chrome(
-    'chromeOptions' => {
-      'args' => %w(--headless --disable-gpu --no-sandbox)
-    }
-  )
-  driven_by :selenium, using: :chrome, options: {desired_capabilities: caps}
+  driven_by :selenium, using: :headless_chrome do |options|
+    options.add_argument('--disable-dev-shm-usage')
+    options.add_argument('--no-sandbox')
+  end
 end
