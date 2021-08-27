@@ -22,7 +22,6 @@ jobs:
       DB_HOST: 127.0.0.1
       DB_PASSWORD: 'root'
       DB_USERNAME: 'root'
-#      MYSQL_ALLOW_EMPTY_PASSWORD: yes
       RAILS_ENV: test
       NODE_ENV: test
       TZ: 'Asia/Tokyo'
