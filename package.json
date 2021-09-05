@@ -6,7 +6,7 @@
     "@popperjs/core": "^2.10.1",
     "@rails/ujs": "^6.1.4",
     "@rails/webpacker": "5.4.2",
-    "bootstrap": "^5.0.2",
+    "bootstrap": "^5.1.0",
     "flatpickr": "^4.6.9",
     "import-glob-loader": "^1.1.0",
     "jquery": "^3.6.0",
