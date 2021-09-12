@@ -21,7 +21,7 @@ class CandleAccessController < ApplicationController
   private
 
   def candle_access_params
-    attrs = %i(candle_format granularity instrument count start)
+    attrs = [:candle_format, :granularity, :instrument, :count, :start]
     params.fetch(:candle_access, {}).permit(*attrs)
   end
 

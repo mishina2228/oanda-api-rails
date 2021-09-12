@@ -4,14 +4,14 @@ require 'resque/server'
 Rails.application.routes.draw do
   mount Resque::Server.new, at: '/resque'
 
-  resources :resque_schedules, only: %w(index edit update) do
+  resources :resque_schedules, only: [:index, :edit, :update] do
     collection do
       put :setup_all
       get :schedule
     end
   end
-  resources :candle_information, only: %w(index)
-  resources :candle_access, only: %w(index) do
+  resources :candle_information, only: :index
+  resources :candle_access, only: :index do
     collection do
       put :access
     end
