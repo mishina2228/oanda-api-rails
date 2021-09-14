@@ -2,6 +2,7 @@
 [![Maintainability](https://api.codeclimate.com/v1/badges/b6b9044754816afc195c/maintainability)](https://codeclimate.com/github/mishina2228/oanda-api-rails/maintainability)
 [![codecov](https://codecov.io/gh/mishina2228/oanda-api-rails/branch/master/graph/badge.svg)](https://codecov.io/gh/mishina2228/oanda-api-rails)
 [![GitHub license](https://img.shields.io/github/license/mishina2228/oanda-api-rails)](https://github.com/mishina2228/oanda-api-rails/blob/master/LICENSE)
+[![JavaScript Style Guide](https://img.shields.io/badge/code_style-standard-brightgreen.svg)](https://standardjs.com)
 
 # oanda-api-rails
 
