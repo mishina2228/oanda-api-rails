@@ -54,8 +54,6 @@ Rails/RakeEnvironment:
 
 Style/ArrayCoercion:
   Enabled: true
-Style/AsciiComments:
-  Enabled: false
 Style/Documentation:
   Enabled: false
 Style/EmptyMethod:
