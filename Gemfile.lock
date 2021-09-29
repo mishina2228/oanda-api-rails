@@ -105,7 +105,7 @@ GEM
     god (0.13.7)
     hashie (4.1.0)
     http-exceptions (0.1.2)
-    httparty (0.18.1)
+    httparty (0.20.0)
       mime-types (~> 3.0)
       multi_xml (>= 0.5.2)
     i18n (1.8.10)
