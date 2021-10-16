@@ -1,11 +1,11 @@
+# oanda-api-rails
+
 [![CI](https://github.com/mishina2228/oanda-api-rails/workflows/ci/badge.svg)](https://github.com/mishina2228/oanda-api-rails/actions)
 [![Maintainability](https://api.codeclimate.com/v1/badges/b6b9044754816afc195c/maintainability)](https://codeclimate.com/github/mishina2228/oanda-api-rails/maintainability)
 [![codecov](https://codecov.io/gh/mishina2228/oanda-api-rails/branch/master/graph/badge.svg)](https://codecov.io/gh/mishina2228/oanda-api-rails)
 [![GitHub license](https://img.shields.io/github/license/mishina2228/oanda-api-rails)](https://github.com/mishina2228/oanda-api-rails/blob/master/LICENSE)
 [![JavaScript Style Guide](https://img.shields.io/badge/code_style-standard-brightgreen.svg)](https://standardjs.com)
 [![Ruby Style Guide](https://img.shields.io/badge/code_style-rubocop-brightgreen.svg)](https://github.com/rubocop/rubocop)
-
-# oanda-api-rails
 
 Get exchange data using OANDA API
 
@@ -20,32 +20,41 @@ Get exchange data using OANDA API
 ### Set up Rails app
 
 First, install the gems and javascript packages required by the application:
+
 ```sh
 bundle
 yarn
 ```
+
 Next, execute the database migrations/schema setup:
+
 ```sh
 bin/rails db:setup
 ```
 
 ### Resque settings
 
-Create a configuration file to manage [Resque](https://github.com/resque/resque) and [resque-scheduler](https://github.com/resque/resque-scheduler) with [God](http://godrb.com/)
+Create a configuration file to manage [Resque](https://github.com/resque/resque)
+and [resque-scheduler](https://github.com/resque/resque-scheduler)
+with [God](http://godrb.com/)
+
 ```sh
 RAILS_ENV=[RAILS_ENV] bundle exec itamae local config/itamae/resque.rb
 ```
 
 Load configuration file
+
 ```sh
 god -c /etc/god/master.conf
 ```
 
 Resque, resque-scheduler operation with God
-* check the status
-* start
-* restart
-* stop
+
+- check the status
+- start
+- restart
+- stop
+
 ```sh
 god status resque-oanda_api_rails
 god start resque-oanda_api_rails
@@ -56,11 +65,13 @@ god stop resque-oanda_api_rails
 ### Start the app
 
 #### development
+
 ```sh
 bin/rails start
 ```
 
 #### production
+
 ```sh
 bin/rails assets:precompile RAILS_ENV=production
 bin/rails s -e production
