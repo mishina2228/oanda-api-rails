@@ -23,9 +23,9 @@
   <% @resque_schedules.each do |resque_schedule| %>
     <tr>
       <td><%= link_to resque_schedule.name, edit_resque_schedule_path(resque_schedule) %></td>
-      <td><%= resque_schedule.description %></td>
-      <td><%= resque_schedule.cron %></td>
-      <td><%= check_icon(resque_schedule.enabled) %></td>
+      <td><%= tag.span resque_schedule.description %></td>
+      <td><%= tag.span resque_schedule.cron %></td>
+      <td><%= tag.span check_icon(resque_schedule.enabled) %></td>
     </tr>
   <% end %>
   </tbody>
