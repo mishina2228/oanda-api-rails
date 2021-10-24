@@ -20,7 +20,7 @@ $(document).on('turbolinks:load', () => {
       beforeSend: () => {
         $('img.loading').removeClass('d-none')
       }
-    }).always((data) => {
+    }).done(data => {
       data = data.map(obj => {
         delete obj._attributes
         return obj
@@ -34,6 +34,9 @@ $(document).on('turbolinks:load', () => {
         paginationSizeSelector: [5, 10, 15, 20, 25, 30],
         tooltips: true
       })
+    }).fail(() => {
+      window.alert('Unable to access the API. Please try again later.')
+    }).always(() => {
       $('img.loading').addClass('d-none')
       $(event.currentTarget).prop('disabled', false)
     })
