@@ -7753,10 +7753,10 @@ table@^6.0.4:
     string-width "^4.2.3"
     strip-ansi "^6.0.1"
 
-tabulator-tables@^4.9.3:
-  version "4.9.3"
-  resolved "https://registry.yarnpkg.com/tabulator-tables/-/tabulator-tables-4.9.3.tgz#89ea8f9bffc11ba9a789369b5165ac82da26f4f0"
-  integrity sha512-iwwQqAEGGxlgrBpcmJJvMJrfjGLcCXOB3AOb/DGkXqBy1YKoYA36hIl7qXGp6Jo8dSkzFAlDT6pKLZgyhs9OnQ==
+tabulator-tables@^5.0.6:
+  version "5.0.6"
+  resolved "https://registry.yarnpkg.com/tabulator-tables/-/tabulator-tables-5.0.6.tgz#cf2817764818e7eb2b76651bc59afc49c510a3bf"
+  integrity sha512-9QGm6dpJbG4v145pTRllnWeshXKKv4kx0BGTq9sWDBjYZsHZJ1Dl8ovya4SIo/6J+cUD+BLyjSN3msgub4Nl5w==
 
 tapable@^1.0.0, tapable@^1.1.3:
   version "1.1.3"
