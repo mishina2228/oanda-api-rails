@@ -1,4 +1,6 @@
-import Tabulator from 'tabulator-tables'
+import { Tabulator, PageModule, ResizeColumnsModule, SortModule } from 'tabulator-tables'
+
+Tabulator.registerModule([PageModule, ResizeColumnsModule, SortModule])
 
 $(document).on('turbolinks:load', () => {
   $('#candle-access').on('click', event => {
@@ -29,10 +31,11 @@ $(document).on('turbolinks:load', () => {
         data: data,
         autoColumns: true,
         placeholder: 'No Data Set',
-        pagination: 'local',
+        pagination: true,
         paginationSize: 10,
         paginationSizeSelector: [5, 10, 15, 20, 25, 30],
-        tooltips: true
+        layout: 'fitColumns',
+        columnDefaults: { resizable: 'header', tooltip: true }
       })
     }).fail(() => {
       window.alert('Unable to access the API. Please try again later.')
