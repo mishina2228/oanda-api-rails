@@ -3,4 +3,6 @@
 @import '~flatpickr/dist/themes/material_blue';
 @import '~flatpickr/dist/plugins/monthSelect/style';
 @import '~tabulator-tables/dist/css/tabulator.min';
-@import '../stylesheets/*';
+@import '../packs/stylesheets/candle_access';
+@import '../packs/stylesheets/scaffolds';
+@import '../packs/stylesheets/resque_schedules';

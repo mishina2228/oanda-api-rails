@@ -9,12 +9,12 @@
 
 import 'bootstrap'
 
-import '../src/candle_access'
-import '../src/columns_initializer'
-import '../src/datepicker_loader'
-import '../src/fontawesome'
-import '../src/resque_schedules'
-import '../src/theme_changer'
+import '../packs/src/candle_access'
+import '../packs/src/columns_initializer'
+import '../packs/src/datepicker_loader'
+import '../packs/src/fontawesome'
+import '../packs/src/resque_schedules'
+import '../packs/src/theme_changer'
 
 import './application.scss'
 
@@ -24,4 +24,4 @@ import Turbolinks from 'turbolinks'
 Rails.start()
 Turbolinks.start()
 
-require.context('../images', true)
+require.context('../packs/images', true)
