@@ -9,18 +9,6 @@ webpackConfig.module.rules.map(module => {
   }
   return module
 })
-// sassLoader.use.splice(-1, 0, {
-//   loader: 'resolve-url-loader'
-// })
-// webpackConfig.loaders.prepend('erb', erb)
-
-// const webpack = require('webpack')
-// environment.plugins.append('Provide',
-//   new webpack.ProvidePlugin({
-//     $: 'jquery',
-//     jQuery: 'jquery'
-//   })
-// )
 
 const customConfig = {
   resolve: {
@@ -31,6 +19,5 @@ const customConfig = {
     extensions: ['.css', '.scss']
   }
 }
-const erb = require('./loaders/erb')
 
 module.exports = merge(webpackConfig, customConfig)
