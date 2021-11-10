@@ -1,6 +1,15 @@
 {
   "name": "oanda-api-rails",
+  "version": "0.1.0",
   "private": true,
+  "babel": {
+    "presets": [
+      "./node_modules/@rails/webpacker/package/babel/preset.js"
+    ]
+  },
+  "browserslist": [
+    "defaults"
+  ],
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "^1.2.36",
     "@fortawesome/free-regular-svg-icons": "^5.15.4",
@@ -26,15 +35,6 @@
     "webpack": "^5.53.0",
     "webpack-cli": "^4.8.0"
   },
-  "version": "0.1.0",
-  "babel": {
-    "presets": [
-      "./node_modules/@rails/webpacker/package/babel/preset.js"
-    ]
-  },
-  "browserslist": [
-    "defaults"
-  ],
   "devDependencies": {
     "@webpack-cli/serve": "^1.6.0",
     "markdownlint-cli": "^0.29.0",
