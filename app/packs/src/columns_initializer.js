@@ -2,12 +2,14 @@ import { Tabulator, PageModule, ResizeColumnsModule, SortModule } from 'tabulato
 
 Tabulator.registerModule([PageModule, SortModule, ResizeColumnsModule])
 
-window.addEventListener('turbolinks:load', () => {
+const initCandleAccessTable = () => {
   if (document.URL.match(/candle_access/)) {
-    new Tabulator('#candle-access-table', { // eslint-disable-line no-new
+    return new Tabulator('#candle-access-table', {
       height: 'auto',
       placeholder: 'No Data Set',
       layout: 'fitColumns'
     })
   }
-})
+}
+
+window.addEventListener('turbolinks:load', initCandleAccessTable)
