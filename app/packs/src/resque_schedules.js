@@ -1,21 +1,21 @@
 const loadSchedules = () => {
-  const $field = $('#resque-schedules')
-  if (!$field[0]) {
-    return null
-  }
-  $.ajax({
-    url: '/resque_schedules/schedule',
-    type: 'GET',
-    beforeSend: () => {
-      $('img.loading').removeClass('d-none')
-    }
-  }).always((data) => {
-    const pretty = JSON.stringify(data, null, 4)
-    $field.html(pretty)
-    $('img.loading').addClass('d-none')
-  })
+  const field = document.getElementById('resque-schedules')
+  if (!field) { return }
+
+  document.querySelector('img.loading').classList.remove('d-none')
+  window.fetch('/resque_schedules/schedule')
+    .then(response => {
+      if (!response.ok) {
+        throw new Error(response.statusText)
+      }
+      return JSON.stringify(response, null, 4)
+    })
+    .then(json => { field.innerHTML = json })
+    .catch(err => {
+      field.innerHTML = 'An error occurred.'
+      console.error('An error occurred. Message:', err)
+    })
+    .finally(() => document.querySelector('img.loading').classList.add('d-none'))
 }
 
-$(document).on('turbolinks:load', () => {
-  loadSchedules()
-})
+window.addEventListener('turbolinks:load', loadSchedules)

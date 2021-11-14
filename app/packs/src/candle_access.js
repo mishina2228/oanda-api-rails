@@ -4,7 +4,7 @@ Tabulator.registerModule([PageModule, ResizeColumnsModule, SortModule])
 
 $(document).on('turbolinks:load', () => {
   $('#candle-access').on('click', event => {
-    $(event.currentTarget).prop('disabled', true)
+    event.currentTarget.setAttribute('disabled', 'disabled')
     const $form = $(event.currentTarget).parents('form')
     $.ajax({
       url: $form.attr('action'),
@@ -40,8 +40,8 @@ $(document).on('turbolinks:load', () => {
     }).fail(() => {
       window.alert('Unable to access the API. Please try again later.')
     }).always(() => {
-      $('img.loading').addClass('d-none')
-      $(event.currentTarget).prop('disabled', false)
+      document.querySelector('img.loading').classList.add('d-none')
+      event.currentTarget.removeAttribute('disabled')
     })
   })
 })
