@@ -8,9 +8,9 @@ const loadSchedules = () => {
       if (!response.ok) {
         throw new Error(`${response.status} ${response.statusText}`)
       }
-      return JSON.stringify(response, null, 4)
+      return response.json()
     })
-    .then(json => { field.innerHTML = json })
+    .then(json => { field.innerHTML = JSON.stringify(json, null, 4) })
     .catch(err => {
       field.innerHTML = 'An error occurred.'
       console.error('An error occurred. Message:', err)
