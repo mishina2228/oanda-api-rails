@@ -7,13 +7,5 @@ sassLoader.use.splice(-1, 0, {
 })
 environment.loaders.prepend('erb', erb)
 
-const webpack = require('webpack')
-environment.plugins.append('Provide',
-  new webpack.ProvidePlugin({
-    $: 'jquery',
-    jQuery: 'jquery'
-  })
-)
-
 environment.splitChunks()
 module.exports = environment
