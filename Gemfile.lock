@@ -125,7 +125,7 @@ GEM
       multi_xml (>= 0.5.2)
     i18n (1.8.11)
       concurrent-ruby (~> 1.0)
-    itamae (1.12.2)
+    itamae (1.12.3)
       ansi
       hashie
       schash (~> 0.1.0)
