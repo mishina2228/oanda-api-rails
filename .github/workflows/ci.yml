@@ -10,6 +10,7 @@ jobs:
       fail-fast: true
       matrix:
         ruby_version:
+          - 'ruby-head'
           - '3.0'
           - '2.7'
           - '2.6'
@@ -44,10 +45,12 @@ jobs:
         run: bin/webpack
       - name: Run unit tests
         run: bin/rails test
+        continue-on-error: ${{ matrix.ruby == 'ruby-head' }}
       - name: Upload unit test coverage report
         uses: codecov/codecov-action@v2
       - name: Run system test
         run: bin/rails test:system
+        continue-on-error: ${{ matrix.ruby == 'ruby-head' }}
       - name: Archive system test result screenshots
         if: failure()
         uses: actions/upload-artifact@v2
