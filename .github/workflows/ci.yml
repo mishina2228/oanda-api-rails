@@ -45,12 +45,12 @@ jobs:
         run: bin/webpack
       - name: Run unit tests
         run: bin/rails test
-        continue-on-error: ${{ matrix.ruby == 'ruby-head' }}
+        continue-on-error: ${{ matrix.ruby_version == 'ruby-head' }}
       - name: Upload unit test coverage report
         uses: codecov/codecov-action@v2
       - name: Run system test
         run: bin/rails test:system
-        continue-on-error: ${{ matrix.ruby == 'ruby-head' }}
+        continue-on-error: ${{ matrix.ruby_version == 'ruby-head' }}
       - name: Archive system test result screenshots
         if: failure()
         uses: actions/upload-artifact@v2
