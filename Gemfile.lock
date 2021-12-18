@@ -131,8 +131,6 @@ GEM
       schash (~> 0.1.0)
       specinfra (>= 2.64.0, < 3.0.0)
       thor
-    jbuilder (2.11.3)
-      activesupport (>= 5.0.0)
     loofah (2.13.0)
       crass (~> 1.0.2)
       nokogiri (>= 1.5.9)
@@ -341,7 +339,6 @@ DEPENDENCIES
   erb_lint
   god
   itamae
-  jbuilder (~> 2.11)
   minitest-ci
   mysql2 (>= 0.4.4, < 0.6.0)
   oanda_api
