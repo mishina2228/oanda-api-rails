@@ -11,7 +11,7 @@
     "js-cookie": "^3.0.1",
     "rails-erb-loader": "^5.5.2",
     "resolve-url-loader": "^4.0.0",
-    "tabulator-tables": "^5.0.7",
+    "tabulator-tables": "^5.0.8",
     "turbolinks": "^5.2.0"
   },
   "devDependencies": {
