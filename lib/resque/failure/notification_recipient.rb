@@ -6,7 +6,7 @@ module Resque
       def recipients
         return unless File.exist?(CONFIG_PATH)
 
-        options = YAML.load_file(CONFIG_PATH)[Rails.env]
+        options = YAML.safe_load_file(CONFIG_PATH, aliases: true)[Rails.env]
         options['recipients']
       end
     end

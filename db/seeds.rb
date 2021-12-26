@@ -11,7 +11,7 @@ Dir.glob(Rails.root.join('db/seeds/*.yml')).sort.each do |yml|
   klass = klass_name.singularize.camelize.constantize
   klass.transaction do
     klass.destroy_all
-    YAML.load_file(yml).reject {|key, _value| key.start_with?('default_')}.each_value do |value|
+    YAML.safe_load_file(yml, aliases: true).reject {|key, _value| key.start_with?('default_')}.each_value do |value|
       record = klass.new
       record.attributes = value
       record.save!
