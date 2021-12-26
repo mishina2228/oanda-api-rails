@@ -20,6 +20,7 @@ gem 'turbolinks', '~> 5'
 gem 'bootsnap', '>= 1.1.0', require: false
 
 gem 'activerecord-import'
+gem 'net-smtp'
 gem 'oanda_api'
 
 gem 'resque'
