@@ -1,5 +1,5 @@
 test:
-  delivery_method: :test
+  delivery_method: 'test'
   recipients:
     - 'test1@example.com'
     - 'test2@example.com'
