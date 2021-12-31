@@ -127,7 +127,7 @@ GEM
     i18n (1.8.11)
       concurrent-ruby (~> 1.0)
     io-wait (0.2.1)
-    itamae (1.12.4)
+    itamae (1.12.5)
       ansi
       hashie
       schash (~> 0.1.0)
