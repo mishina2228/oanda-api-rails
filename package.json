@@ -3,7 +3,7 @@
     "@fortawesome/fontawesome-svg-core": "^1.2.36",
     "@fortawesome/free-regular-svg-icons": "^5.15.4",
     "@fortawesome/free-solid-svg-icons": "^5.15.4",
-    "@popperjs/core": "^2.11.0",
+    "@popperjs/core": "^2.11.2",
     "@rails/ujs": "^7.0.0",
     "@rails/webpacker": "5.4.3",
     "bootstrap": "^5.1.3",
