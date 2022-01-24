@@ -5,9 +5,11 @@
 </h1>
 
 <div class="setup-all-button">
-  <%= button_to t('helpers.button.setup_all'), setup_all_resque_schedules_path,
-                class: 'btn btn-info', role: :button, method: :put,
-                data: {disable_with: t('helpers.notice.processing')} %>
+  <%= button_to setup_all_resque_schedules_path,
+                { class: 'btn btn-info', role: :button, method: :put } do %>
+    <span class="show-when-enabled"><%= t('helpers.button.setup_all') %></span>
+    <span class="show-when-disabled"><%= t('helpers.notice.processing') %></span>
+  <% end %>
 </div>
 <table class='table table-bordered table-hover table-striped'>
 <thead>

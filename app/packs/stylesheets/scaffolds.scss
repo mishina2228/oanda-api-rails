@@ -223,6 +223,26 @@ label {
   display: block;
 }
 
+button {
+  .show-when-enabled {
+    display: initial;
+  }
+
+  .show-when-disabled {
+    display: none;
+  }
+
+  &[disabled] {
+    .show-when-enabled {
+      display: none;
+    }
+
+    .show-when-disabled {
+      display: initial;
+    }
+  }
+}
+
 @for $size from 1 to 100 {
   .w-#{$size} {
     width: #{$size * 1%} !important;
