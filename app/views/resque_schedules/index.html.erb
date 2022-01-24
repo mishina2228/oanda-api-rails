@@ -6,7 +6,7 @@
 
 <div class="setup-all-button">
   <%= button_to setup_all_resque_schedules_path,
-                { class: 'btn btn-info', role: :button, method: :put } do %>
+                {class: 'btn btn-info', role: :button, method: :put} do %>
     <span class="show-when-enabled"><%= t('helpers.button.setup_all') %></span>
     <span class="show-when-disabled"><%= t('helpers.notice.processing') %></span>
   <% end %>
