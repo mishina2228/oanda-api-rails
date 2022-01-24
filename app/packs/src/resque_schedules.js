@@ -18,4 +18,4 @@ const loadSchedules = () => {
     .finally(() => document.querySelector('img.loading').classList.add('d-none'))
 }
 
-window.addEventListener('turbolinks:load', loadSchedules)
+window.addEventListener('turbo:load', loadSchedules)

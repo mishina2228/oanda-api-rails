@@ -12,4 +12,4 @@ const initCandleAccessTable = () => {
   }
 }
 
-window.addEventListener('turbolinks:load', initCandleAccessTable)
+window.addEventListener('turbo:load', initCandleAccessTable)

@@ -3,7 +3,7 @@ import { Tabulator, PageModule, ResizeColumnsModule, SortModule } from 'tabulato
 
 Tabulator.registerModule([PageModule, ResizeColumnsModule, SortModule])
 
-window.addEventListener('turbolinks:load', () => {
+window.addEventListener('turbo:load', () => {
   document.getElementById('candle-access')?.addEventListener('click', event => {
     document.querySelector('img.loading').classList.remove('d-none')
     document.getElementById('candle-access').setAttribute('disabled', 'disabled')
