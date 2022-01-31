@@ -7649,10 +7649,10 @@ table@^6.0.4:
     string-width "^4.2.3"
     strip-ansi "^6.0.1"
 
-tabulator-tables@^5.0.10:
-  version "5.0.10"
-  resolved "https://registry.yarnpkg.com/tabulator-tables/-/tabulator-tables-5.0.10.tgz#03f1f66740cde65a3fdd3ad0838c8ec925c669ab"
-  integrity sha512-pqIZkO8oGDI0eVWrhmLNgn6yGQvRSDAZRwI+weTYHeAgMtFXkRBgkmPTaM5cIAta5xrMqu4/PuUNNotRnRZ9rg==
+tabulator-tables@^5.1.0:
+  version "5.1.0"
+  resolved "https://registry.yarnpkg.com/tabulator-tables/-/tabulator-tables-5.1.0.tgz#bb647f6ba3e63fb22b07397d0813c58e47d52c01"
+  integrity sha512-R7/pjfsTGaxaXvYUWhMe0L6HhkaguOCisBi5pMfdrKhOM0XTV/shc0yZ7+YBkOHSEteaQV0jaC6ylfabykmgRA==
 
 tapable@^1.0.0, tapable@^1.1.3:
   version "1.1.3"
