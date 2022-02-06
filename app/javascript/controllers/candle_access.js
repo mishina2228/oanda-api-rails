@@ -1,4 +1,4 @@
-import { Shared } from './shared'
+import { Shared } from 'controllers/shared'
 import { Tabulator, PageModule, ResizeColumnsModule, SortModule } from 'tabulator-tables'
 
 Tabulator.registerModule([PageModule, ResizeColumnsModule, SortModule])
