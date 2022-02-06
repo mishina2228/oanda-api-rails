@@ -28,3 +28,5 @@ updates:
   open-pull-requests-limit: 10
   assignees:
     - mishina2228
+  labels:
+    - "yarn-dependabot"
