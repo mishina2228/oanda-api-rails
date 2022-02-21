@@ -195,7 +195,7 @@ GEM
       httparty (~> 0.13, >= 0.13.5)
       persistent_httparty (~> 0.1)
     parallel (1.21.0)
-    parser (3.1.0.0)
+    parser (3.1.1.0)
       ast (~> 2.4.1)
     persistent_http (1.0.6)
       gene_pool (>= 1.3)
