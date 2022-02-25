@@ -8,7 +8,7 @@
     "bootstrap": "^5.1.3",
     "flatpickr": "^4.6.9",
     "js-cookie": "^3.0.1",
-    "sass": "^1.49.8",
+    "sass": "^1.49.9",
     "tabulator-tables": "^5.1.0"
   },
   "devDependencies": {
