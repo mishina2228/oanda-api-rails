@@ -113,7 +113,7 @@ GEM
       rubocop
       smart_properties
     erubi (1.10.0)
-    et-orbi (1.2.6)
+    et-orbi (1.2.7)
       tzinfo
     ffi (1.15.5)
     fugit (1.5.2)
