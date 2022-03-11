@@ -9,7 +9,6 @@ gem 'rails', '~> 7.0.2'
 gem 'mysql2', '>= 0.4.4', '< 0.6.0'
 # Use Puma as the app server
 gem 'puma', '~> 5.6'
-gem 'puma_worker_killer'
 # Use JavaScript with ESM import maps [https://github.com/rails/importmap-rails]
 gem 'importmap-rails'
 
