@@ -39,6 +39,8 @@ Metrics/PerceivedComplexity:
   Exclude:
     - 'test/**/*.rb'
 
+Minitest/AssertPredicate:
+  Enabled: false
 Minitest/MultipleAssertions:
   Enabled: false
 
