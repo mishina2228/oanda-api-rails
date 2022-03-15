@@ -33,6 +33,6 @@ class UsdJpyM1CandleTest < ActiveSupport::TestCase
     ba = bidask(time: Time.zone.parse('2019-06-12T00:00:00+0000'))
     mp = midpoint(time: Time.zone.parse('2019-06-12T00:00:00+0000'))
     candle = UsdJpyM1Candle.new_candle(ba, mp)
-    assert candle.is_a?(UsdJpyM1Candle)
+    assert_instance_of UsdJpyM1Candle, candle
   end
 end

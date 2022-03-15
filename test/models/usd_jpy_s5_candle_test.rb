@@ -38,11 +38,9 @@ class UsdJpyS5CandleTest < ActiveSupport::TestCase
     ret = UsdJpyS5Candle.convert_time(time_str)
     assert_equal '2019-06-11T15:00:00+00:00', ret
 
-    assert_nothing_raised do
-      ret = UsdJpyS5Candle.convert_time
-      regexp = /\d{4}-\d{2}-\d{2}T\d{2}:\d{2}:\d{2}\+00:00/
-      assert_match regexp, ret
-    end
+    ret = UsdJpyS5Candle.convert_time
+    regexp = /\d{4}-\d{2}-\d{2}T\d{2}:\d{2}:\d{2}\+00:00/
+    assert_match regexp, ret
 
     error = assert_raise ArgumentError do
       UsdJpyS5Candle.convert_time(123)
@@ -77,7 +75,7 @@ class UsdJpyS5CandleTest < ActiveSupport::TestCase
     ng = %w[2019-06-12T00:00:10+0000]
     ret.each do |candle|
       candle_time = candle.time.strftime('%Y-%m-%dT%H:%M:%S%z')
-      assert_not ng.include?(candle_time), 'should not contain unmatched data'
+      assert_not_includes ng, candle_time, 'should not contain unmatched data'
     end
   end
 
@@ -97,7 +95,7 @@ class UsdJpyS5CandleTest < ActiveSupport::TestCase
     ng = %w[2019-06-12T00:00:10+0000 2019-06-12T00:00:15+0000]
     ret.each do |candle|
       candle_time = candle.time.strftime('%Y-%m-%dT%H:%M:%S%z')
-      assert_not ng.include?(candle_time), 'should not contain unmatched data'
+      assert_not_includes ng, candle_time, 'should not contain unmatched data'
     end
   end
 
@@ -117,7 +115,7 @@ class UsdJpyS5CandleTest < ActiveSupport::TestCase
     ng = %w[2019-06-12T00:00:10+0000]
     ret.each do |candle|
       candle_time = candle.time.strftime('%Y-%m-%dT%H:%M:%S%z')
-      assert_not ng.include?(candle_time), 'should not contain data that is not complete'
+      assert_not_includes ng, candle_time, 'should not contain data that is not complete'
     end
   end
 
@@ -156,7 +154,7 @@ class UsdJpyS5CandleTest < ActiveSupport::TestCase
     ng = %w[2019-06-12T00:00:10+0000]
     ret.each do |candle|
       candle_time = candle.time.strftime('%Y-%m-%dT%H:%M:%S%z')
-      assert_not ng.include?(candle_time), 'should not contain registered data'
+      assert_not_includes ng, candle_time, 'should not contain registered data'
     end
   end
 
@@ -164,6 +162,6 @@ class UsdJpyS5CandleTest < ActiveSupport::TestCase
     ba = bidask(time: Time.zone.parse('2019-06-12T00:00:00+0000'))
     mp = midpoint(time: Time.zone.parse('2019-06-12T00:00:00+0000'))
     candle = UsdJpyS5Candle.new_candle(ba, mp)
-    assert candle.is_a?(UsdJpyS5Candle)
+    assert_instance_of UsdJpyS5Candle, candle
   end
 end
