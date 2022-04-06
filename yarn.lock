@@ -1777,10 +1777,10 @@ table@^6.0.4:
     string-width "^4.2.3"
     strip-ansi "^6.0.1"
 
-tabulator-tables@^5.1.7:
-  version "5.1.7"
-  resolved "https://registry.yarnpkg.com/tabulator-tables/-/tabulator-tables-5.1.7.tgz#5440b3a632b92f7c2c51335633ca67ef525bed26"
-  integrity sha512-5p/I5WxJpDzP7noyZeGeY71t+aCH4BmESJ754vZjmSHNqOMBpDxW11hTUjd6gaU7MdQs2cjWUYEEiT55qoUeOQ==
+tabulator-tables@^5.1.8:
+  version "5.1.8"
+  resolved "https://registry.yarnpkg.com/tabulator-tables/-/tabulator-tables-5.1.8.tgz#0d2b576ed75099c426d756153e369fb476d678d3"
+  integrity sha512-5ah2ftxNEKiSF5QaAETA4gX49OHiv+kFZLaD+s++LOx2oSvH0J0CujxH570Ou4Bo4Zq6MmI4T7idRS0jhq/VfA==
 
 text-table@^0.2.0:
   version "0.2.0"
