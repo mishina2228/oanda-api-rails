@@ -1831,10 +1831,10 @@ table@^6.0.4:
     string-width "^4.2.3"
     strip-ansi "^6.0.1"
 
-tabulator-tables@^5.1.7:
-  version "5.1.7"
-  resolved "https://registry.yarnpkg.com/tabulator-tables/-/tabulator-tables-5.1.7.tgz#5440b3a632b92f7c2c51335633ca67ef525bed26"
-  integrity sha512-5p/I5WxJpDzP7noyZeGeY71t+aCH4BmESJ754vZjmSHNqOMBpDxW11hTUjd6gaU7MdQs2cjWUYEEiT55qoUeOQ==
+tabulator-tables@^5.2.0:
+  version "5.2.0"
+  resolved "https://registry.yarnpkg.com/tabulator-tables/-/tabulator-tables-5.2.0.tgz#9fae31d65be93e836d725c954cf042e9dd8eb414"
+  integrity sha512-+E/AbqSg2eX3SiAeSeezY3xuIrp7/yPWmRkoQiY/JplBm5edg0PrK2rQsen5cyiHSVItgFMLQ3+8+ivXPFQlkQ==
 
 text-table@^0.2.0:
   version "0.2.0"
