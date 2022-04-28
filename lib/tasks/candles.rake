@@ -9,7 +9,7 @@ module CandleTask
     {
       start: ENV['START_AT'].to_time,
       finish: ENV['FINISH_AT'].to_time,
-      count: (ENV['COUNT'] || 5000).to_i
+      count: ENV.fetch('COUNT', 5000).to_i
     }
   end
 
