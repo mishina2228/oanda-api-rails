@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class CandleAccess
   include ActiveModel::Model
 

@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class CandleJob
   def self.before_enqueue(params = {})
     params = params.with_indifferent_access

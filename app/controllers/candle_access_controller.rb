@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class CandleAccessController < ApplicationController
   def index
     @candle_access = CandleAccess.new(default_values)
