@@ -22,3 +22,5 @@ linters:
         Enabled: false
       Rails/OutputSafety:
         Enabled: false
+      Style/FrozenStringLiteralComment:
+        Enabled: false
