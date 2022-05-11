@@ -308,7 +308,7 @@ GEM
       net-ssh (>= 2.7)
       net-telnet (= 0.1.1)
       sfl
-    strscan (3.0.2)
+    strscan (3.0.3)
     thor (1.2.1)
     tilt (2.0.10)
     timeout (0.2.0)
