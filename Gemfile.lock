@@ -130,7 +130,7 @@ GEM
       multi_xml (>= 0.5.2)
     i18n (1.10.0)
       concurrent-ruby (~> 1.0)
-    importmap-rails (1.0.3)
+    importmap-rails (1.1.0)
       actionpack (>= 6.0.0)
       railties (>= 6.0.0)
     itamae (1.12.6)
