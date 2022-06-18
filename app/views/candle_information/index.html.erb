@@ -11,15 +11,15 @@
   <tbody>
   <tr>
     <th class="w-40"><%= tag.span CandleInformation.human_attribute_name :usd_jpy_m1_count %></th>
-    <td><%= tag.span @candle_information.usd_jpy_m1_count.to_formatted_s(:delimited) %></td>
+    <td><%= tag.span @candle_information.usd_jpy_m1_count.to_fs(:delimited) %></td>
   </tr>
   <tr>
     <th><%= tag.span CandleInformation.human_attribute_name :eur_jpy_m1_count %></th>
-    <td><%= tag.span @candle_information.eur_jpy_m1_count.to_formatted_s(:delimited) %></td>
+    <td><%= tag.span @candle_information.eur_jpy_m1_count.to_fs(:delimited) %></td>
   </tr>
   <tr>
     <th><%= tag.span CandleInformation.human_attribute_name :gbp_jpy_m1_count %></th>
-    <td><%= tag.span @candle_information.gbp_jpy_m1_count.to_formatted_s(:delimited) %></td>
+    <td><%= tag.span @candle_information.gbp_jpy_m1_count.to_fs(:delimited) %></td>
   </tr>
   </tbody>
 </table>
