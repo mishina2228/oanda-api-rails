@@ -355,6 +355,7 @@ DEPENDENCIES
   itamae
   minitest-ci
   mysql2 (>= 0.4.4, < 0.6.0)
+  net-scp (>= 3.0.0)
   oanda_api
   propshaft
   puma (~> 5.6)

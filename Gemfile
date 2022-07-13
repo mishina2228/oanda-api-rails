@@ -55,5 +55,6 @@ end
 
 group :itamae do
   gem 'itamae'
+  gem 'net-scp', '>= 3.0.0'
   gem 'resurrected_god'
 end
