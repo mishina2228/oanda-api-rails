@@ -6,7 +6,7 @@
     "tabulator-tables": "^5.3.0"
   },
   "devDependencies": {
-    "markdownlint-cli": "^0.31.1",
+    "markdownlint-cli": "^0.32.0",
     "standard": "^17.0.0"
   },
   "scripts": {
