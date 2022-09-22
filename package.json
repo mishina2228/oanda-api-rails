@@ -2,7 +2,7 @@
   "dependencies": {
     "bootstrap": "^5.2.1",
     "flatpickr": "^4.6.13",
-    "sass": "^1.54.9",
+    "sass": "^1.55.0",
     "tabulator-tables": "^5.3.4"
   },
   "devDependencies": {
