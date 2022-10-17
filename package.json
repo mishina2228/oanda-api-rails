@@ -3,7 +3,7 @@
     "bootstrap": "^5.2.2",
     "flatpickr": "^4.6.13",
     "sass": "^1.55.0",
-    "tabulator-tables": "^5.4.0"
+    "tabulator-tables": "^5.4.2"
   },
   "devDependencies": {
     "markdownlint-cli": "^0.32.2",
