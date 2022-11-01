@@ -103,7 +103,7 @@ GEM
     cssbundling-rails (1.1.1)
       railties (>= 6.0.0)
     docile (1.4.0)
-    erb_lint (0.2.0)
+    erb_lint (0.3.0)
       activesupport
       better_html (>= 2.0.1)
       parser (>= 2.7.1.4)
@@ -252,7 +252,7 @@ GEM
       rufus-scheduler (~> 3.2, != 3.3)
     resurrected_god (1.1.0)
     rexml (3.2.5)
-    rubocop (1.37.1)
+    rubocop (1.38.0)
       json (~> 2.3)
       parallel (~> 1.10)
       parser (>= 3.1.2.1)
