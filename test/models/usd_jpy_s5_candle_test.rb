@@ -33,22 +33,17 @@ class UsdJpyS5CandleTest < ActiveSupport::TestCase
 
   test 'convert_time' do
     time = Time.zone.parse('2019-06-12T00:00:00+0900')
-    ret = UsdJpyS5Candle.convert_time(time)
-    assert_equal '2019-06-11T15:00:00+00:00', ret
+    assert_equal '2019-06-11T15:00:00+00:00', UsdJpyS5Candle.convert_time(time)
 
     time_str = '2019-06-12T00:00:00+0900'
-    ret = UsdJpyS5Candle.convert_time(time_str)
-    assert_equal '2019-06-11T15:00:00+00:00', ret
+    assert_equal '2019-06-11T15:00:00+00:00', UsdJpyS5Candle.convert_time(time_str)
 
-    ret = UsdJpyS5Candle.convert_time
-    regexp = /\d{4}-\d{2}-\d{2}T\d{2}:\d{2}:\d{2}\+00:00/
-    assert_match regexp, ret
+    assert_match(/\d{4}-\d{2}-\d{2}T\d{2}:\d{2}:\d{2}\+00:00/, UsdJpyS5Candle.convert_time)
 
     error = assert_raise ArgumentError do
       UsdJpyS5Candle.convert_time(123)
     end
-    regexp = /type: #{123.class}\z/
-    assert_match regexp, error.message
+    assert_match(/type: #{123.class}\z/, error.message)
   end
 
   test 'cannot import invalid candles' do
