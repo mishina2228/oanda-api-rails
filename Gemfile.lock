@@ -239,7 +239,7 @@ GEM
       connection_pool
     redis-namespace (1.9.0)
       redis (>= 4)
-    regexp_parser (2.6.0)
+    regexp_parser (2.6.1)
     resque (2.4.0)
       mono_logger (~> 1.0)
       multi_json (~> 1.0)
