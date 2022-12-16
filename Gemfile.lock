@@ -101,7 +101,7 @@ GEM
     crass (1.0.6)
     cssbundling-rails (1.1.2)
       railties (>= 6.0.0)
-    date (3.3.1)
+    date (3.3.2)
     docile (1.4.0)
     erb_lint (0.3.1)
       activesupport
