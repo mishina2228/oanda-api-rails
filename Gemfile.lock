@@ -343,6 +343,7 @@ DEPENDENCIES
   erb_lint
   importmap-rails
   itamae
+  mail (~> 2.7.1)
   minitest-ci
   mysql2 (>= 0.4.4, < 0.6.0)
   net-scp (>= 3.0.0)
