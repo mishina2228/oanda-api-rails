@@ -16,7 +16,6 @@ gem 'importmap-rails'
 
 gem 'cssbundling-rails'
 gem 'propshaft'
-
 gem 'turbo-rails'
 
 # Reduces boot times through caching; required in config/boot.rb
