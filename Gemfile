@@ -28,6 +28,8 @@ gem 'oanda_api'
 gem 'resque'
 gem 'resque-scheduler'
 
+gem 'mail', '~> 2.7.1' # Staying at 2.7.x until 2.8.1 is released
+
 group :development do
   gem 'brakeman'
   gem 'bullet'
