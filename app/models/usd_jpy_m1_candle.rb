@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class UsdJpyM1Candle < ApplicationRecord
   include CandleConcern
 

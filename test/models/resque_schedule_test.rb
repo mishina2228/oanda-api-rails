@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require 'test_helper'
 
 class ResqueScheduleTest < ActiveSupport::TestCase
@@ -9,17 +11,13 @@ class ResqueScheduleTest < ActiveSupport::TestCase
   test 'save_and_setting!' do
     schedule = ResqueSchedule.new(valid_params)
     assert schedule.enabled?
-    assert_nothing_raised do
-      schedule.save_and_setting!
-      assert schedule.persisted?
-    end
+    schedule.save_and_setting!
+    assert schedule.persisted?
 
     schedule.enabled = false
     assert_not schedule.enabled?
-    assert_nothing_raised do
-      schedule.save_and_setting!
-      assert schedule.persisted?
-    end
+    schedule.save_and_setting!
+    assert schedule.persisted?
   end
 
   def valid_params

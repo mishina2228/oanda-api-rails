@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require 'test_helper'
 
 class EurJpyM1CandleTest < ActiveSupport::TestCase
@@ -33,6 +35,6 @@ class EurJpyM1CandleTest < ActiveSupport::TestCase
     ba = bidask(time: Time.zone.parse('2019-06-12T00:00:00+0000'))
     mp = midpoint(time: Time.zone.parse('2019-06-12T00:00:00+0000'))
     candle = EurJpyM1Candle.new_candle(ba, mp)
-    assert candle.is_a?(EurJpyM1Candle)
+    assert_instance_of EurJpyM1Candle, candle
   end
 end

@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 module Mishina
   module Constants
     OANDA_TOKEN_PATH = Rails.root.join('config/token.yml')

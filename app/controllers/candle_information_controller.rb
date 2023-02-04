@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class CandleInformationController < ApplicationController
   def index
     @candle_information = CandleInformation.new(

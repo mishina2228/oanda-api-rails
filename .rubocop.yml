@@ -39,6 +39,10 @@ Metrics/PerceivedComplexity:
   Exclude:
     - 'test/**/*.rb'
 
+Minitest/AssertPredicate:
+  Enabled: false
+Minitest/EmptyLineBeforeAssertionMethods:
+  Enabled: false
 Minitest/MultipleAssertions:
   Enabled: false
 
@@ -57,7 +61,7 @@ Style/Documentation:
   Enabled: false
 Style/EmptyMethod:
   EnforcedStyle: expanded
-Style/FrozenStringLiteralComment:
+Style/RedundantConstantBase:
   Enabled: false
 Style/RescueStandardError:
   EnforcedStyle: implicit

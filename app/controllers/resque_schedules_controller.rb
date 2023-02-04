@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class ResqueSchedulesController < ApplicationController
   before_action :set_resque_schedule, only: [:edit, :update]
 

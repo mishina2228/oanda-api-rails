@@ -4,12 +4,16 @@ on:
   - push
   - pull_request
 
+permissions:
+  contents: read
+
 jobs:
   test:
     strategy:
       fail-fast: true
       matrix:
         ruby_version:
+          - '3.2'
           - '3.1'
           - '3.0'
           - '2.7'
@@ -23,7 +27,7 @@ jobs:
       TZ: 'Asia/Tokyo'
     steps:
       - name: Checkout code
-        uses: actions/checkout@v2
+        uses: actions/checkout@v3
       - name: Start local MySQL
         run: sudo systemctl start mysql.service
       - name: Set up Ruby
@@ -31,9 +35,9 @@ jobs:
         with:
           ruby-version: ${{ matrix.ruby_version }}
           bundler-cache: true
-      - uses: actions/setup-node@v2
+      - uses: actions/setup-node@v3
         with:
-          node-version: '14'
+          node-version: '16'
           cache: 'yarn'
       - run: yarn install
       - name: Database setup
@@ -41,16 +45,16 @@ jobs:
           bin/rails db:create --trace
           bin/rails db:schema:load --trace
       - name: Build assets in advance
-        run: yarn build:css
+        run: bin/rails assets:precompile
       - name: Run unit tests
         run: bin/rails test
       - name: Upload unit test coverage report
-        uses: codecov/codecov-action@v2
+        uses: codecov/codecov-action@v3
       - name: Run system test
         run: bin/rails test:system
       - name: Archive system test result screenshots
         if: failure()
-        uses: actions/upload-artifact@v2
+        uses: actions/upload-artifact@v3
         with:
           name: system test result screenshots
           path: tmp/screenshots/
@@ -58,11 +62,11 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout code
-        uses: actions/checkout@v2
+        uses: actions/checkout@v3
       - name: Set up Ruby
         uses: ruby/setup-ruby@v1
         with:
-          ruby-version: '3.0'
+          ruby-version: '3.2'
           bundler-cache: true
       - name: Run Brakeman
         run: bundle exec brakeman
@@ -72,10 +76,10 @@ jobs:
       NODE_ENV: test
     steps:
       - name: Checkout code
-        uses: actions/checkout@v2
-      - uses: actions/setup-node@v2
+        uses: actions/checkout@v3
+      - uses: actions/setup-node@v3
         with:
-          node-version: '14'
+          node-version: '16'
           cache: 'yarn'
       - run: yarn install
       - name: Run Standard
@@ -84,11 +88,11 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout code
-        uses: actions/checkout@v2
+        uses: actions/checkout@v3
       - name: Set up Ruby
         uses: ruby/setup-ruby@v1
         with:
-          ruby-version: '3.0'
+          ruby-version: '3.2'
           bundler-cache: true
       - name: Run RuboCop
         run: bundle exec rubocop
@@ -96,11 +100,11 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout code
-        uses: actions/checkout@v2
+        uses: actions/checkout@v3
       - name: Set up Ruby
         uses: ruby/setup-ruby@v1
         with:
-          ruby-version: '3.0'
+          ruby-version: '3.2'
           bundler-cache: true
       - name: Run ERB Lint
         run: bundle exec erblint --lint-all
@@ -110,10 +114,10 @@ jobs:
       NODE_ENV: test
     steps:
       - name: Checkout code
-        uses: actions/checkout@v2
-      - uses: actions/setup-node@v2
+        uses: actions/checkout@v3
+      - uses: actions/setup-node@v3
         with:
-          node-version: '14'
+          node-version: '16'
           cache: 'yarn'
       - run: yarn install
       - name: Run markdownlint

@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class UsdJpyM1CandleJob < CandleJob
   @queue = :normal
 

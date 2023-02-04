@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 module CandleSupport
   def bidask(params = {})
     time = params[:time] || Time.zone.parse('2019-06-12T00:00:00+0000')
