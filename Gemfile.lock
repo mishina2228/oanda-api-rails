@@ -101,6 +101,8 @@ GEM
     crass (1.0.6)
     cssbundling-rails (1.1.2)
       railties (>= 6.0.0)
+    dartsass-rails (0.4.1)
+      railties (>= 6.0.0)
     date (3.3.3)
     docile (1.4.0)
     erb_lint (0.3.1)
@@ -343,6 +345,7 @@ DEPENDENCIES
   bullet
   capybara (>= 2.15, < 4.0)
   cssbundling-rails
+  dartsass-rails (~> 0.4.1)
   erb_lint
   importmap-rails
   itamae

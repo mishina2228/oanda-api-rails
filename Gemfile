@@ -15,6 +15,7 @@ gem 'puma', '~> 6.0'
 gem 'importmap-rails'
 
 gem 'cssbundling-rails'
+gem 'dartsass-rails', '~> 0.4.1'
 gem 'propshaft'
 gem 'turbo-rails'
 
