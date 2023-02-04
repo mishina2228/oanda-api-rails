@@ -14,7 +14,6 @@ gem 'puma', '~> 6.0'
 # Use JavaScript with ESM import maps [https://github.com/rails/importmap-rails]
 gem 'importmap-rails'
 
-gem 'cssbundling-rails'
 gem 'dartsass-rails', '~> 0.4.1'
 gem 'propshaft'
 gem 'turbo-rails'

@@ -99,8 +99,6 @@ GEM
     concurrent-ruby (1.2.0)
     connection_pool (2.3.0)
     crass (1.0.6)
-    cssbundling-rails (1.1.2)
-      railties (>= 6.0.0)
     dartsass-rails (0.4.1)
       railties (>= 6.0.0)
     date (3.3.3)
@@ -344,7 +342,6 @@ DEPENDENCIES
   brakeman
   bullet
   capybara (>= 2.15, < 4.0)
-  cssbundling-rails
   dartsass-rails (~> 0.4.1)
   erb_lint
   importmap-rails
