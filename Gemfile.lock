@@ -241,7 +241,7 @@ GEM
     redis-namespace (1.10.0)
       redis (>= 4)
     regexp_parser (2.7.0)
-    resque (2.4.0)
+    resque (2.5.0)
       mono_logger (~> 1.0)
       multi_json (~> 1.0)
       redis-namespace (~> 1.6)
