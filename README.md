@@ -11,7 +11,7 @@ Get exchange data using OANDA API
 
 ## Prerequisites
 
-- Ruby 2.7+
+- Ruby 3.0+
 - Node.js 12.22.0+ || 14.17.0+ || 16.0.0+
 - Yarn 1.x+
 
