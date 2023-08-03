@@ -3,18 +3,18 @@
 source 'https://rubygems.org'
 git_source(:github) {|repo| "https://github.com/#{repo}.git"}
 
-ruby '>= 2.7', '< 4'
+ruby '>= 3.0', '< 4'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
-gem 'rails', '~> 7.0.4'
+gem 'rails', '~> 7.0.6'
 # Use mysql as the database for Active Record
 gem 'mysql2', '>= 0.4.4', '< 0.6.0'
 # Use Puma as the app server
-gem 'puma', '~> 6.0'
+gem 'puma', '~> 6.3'
 # Use JavaScript with ESM import maps [https://github.com/rails/importmap-rails]
 gem 'importmap-rails'
 
-gem 'dartsass-rails', '~> 0.4.1'
+gem 'dartsass-rails', '~> 0.5.0'
 gem 'propshaft'
 gem 'turbo-rails'
 
@@ -39,7 +39,7 @@ group :development do
 
   # Display performance information such as SQL time and flame graphs for each request in your browser.
   # Can be configured to work on production as well see: https://github.com/MiniProfiler/rack-mini-profiler/blob/master/README.md
-  gem 'rack-mini-profiler', '~> 3.0', require: false
+  gem 'rack-mini-profiler', '~> 3.1', require: false
 end
 
 group :test do
@@ -49,7 +49,6 @@ group :test do
   gem 'selenium-webdriver'
   gem 'simplecov', require: false
   gem 'simplecov-cobertura', require: false
-  gem 'webdrivers'
 end
 
 group :itamae do

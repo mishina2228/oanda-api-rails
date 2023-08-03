@@ -10,7 +10,7 @@ class CandleAccess
   validates :instrument, presence: true
   validates :count, numericality: {greater_than: 0, less_than: 5001, only_integer: true}
 
-  START_DATETIME_FORMAT = /\A\d{4}-\d{2}-\d{2}T\d{2}:\d{2}:\d{2}([+-]\d{2}:\d{2}|\.000Z)\z/.freeze
+  START_DATETIME_FORMAT = /\A\d{4}-\d{2}-\d{2}T\d{2}:\d{2}:\d{2}([+-]\d{2}:\d{2}|\.000Z)\z/
   validates :start, format: {with: START_DATETIME_FORMAT}
 
   def client
