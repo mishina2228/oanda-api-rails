@@ -12,6 +12,6 @@ pin "@fortawesome/free-solid-svg-icons", to: "https://ga.jspm.io/npm:@fortawesom
 pin "flatpickr", to: "https://ga.jspm.io/npm:flatpickr@4.6.13/dist/flatpickr.js"
 pin "flatpickr/dist/l10n/ja", to: "https://ga.jspm.io/npm:flatpickr@4.6.13/dist/l10n/ja.js"
 pin "js-cookie", to: "https://ga.jspm.io/npm:js-cookie@3.0.5/dist/js.cookie.mjs"
-pin "tabulator-tables", to: "https://ga.jspm.io/npm:tabulator-tables@5.5.0/dist/js/tabulator_esm.js"
+pin "tabulator-tables", to: "https://ga.jspm.io/npm:tabulator-tables@5.5.1/dist/js/tabulator_esm.js"
 pin_all_from "app/javascript/lib", under: "lib"
 pin_all_from "app/javascript/controllers", under: "controllers"
