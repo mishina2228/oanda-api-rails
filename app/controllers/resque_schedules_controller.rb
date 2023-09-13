@@ -21,7 +21,7 @@ class ResqueSchedulesController < ApplicationController
   end
 
   def setup_all
-    ResqueSchedule.all.find_each(&:setup_resque_schedule)
+    ResqueSchedule.find_each(&:setup_resque_schedule)
     redirect_to({action: :index}, notice: t('helpers.notice.setup_all_resque_schedules'))
   end
 
