@@ -200,7 +200,7 @@ GEM
       rack
       railties (>= 7.0.0)
     public_suffix (5.0.3)
-    puma (6.3.1)
+    puma (6.4.0)
       nio4r (~> 2.0)
     raabro (1.4.0)
     racc (1.7.1)
@@ -359,7 +359,7 @@ DEPENDENCIES
   net-scp (>= 3.0.0)
   oanda_api
   propshaft
-  puma (~> 6.3)
+  puma (~> 6.4)
   rack-mini-profiler (~> 3.1)
   rails (~> 7.0.8)
   resque
