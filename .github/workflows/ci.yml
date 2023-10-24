@@ -36,7 +36,7 @@ jobs:
           bundler-cache: true
       - uses: actions/setup-node@v3
         with:
-          node-version: '16'
+          node-version: '18'
           cache: 'yarn'
       - run: yarn install
       - name: Database setup
@@ -78,7 +78,7 @@ jobs:
         uses: actions/checkout@v4
       - uses: actions/setup-node@v3
         with:
-          node-version: '16'
+          node-version: '18'
           cache: 'yarn'
       - run: yarn install
       - name: Run Standard
@@ -116,7 +116,7 @@ jobs:
         uses: actions/checkout@v4
       - uses: actions/setup-node@v3
         with:
-          node-version: '16'
+          node-version: '18'
           cache: 'yarn'
       - run: yarn install
       - name: Run markdownlint
