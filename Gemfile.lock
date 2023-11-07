@@ -178,7 +178,7 @@ GEM
     multi_xml (0.6.0)
     mustermann (3.0.0)
       ruby2_keywords (~> 0.0.1)
-    mutex_m (0.1.2)
+    mutex_m (0.2.0)
     mysql2 (0.5.5)
     net-imap (0.4.4)
       date
