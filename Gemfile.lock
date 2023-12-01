@@ -156,7 +156,7 @@ GEM
       schash (~> 0.1.0)
       specinfra (>= 2.64.0, < 3.0.0)
       thor (>= 1.0.0)
-    json (2.6.3)
+    json (2.7.0)
     language_server-protocol (3.17.0.3)
     loofah (2.22.0)
       crass (~> 1.0.2)
