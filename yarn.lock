@@ -1888,10 +1888,10 @@ supports-preserve-symlinks-flag@^1.0.0:
   resolved "https://registry.yarnpkg.com/supports-preserve-symlinks-flag/-/supports-preserve-symlinks-flag-1.0.0.tgz#6eda4bd344a3c94aea376d4cc31bc77311039e09"
   integrity sha512-ot0WnXS9fgdkgIcePe6RHNk1WA8+muPa6cSjeR3V8K27q9BB1rTE3R1p7Hv0z1ZyAc8s6Vvv8DIyWf681MAt0w==
 
-tabulator-tables@^5.5.4:
-  version "5.5.4"
-  resolved "https://registry.yarnpkg.com/tabulator-tables/-/tabulator-tables-5.5.4.tgz#7f9e5b3c5c80013e390a3ca79ed7ddef8dc99e5f"
-  integrity sha512-hVcITAfO2G3gm2ILW9GN2ORgcmNsbVmC+Q+2E3xfthIE9xtFxGKSbhbsNk39h11Uzm9GNUvjGfos1IVKrfeeOA==
+tabulator-tables@^5.6.1:
+  version "5.6.1"
+  resolved "https://registry.yarnpkg.com/tabulator-tables/-/tabulator-tables-5.6.1.tgz#ffd9ca7f730f3e7ec58e7dfffc91ee58e2b7fcc9"
+  integrity sha512-DsmaZqEmlQS/NL5ZJbVtoaeYjJgofEFp+2er7+uwKerGwd/E2rZbeQgux4+Ab1dxNJcbptiX7oUiTwogOnUdgQ==
 
 text-table@^0.2.0:
   version "0.2.0"
