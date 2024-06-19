@@ -67,7 +67,7 @@ god stop resque-oanda_api_rails
 #### development
 
 ```sh
-bin/rails start
+bin/dev
 ```
 
 #### production
