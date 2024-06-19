@@ -1,8 +1,4 @@
 // Entry point for your Sass build
-@use 'bootstrap/scss/bootstrap';
-@use 'flatpickr/dist/flatpickr';
-@use 'flatpickr/dist/themes/material_blue';
-@use 'tabulator-tables/dist/css/tabulator.min';
 @use './candle_access';
 @use './scaffolds';
 @use './resque_schedules';
