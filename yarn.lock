@@ -1919,10 +1919,10 @@ supports-preserve-symlinks-flag@^1.0.0:
   resolved "https://registry.yarnpkg.com/supports-preserve-symlinks-flag/-/supports-preserve-symlinks-flag-1.0.0.tgz#6eda4bd344a3c94aea376d4cc31bc77311039e09"
   integrity sha512-ot0WnXS9fgdkgIcePe6RHNk1WA8+muPa6cSjeR3V8K27q9BB1rTE3R1p7Hv0z1ZyAc8s6Vvv8DIyWf681MAt0w==
 
-tabulator-tables@^6.2.1:
-  version "6.2.1"
-  resolved "https://registry.yarnpkg.com/tabulator-tables/-/tabulator-tables-6.2.1.tgz#61bf5d3ff7fafea70043b433425d4681bef1888f"
-  integrity sha512-iCyLUzE9xEesEWqHDzNgShr6fpIIsRXnvTSDxiEti3sVbVYwlRt5HTBnXsl8bxY+4p64Rxxdlk9jT3voNLcIZQ==
+tabulator-tables@^6.2.5:
+  version "6.2.5"
+  resolved "https://registry.yarnpkg.com/tabulator-tables/-/tabulator-tables-6.2.5.tgz#c3cd011c287b4e25143a3c62c912b835b8c0636a"
+  integrity sha512-f/TI78hV+GNoBefdqQ4q5RXbP+vJkvwSwt7sqeCTriAchNXax3ekcT1GG3i2J+8mhz6dHg0PFKyCYfmMW45HEg==
 
 text-table@^0.2.0:
   version "0.2.0"
