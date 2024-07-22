@@ -7,7 +7,7 @@
     "bootstrap": "^5.3.3",
     "flatpickr": "^4.6.13",
     "js-cookie": "^3.0.5",
-    "tabulator-tables": "^6.2.1"
+    "tabulator-tables": "^6.2.5"
   },
   "devDependencies": {
     "markdownlint-cli": "^0.41.0",
