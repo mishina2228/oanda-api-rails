@@ -112,7 +112,7 @@ GEM
     connection_pool (2.4.1)
     crass (1.0.6)
     csv (3.3.0)
-    dartsass-rails (0.5.0)
+    dartsass-rails (0.5.1)
       railties (>= 6.0.0)
       sass-embedded (~> 1.63)
     date (3.3.4)
@@ -201,7 +201,7 @@ GEM
     net-ssh (7.2.3)
     net-telnet (0.2.0)
     nio4r (2.7.3)
-    nokogiri (1.16.6)
+    nokogiri (1.16.7)
       mini_portile2 (~> 2.8.2)
       racc (~> 1.4)
     oanda_api (0.9.6)
@@ -228,7 +228,7 @@ GEM
     puma (6.4.2)
       nio4r (~> 2.0)
     raabro (1.4.0)
-    racc (1.8.0)
+    racc (1.8.1)
     rack (3.1.7)
     rack-mini-profiler (3.3.1)
       rack (>= 1.2.0)
@@ -328,9 +328,9 @@ GEM
     rubyzip (2.3.2)
     rufus-scheduler (3.9.1)
       fugit (~> 1.1, >= 1.1.6)
-    sass-embedded (1.77.0)
-      google-protobuf (>= 3.25, < 5.0)
-      rake (>= 13.0.0)
+    sass-embedded (1.77.8)
+      google-protobuf (~> 4.26)
+      rake (>= 13)
     schash (0.1.2)
     selenium-webdriver (4.23.0)
       base64 (~> 0.2)
@@ -386,7 +386,7 @@ GEM
     websocket-extensions (0.1.5)
     xpath (3.2.0)
       nokogiri (~> 1.8)
-    zeitwerk (2.6.16)
+    zeitwerk (2.6.17)
 
 PLATFORMS
   ruby
@@ -397,7 +397,7 @@ DEPENDENCIES
   brakeman
   bullet
   capybara (>= 2.15, < 4.0)
-  dartsass-rails (~> 0.5.0)
+  dartsass-rails (~> 0.5.1)
   erb_lint
   importmap-rails
   itamae
