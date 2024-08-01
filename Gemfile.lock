@@ -118,12 +118,12 @@ GEM
     date (3.3.4)
     docile (1.4.1)
     drb (2.2.1)
-    erb_lint (0.5.0)
+    erb_lint (0.6.0)
       activesupport
       better_html (>= 2.0.1)
       parser (>= 2.7.1.4)
       rainbow
-      rubocop
+      rubocop (>= 1)
       smart_properties
     erubi (1.13.0)
     et-orbi (1.2.11)
@@ -297,9 +297,9 @@ GEM
     resurrected_god (1.1.1)
       drb (~> 2.0)
       syslog (~> 0.1)
-    rexml (3.3.2)
+    rexml (3.3.4)
       strscan
-    rubocop (1.65.0)
+    rubocop (1.65.1)
       json (~> 2.3)
       language_server-protocol (>= 3.17.0)
       parallel (~> 1.10)
