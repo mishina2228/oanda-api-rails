@@ -208,7 +208,7 @@ GEM
       http-exceptions (~> 0.0)
       httparty (~> 0.13, >= 0.13.5)
       persistent_httparty (~> 0.1)
-    parallel (1.25.1)
+    parallel (1.26.1)
     parser (3.3.4.2)
       ast (~> 2.4.1)
       racc
