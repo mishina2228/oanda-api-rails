@@ -292,7 +292,7 @@ GEM
     resurrected_god (1.1.1)
       drb (~> 2.0)
       syslog (~> 0.1)
-    rexml (3.3.7)
+    rexml (3.3.8)
     rubocop (1.66.1)
       json (~> 2.3)
       language_server-protocol (>= 3.17.0)
