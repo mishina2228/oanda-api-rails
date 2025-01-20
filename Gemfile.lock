@@ -116,7 +116,7 @@ GEM
     date (3.4.1)
     docile (1.4.1)
     drb (2.2.1)
-    erb_lint (0.8.0)
+    erb_lint (0.9.0)
       activesupport
       better_html (>= 2.0.1)
       parser (>= 2.7.1.4)
@@ -142,7 +142,7 @@ GEM
       csv
       mini_mime (>= 1.0.0)
       multi_xml (>= 0.5.2)
-    i18n (1.14.6)
+    i18n (1.14.7)
       concurrent-ruby (~> 1.0)
     importmap-rails (2.1.0)
       actionpack (>= 6.0.0)
@@ -198,7 +198,7 @@ GEM
     net-ssh (7.3.0)
     net-telnet (0.2.0)
     nio4r (2.7.4)
-    nokogiri (1.18.1)
+    nokogiri (1.18.2)
       mini_portile2 (~> 2.8.2)
       racc (~> 1.4)
     oanda_api (0.9.6)
