@@ -2816,10 +2816,10 @@ supports-preserve-symlinks-flag@^1.0.0:
   resolved "https://registry.yarnpkg.com/supports-preserve-symlinks-flag/-/supports-preserve-symlinks-flag-1.0.0.tgz#6eda4bd344a3c94aea376d4cc31bc77311039e09"
   integrity sha512-ot0WnXS9fgdkgIcePe6RHNk1WA8+muPa6cSjeR3V8K27q9BB1rTE3R1p7Hv0z1ZyAc8s6Vvv8DIyWf681MAt0w==
 
-tabulator-tables@^6.3.0:
-  version "6.3.0"
-  resolved "https://registry.yarnpkg.com/tabulator-tables/-/tabulator-tables-6.3.0.tgz#9936a70073bd9c0025c7efa3cfd5baea93fcc716"
-  integrity sha512-gFiivoa03+NCDJ28Na3UU45nJT7sFXBsFCBtMqXz5OpsNTWrmL5ZJYA4oZtDFaVfarPqUHNgwm2PhL6DR7CQxg==
+tabulator-tables@^6.3.1:
+  version "6.3.1"
+  resolved "https://registry.yarnpkg.com/tabulator-tables/-/tabulator-tables-6.3.1.tgz#648c2893167bfb1f531c52670fad92d6353b8b40"
+  integrity sha512-qFW7kfadtcaISQIibKAIy0f3eeIXUVi8242Vly1iJfMD79kfEGzfczNuPBN/80hDxHzQJXYbmJ8VipI40hQtfA==
 
 text-table@^0.2.0:
   version "0.2.0"
