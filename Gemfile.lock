@@ -178,7 +178,7 @@ GEM
     minitest-ci (3.4.0)
       minitest (>= 5.0.6)
     mono_logger (1.1.2)
-    msgpack (1.7.5)
+    msgpack (1.8.0)
     multi_json (1.15.0)
     multi_xml (0.7.1)
       bigdecimal (~> 3.1)
