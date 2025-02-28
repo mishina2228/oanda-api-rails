@@ -15,7 +15,7 @@ module CandleSupport
       open_bid: params[:open_bid] || 108.550,
       time: time,
       volume: params[:volume] || 1,
-      complete: params[:complete].nil? ? true : params[:complete]
+      complete: params[:complete].nil? || params[:complete]
     )
   end
 
