@@ -4,7 +4,7 @@
     "@fortawesome/free-regular-svg-icons": "^6.7.2",
     "@fortawesome/free-solid-svg-icons": "^6.7.2",
     "@popperjs/core": "^2.11.8",
-    "bootstrap": "^5.3.5",
+    "bootstrap": "^5.3.6",
     "flatpickr": "^4.6.13",
     "js-cookie": "^3.0.5",
     "tabulator-tables": "^6.3.1"
