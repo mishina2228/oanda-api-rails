@@ -78,7 +78,7 @@ GEM
       public_suffix (>= 2.0.2, < 7.0)
     ansi (1.5.0)
     ast (2.4.3)
-    base64 (0.2.0)
+    base64 (0.3.0)
     benchmark (0.4.0)
     better_html (2.1.1)
       actionview (>= 6.0)
