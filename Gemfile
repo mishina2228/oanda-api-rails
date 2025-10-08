@@ -26,7 +26,7 @@ gem 'oanda_api'
 
 gem 'resque'
 gem 'resque-scheduler'
-gem 'sinatra', '~> 4.1.1' # Suppress Dependabot's PR
+gem 'sinatra', '~> 4.2.0' # Suppress Dependabot's PR
 
 group :development do
   gem 'brakeman'
