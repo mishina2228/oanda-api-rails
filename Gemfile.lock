@@ -181,7 +181,7 @@ GEM
       minitest (>= 5.0.6)
     mono_logger (1.1.2)
     msgpack (1.8.0)
-    multi_json (1.17.0)
+    multi_json (1.18.0)
     multi_xml (0.7.2)
       bigdecimal (~> 3.1)
     mustermann (3.0.4)
