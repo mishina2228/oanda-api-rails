@@ -134,7 +134,7 @@ GEM
       concurrent-ruby (>= 1.0)
     globalid (1.3.0)
       activesupport (>= 6.1)
-    google-protobuf (4.33.1)
+    google-protobuf (4.33.2)
       bigdecimal
       rake (>= 13)
     hashie (5.0.0)
@@ -340,7 +340,7 @@ GEM
     rubyzip (3.2.2)
     rufus-scheduler (3.9.2)
       fugit (~> 1.1, >= 1.11.1)
-    sass-embedded (1.94.2)
+    sass-embedded (1.94.3)
       google-protobuf (~> 4.31)
       rake (>= 13)
     schash (0.1.2)
