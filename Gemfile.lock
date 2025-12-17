@@ -188,7 +188,7 @@ GEM
       ruby2_keywords (~> 0.0.1)
     mysql2 (0.5.7)
       bigdecimal
-    net-imap (0.6.0)
+    net-imap (0.6.2)
       date
       net-protocol
     net-pop (0.1.2)
@@ -380,7 +380,7 @@ GEM
       logger
     thor (1.4.0)
     tilt (2.6.1)
-    timeout (0.5.0)
+    timeout (0.6.0)
     tsort (0.2.0)
     turbo-rails (2.0.20)
       actionpack (>= 7.1.0)
