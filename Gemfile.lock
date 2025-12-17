@@ -375,7 +375,7 @@ GEM
       net-ssh (>= 2.7)
       net-telnet
       sfl
-    stringio (3.1.9)
+    stringio (3.2.0)
     syslog (0.3.0)
       logger
     thor (1.4.0)
