@@ -16,7 +16,7 @@ class ResqueSchedulesController < ApplicationController
       @resque_schedule.save_and_setting!
       format.html {redirect_to({action: :index}, notice: t('helpers.notice.update'))}
     rescue ActiveRecord::RecordInvalid, Redis::CannotConnectError
-      format.html {render :edit, status: :unprocessable_entity}
+      format.html {render :edit, status: :unprocessable_content}
     end
   end
 
