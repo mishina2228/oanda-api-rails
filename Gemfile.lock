@@ -137,7 +137,8 @@ GEM
     google-protobuf (4.33.2)
       bigdecimal
       rake (>= 13)
-    hashie (5.0.0)
+    hashie (5.1.0)
+      logger
     http-exceptions (0.1.6)
     httparty (0.23.2)
       csv
