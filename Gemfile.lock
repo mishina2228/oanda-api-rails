@@ -140,7 +140,7 @@ GEM
     hashie (5.1.0)
       logger
     http-exceptions (0.1.6)
-    httparty (0.24.0)
+    httparty (0.24.2)
       csv
       mini_mime (>= 1.0.0)
       multi_xml (>= 0.5.2)
