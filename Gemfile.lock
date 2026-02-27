@@ -136,9 +136,9 @@ GEM
       concurrent-ruby (>= 1.0)
     globalid (1.3.0)
       activesupport (>= 6.1)
-    google-protobuf (4.33.5)
+    google-protobuf (4.34.0)
       bigdecimal
-      rake (>= 13)
+      rake (~> 13.3)
     hashie (5.1.0)
       logger
     http-exceptions (0.1.6)
