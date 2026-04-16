@@ -192,7 +192,7 @@ GEM
     multi_json (1.20.1)
     multi_xml (0.8.1)
       bigdecimal (>= 3.1, < 5)
-    mustermann (3.1.0)
+    mustermann (3.1.1)
     mysql2 (0.5.7)
       bigdecimal
     net-imap (0.6.3)
