@@ -237,7 +237,7 @@ GEM
       date
       stringio
     public_suffix (7.0.5)
-    puma (7.2.0)
+    puma (8.0.1)
       nio4r (~> 2.0)
     raabro (1.4.0)
     racc (1.8.1)
@@ -436,7 +436,7 @@ DEPENDENCIES
   net-scp (>= 3.0.0)
   oanda_api
   propshaft
-  puma (~> 7.2)
+  puma (~> 8.0)
   rack-mini-profiler (~> 4.0)
   rails (~> 8.1.2)
   resque
